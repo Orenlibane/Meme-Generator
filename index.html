@@ -44,14 +44,18 @@
 
     <div class="memes-container flex flex-wrap both-align-center"></div>
     <div class="modal-container  ">
-      <canvas onmousedown="draw(event)" id="canvas" width="500" height="500">
+      <canvas id="canvas" width="500" height="500">
         update your browser! it dosent support canvas</canvas
       >
       <div
         class="canvas-editor-container flex column align-center flex-space-around"
       >
         <div class="editor">
-          <input type="text" placeholder="Enter a messge" />
+          <input
+            type="text"
+            placeholder="Enter a messge"
+            oninput="draw(event,this.value)"
+          />
           <div class="controller">
             <ul class=" first-editor editor-buttons flex clean-list">
               <li><i class="fas fa-plus-square"></i></li>

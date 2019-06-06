@@ -165,6 +165,14 @@ footer .logo {
     font-size: 3rem;
 }
 
+.canvas-share i {
+    transition: all 0.3s ease-out
+}
+
+.canvas-share i:hover {
+    color: white;
+}
+
 @media (max-width: 740px) {
     .meme {
         min-height: 100px;

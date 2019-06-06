@@ -8,6 +8,8 @@ var gCanvas;
 var ctx;
 // var canvasFactorHeight;
 var canvasFactorWidth = 650;
+var gCanvasHeight;
+var gCanvasWidth;
 
 function showModal(id) {
   onUpdateId(id);
@@ -24,6 +26,9 @@ function showModal(id) {
 
   gCanvas.width = window.innerWidth - canvasFactorWidth;
   gCanvas.height = window.innerHeight - 200;
+
+  gCanvasHeight = gCanvas.height;
+  gCanvasWidth = gCanvas.width;
 
   var image = new Image();
 
