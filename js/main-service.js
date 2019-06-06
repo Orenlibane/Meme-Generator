@@ -98,21 +98,21 @@ function updateGmeme() {
       {
         content: '',
         size: 3,
-        align: 'left',
+        align: 'start',
         color: 'white',
         font: 'impact'
       },
       {
         content: '',
         size: 3,
-        align: 'left',
+        align: 'end',
         color: 'white',
         font: 'impact'
       },
       {
         content: '',
         size: 3,
-        align: 'left',
+        align: 'center',
         color: 'white',
         font: 'impact'
       }
@@ -135,13 +135,17 @@ function changePos(direction) {
     if (gMeme.position < 3) gMeme.position++;
   }
   // debugger;
-  var test = document.querySelector('.editor input').value;
   document.querySelector('.editor input').value =
     gMeme.text[gMeme.position].content;
 }
 
 function changeSize(sizeVariation) {
   gMeme.text[gMeme.position].size += sizeVariation;
+  drawText();
+}
+
+function  changeAlign (dir) {
+  gMeme.text[gMeme.position].align = dir;
   drawText();
 }
 

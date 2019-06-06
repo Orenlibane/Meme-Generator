@@ -43,22 +43,32 @@ function drawText() {
     var txt = gMeme.text[i].content 
     var fontSize = gMeme.text[i].size +"rem"
     var font = gMeme.text[i].font
+    var textAlign = gMeme.text[i].align
     
     var x;
     var y;
         if (i===0){
-        x = gCanvasWidth / 3
         y= gCanvasHeight / 10
         }else if(i===1){
-        x = gCanvasWidth / 3
         y= gCanvasHeight / 2
         }
         else if(i===2){
-        x = gCanvasWidth / 3
         y= gCanvasHeight -10
         }
+
+        if (textAlign==='center'){
+        x = gCanvasWidth / 2
+        }else if(textAlign==='start'){
+        x = gCanvasWidth / 6
+        }
+        else if(textAlign==='end'){
+        x = gCanvasWidth / 1.1
+        }
+
+
     
     ctx.strokeStyle = 'black';
+    ctx.textAlign = textAlign;
     ctx.font = fontSize + ' ' + font;
     ctx.fillStyle = color;
     ctx.fillText(txt, x, y);
@@ -90,4 +100,8 @@ function onShowFonts() {
 
 function onChangeFont(fontNumber) {
   changeFont(fontNumber);
+}
+
+function onChangeAlign(dir) {
+  changeAlign (dir)
 }
