@@ -82,5 +82,9 @@ var gImgs = [
     keyword: []
   }
 ];
+var gcurrentImgId;
 
-
+function updateId(id) {
+  gcurrentImgId = id;
+  console.log(gcurrentImgId);
+}

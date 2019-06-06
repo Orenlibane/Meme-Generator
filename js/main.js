@@ -7,7 +7,8 @@ var gId = 1;
 var gCanvas;
 var ctx;
 
-function showModal() {
+function showModal(id) {
+  onUpdateId(id);
   document.querySelector('.memes-container').style.display = 'none';
   document.querySelector('.modal-container').style.transform = 'scale(1)';
   document.querySelector('.modal-container').style.display = 'flex';

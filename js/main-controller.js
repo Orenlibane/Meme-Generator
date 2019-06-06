@@ -23,3 +23,7 @@ function renderMeme() {
 function showId(id) {
   console.log(id);
 }
+
+function onUpdateId(id) {
+  updateId(id);
+}
