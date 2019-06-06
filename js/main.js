@@ -30,7 +30,7 @@ function showModal(id) {
   gCanvasHeight = gCanvas.height;
   gCanvasWidth = gCanvas.width;
 
-  updateImgCanvas(id, gCanvasHeight, gCanvasWidth);
+  updateImgCanvas();
 }
 
 function clearCanvas() {
@@ -38,9 +38,14 @@ function clearCanvas() {
   ctx.fillRect(0, 0, gCanvas.width, gCanvas.height);
 }
 
-function updateImgCanvas(id, gCanvasHeight, gCanvasWidth) {
+function updateImgCanvas() {
   var image = new Image();
 
-  image.src = `graphic/img/${id}.jpg`;
+  image.src = `graphic/img/${gMeme.id}.jpg`;
   ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
+}
+
+function clearMeme() {
+  updateImgCanvas();
+  document.querySelector('.editor input').value = '';
 }

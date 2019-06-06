@@ -44,7 +44,7 @@ function drawText(color = gMeme.text[gMeme.position].color , txt= gMeme.text[gMe
     y= gCanvasHeight / 10
   }else if(gMeme.position===2){
     x = gCanvasWidth / 3
-    y= gCanvasHeight / 30
+    y= gCanvasHeight / 2
   }
   else if(gMeme.position===2){
     x = gCanvasWidth / 3
