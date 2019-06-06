@@ -6,6 +6,8 @@ var gId = 1;
 
 var gCanvas;
 var ctx;
+// var canvasFactorHeight;
+var canvasFactorWidth = 650;
 
 function showModal(id) {
   onUpdateId(id);
@@ -15,6 +17,15 @@ function showModal(id) {
 
   gCanvas = document.querySelector('#canvas');
   ctx = gCanvas.getContext('2d');
-  gCanvas.width = window.innerWidth - 200;
-  gCanvas.height = window.innerHeight - 300;
+  if (window.innerWidth > 1295) {
+    canvasFactorWidth = 650;
+  } else canvasFactorWidth = 300;
+
+  gCanvas.width = window.innerWidth - canvasFactorWidth;
+  gCanvas.height = window.innerHeight - 200;
+
+  var image = new Image();
+
+  image.src = `../graphic/img/${id}.jpg`;
+  ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
 }

@@ -80,11 +80,11 @@ body {
     overflow: hidden;
     border-left: 2px black solid;
     border-right: 2px black solid;
-    background: teal;
     transform: scale(0);
     transform-origin: top center;
     transition: transform 0.7s ease-out;
     display: none;
+    /* TODO: fix the transform transition - dosent work  */
 }
 
 .meme {
@@ -109,12 +109,78 @@ footer .logo {
     font-size: 2rem;
 }
 
-@media (max-width: 500px) {
+.canvas-editor-container {
+    min-width: 250px;
+    max-width: 500px;
+    height: 500px;
+    /* background: teal; */
+}
+
+.editor input {
+    width: 100%;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    border-bottom: 2px black solid;
+    outline: none;
+    padding-left: 2px;
+}
+
+.editor {
+    border: 2px black solid;
+    width: 90%;
+    border-radius: 15px;
+}
+
+.editor-buttons i {
+    padding: 10px 10px 10px 0;
+}
+
+.editor-buttons {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.editor-buttons li {
+    padding: 10px 10px 10px 0;
+}
+
+.editor-buttons li:not(:first-child) {
+    padding: 10px;
+}
+
+.canvas-share {
+    border: 2px black solid;
+    height: 20%;
+    width: 15vw;
+    border-radius: 15px;
+    background: #4267b2
+}
+
+.canvas-share div {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+@media (max-width: 740px) {
     .meme {
         min-height: 100px;
         min-width: 100px;
     }
     .logo {
-        font-size: 1.5rem;
+        font-size: 1rem;
+    }
+    .modal-container {
+        flex-direction: column;
+    }
+    .canvas-editor-container {
+        margin-top: 50px;
+        height: 40px;
+    }
+    .editor-buttons {
+        justify-content: center;
     }
 }

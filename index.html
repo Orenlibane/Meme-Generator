@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
+    />
+
     <link rel="stylesheet" href="css/canvas.css" />
     <link rel="stylesheet" href="css/style-main.css" />
     <link rel="stylesheet" href="css/helpers.css" />
@@ -41,6 +46,28 @@
       <canvas onmousedown="draw(event)" id="canvas" width="500" height="500">
         update your browser! it dosent support canvas</canvas
       >
+      <div
+        class="canvas-editor-container flex column align-center flex-space-around"
+      >
+        <div class="editor">
+          <input type="text" placeholder="Enter a messge" />
+          <div class="controller">
+            <ul class="editor-buttons flex clean-list">
+              <li><i class="fas fa-plus-square"></i></li>
+              <li><i class="fas fa-minus-square"></i></li>
+              <li><i class="fas fa-align-left"></i></li>
+              <li><i class="fas fa-align-justify"></i></li>
+              <li><i class="fas fa-align-right"></i></li>
+              <li><i class="far fa-trash-alt"></i></li>
+              <li><i class="fas fa-font"></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="canvas-share flex">
+          <div class="share"><i class="fab fa-facebook-square"></i></div>
+          <div class="download"><i class="fas fa-download"></i></div>
+        </div>
+      </div>
     </div>
 
     <footer>
