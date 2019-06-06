@@ -45,7 +45,7 @@ function updateImgCanvas() {
 }
 
 // clear canvas + input
-function clearMeme() {
-  updateImgCanvas();
+function onClearMeme() {
   document.querySelector('.editor input').value = '';
+  clearMeme();
 }

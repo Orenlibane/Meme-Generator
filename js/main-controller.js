@@ -29,7 +29,7 @@ function onUpdateId(id) {
 }
 
 function draw(txt) {
-  gMeme.text[gMeme.position - 1].content = txt;
+  gMeme.text[gMeme.position].content = txt;
   drawText();
 }
 
@@ -37,30 +37,35 @@ function draw(txt) {
 function drawText() {
   updateImgCanvas(gMeme.id, gCanvasHeight, gCanvasWidth);
 
-var color = gMeme.text[gMeme.position-1].color
-var txt = gMeme.text[gMeme.position-1].content 
-var fontSize = gMeme.text[gMeme.position-1].size +"rem"
-var font = gMeme.text[gMeme.position-1].font
 
-  var x;
-  var y;
-  if (gMeme.position===1){
-    x = gCanvasWidth / 3
-    y= gCanvasHeight / 10
-  }else if(gMeme.position===2){
-    x = gCanvasWidth / 3
-    y= gCanvasHeight / 2
-  }
-  else if(gMeme.position===3){
-    x = gCanvasWidth / 3
-    y= gCanvasHeight -10
+  for (var i=0; i<gMeme.text.length;i++){
+    var color = gMeme.text[i].color
+    var txt = gMeme.text[i].content 
+    var fontSize = gMeme.text[i].size +"rem"
+    var font = gMeme.text[i].font
+    
+    var x;
+    var y;
+        if (gMeme.position===0){
+        x = gCanvasWidth / 3
+        y= gCanvasHeight / 10
+        }else if(gMeme.position===1){
+        x = gCanvasWidth / 3
+        y= gCanvasHeight / 2
+        }
+        else if(gMeme.position===2){
+        x = gCanvasWidth / 3
+        y= gCanvasHeight -10
+        }
+    
+    ctx.strokeStyle = 'black';
+    ctx.font = fontSize + ' ' + font;
+    ctx.fillStyle = color;
+    ctx.fillText(txt, x, y);
+    ctx.strokeText(txt, x, y);
   }
 
-  ctx.strokeStyle = 'black';
-  ctx.font = fontSize + ' ' + font;
-  ctx.fillStyle = color;
-  ctx.fillText(txt, x, y);
-  ctx.strokeText(txt, x, y);
+     
 }
 
 function onChangeColor(pickedColor) {
@@ -86,3 +91,34 @@ function onShowFonts() {
 function onChangeFont(fontNumber) {
   changeFont(fontNumber);
 }
+
+// prettier-ignore
+// function drawText() {
+//   updateImgCanvas(gMeme.id, gCanvasHeight, gCanvasWidth);
+
+//    gMeme.text.forEach(function(text){})
+// var color = gMeme.text[gMeme.position-1].color
+// var txt = gMeme.text[gMeme.position-1].content
+// var fontSize = gMeme.text[gMeme.position-1].size +"rem"
+// var font = gMeme.text[gMeme.position-1].font
+
+//   var x;
+//   var y;
+//   if (gMeme.position===1){
+//     x = gCanvasWidth / 3
+//     y= gCanvasHeight / 10
+//   }else if(gMeme.position===2){
+//     x = gCanvasWidth / 3
+//     y= gCanvasHeight / 2
+//   }
+//   else if(gMeme.position===3){
+//     x = gCanvasWidth / 3
+//     y= gCanvasHeight -10
+//   }
+
+//   ctx.strokeStyle = 'black';
+//   ctx.font = fontSize + ' ' + font;
+//   ctx.fillStyle = color;
+//   ctx.fillText(txt, x, y);
+//   ctx.strokeText(txt, x, y);
+// }
