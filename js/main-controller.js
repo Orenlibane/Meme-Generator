@@ -51,13 +51,12 @@ var font = gMeme.text[gMeme.position-1].font
     x = gCanvasWidth / 3
     y= gCanvasHeight / 2
   }
-  else if(gMeme.position===2){
+  else if(gMeme.position===3){
     x = gCanvasWidth / 3
-    y= gCanvasHeight / 70
+    y= gCanvasHeight -10
   }
 
   ctx.strokeStyle = 'black';
-  var w = (ctx.font = fontSize + ' ' + font);
   ctx.font = fontSize + ' ' + 'impact';
   ctx.fillStyle = color;
   ctx.fillText(txt, x, y);
@@ -67,4 +66,7 @@ var font = gMeme.text[gMeme.position-1].font
 function onChangeColor(pickedColor) {
   // debugger;
   changeColor(pickedColor);
+}
+function onChangePos(diraction) {
+  changePos(diraction);
 }
