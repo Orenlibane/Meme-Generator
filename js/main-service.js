@@ -166,5 +166,9 @@ function changeFont(fontNumber) {
 
 function clearMeme() {
   updateImgCanvas();
+  // debugger;
+  for (var i = 0; i < gMeme.text.length; i++) {
+    gMeme.text[i].content = '';
+  }
   gMeme.text[gMeme.position].content = '';
 }

@@ -33,10 +33,10 @@ function showModal(id) {
   updateImgCanvas();
 }
 
-function clearCanvas() {
-  ctx.fillStyle = 'white';
-  ctx.fillRect(0, 0, gCanvas.width, gCanvas.height);
-}
+// function clearCanvas() {
+//   ctx.fillStyle = 'white';
+//   ctx.fillRect(0, 0, gCanvas.width, gCanvas.height);
+// }
 
 function updateImgCanvas() {
   var image = new Image();
