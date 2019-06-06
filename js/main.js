@@ -40,11 +40,11 @@ function clearCanvas() {
 
 function updateImgCanvas() {
   var image = new Image();
-
   image.src = `graphic/img/${gMeme.id}.jpg`;
   ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
 }
 
+// clear canvas + input
 function clearMeme() {
   updateImgCanvas();
   document.querySelector('.editor input').value = '';

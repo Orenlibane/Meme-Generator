@@ -3,6 +3,17 @@
     box-sizing: border-box;
 }
 
+i select {
+    position: absolute;
+    /* right: 30px; */
+    /* top: 20px; */
+    top: 55px;
+    right: 0;
+    border: 3px white solid;
+    border-radius: 10px;
+    outline: none;
+}
+
 body {
     height: 100vh;
     width: 100vw;
@@ -96,6 +107,11 @@ body {
     background-position: center;
     background-size: cover;
     border-radius: 20px;
+    transition: transform 0.3s ease-out
+}
+
+.meme:hover {
+    transform: scale(1.5)
 }
 
 footer {
@@ -110,6 +126,9 @@ footer .logo {
     font-size: 2rem;
 }
 
+.fa-hamburger {
+    font-size: 3rem;
+}
 
 @media (max-width: 740px) {
     .meme {

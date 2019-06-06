@@ -43,3 +43,6 @@
     list-style-type: none;
 }
 
+.show {
+    transform: scale(1);
+}

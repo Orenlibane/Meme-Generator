@@ -142,3 +142,22 @@ function changeSize(sizeVariation) {
   gMeme.text[gMeme.position - 1].size += sizeVariation;
   drawText();
 }
+
+function showFonts() {
+  document.querySelector('.fonts').classList.toggle('show');
+}
+
+//TODO: need to update so we build array of fonts and then putting the idx into gmeme font
+function changeFont(fontNumber) {
+  if (!fontNumber) {
+    gMeme.text[gMeme.position - 1].font = 'VT';
+  } else if (fontNumber === 1) {
+    gMeme.text[gMeme.position - 1].font = 'DancingScript';
+  } else if (fontNumber === 2) {
+    gMeme.text[gMeme.position - 1].font = 'Impact';
+  } else if (fontNumber === 3) {
+    gMeme.text[gMeme.position - 1].font = 'Indie';
+  }
+
+  drawText();
+}

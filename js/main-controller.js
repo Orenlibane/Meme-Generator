@@ -57,14 +57,13 @@ var font = gMeme.text[gMeme.position-1].font
   }
 
   ctx.strokeStyle = 'black';
-  ctx.font = fontSize + ' ' + 'impact';
+  ctx.font = fontSize + ' ' + font;
   ctx.fillStyle = color;
   ctx.fillText(txt, x, y);
   ctx.strokeText(txt, x, y);
 }
 
 function onChangeColor(pickedColor) {
-  // debugger;
   changeColor(pickedColor);
 }
 function onChangePos(diraction) {
@@ -73,4 +72,17 @@ function onChangePos(diraction) {
 
 function onChangeSize(sizeVariation) {
   changeSize(sizeVariation);
+}
+function saveCanvas(elLink) {
+  const data = gCanvas.toDataURL();
+  elLink.href = data;
+  elLink.download = 'my-img.jpg';
+}
+
+function onShowFonts() {
+  showFonts();
+}
+
+function onChangeFont(fontNumber) {
+  changeFont(fontNumber);
 }
