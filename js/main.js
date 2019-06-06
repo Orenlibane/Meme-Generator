@@ -4,111 +4,16 @@ var gId = 1;
 
 //service
 
-var gImgs = [
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  },
-  {
-    id: gId++,
-    keyword: []
-  }
-];
+var gCanvas;
+var ctx;
 
-//controller
+function showModal() {
+  document.querySelector('.memes-container').style.display = 'none';
+  document.querySelector('.modal-container').style.transform = 'scale(1)';
+  document.querySelector('.modal-container').style.display = 'flex';
 
-function onInit() {
-  renderMeme();
-}
-
-function renderMeme() {
-  //   debugger;
-  var elMemes = document.querySelector('.memes-container');
-  var strHTML = '';
-
-  gImgs.forEach(function(meme) {
-    strHTML += `<div data-id=${meme.id} onclick=showId(${
-      meme.id
-    }) style="background-image:url('graphic/img/${
-      meme.id
-    }.jpg')" class='meme'></div>`;
-  });
-
-  elMemes.innerHTML = strHTML;
-}
-
-function showId(id) {
-  console.log(id);
+  gCanvas = document.querySelector('#canvas');
+  ctx = gCanvas.getContext('2d');
+  gCanvas.width = window.innerWidth - 200;
+  gCanvas.height = window.innerHeight - 300;
 }
