@@ -35,7 +35,7 @@ function draw(ev, txt, color) {
 }
 
 // prettier-ignore
-function drawText(color = gMeme.text[gMeme.position].color , txt= gMeme.text[gMeme.position].content ,fontSize = gMeme.text[gMeme.position].size,font = gMeme.text[gMeme.position].font) {
+function drawText(color = gMeme.text[gMeme.position-1].color , txt= gMeme.text[gMeme.position-1].content ,fontSize = gMeme.text[gMeme.position-1].size,font = gMeme.text[gMeme.position-1].font) {
   updateImgCanvas(gMeme.id, gCanvasHeight, gCanvasWidth);
   var x;
   var y;
@@ -46,15 +46,19 @@ function drawText(color = gMeme.text[gMeme.position].color , txt= gMeme.text[gMe
     x = gCanvasWidth / 3
     y= gCanvasHeight / 2
   }
-  else if(gMeme.position===2){
+  else if(gMeme.position===3){
     x = gCanvasWidth / 3
-    y= gCanvasHeight / 70
+    y= gCanvasHeight -10
   }
   
   ctx.strokeStyle = 'black';
-  var w = (ctx.font = fontSize + ' ' + font);
   ctx.font = fontSize + ' ' + 'impact';
   ctx.fillText(txt, x, y);
   ctx.fillStyle = color;
   ctx.strokeText(txt, x, y);
+}
+
+
+function onChangePos(diraction) {
+  changePos(diraction)
 }

@@ -120,3 +120,18 @@ function updateGmeme() {
     ]
   };
 }
+
+
+
+function changePos(direction) {
+  if (direction) {
+    if (gMeme.position > 1) gMeme.position--;
+  }
+  else {
+    if (gMeme.position < 3) gMeme.position++;
+  }
+
+  console.log(gMeme.position);
+
+}
+
