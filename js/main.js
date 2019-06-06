@@ -30,6 +30,15 @@ function showModal(id) {
   gCanvasHeight = gCanvas.height;
   gCanvasWidth = gCanvas.width;
 
+  updateImgCanvas(id, gCanvasHeight, gCanvasWidth);
+}
+
+function clearCanvas() {
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, gCanvas.width, gCanvas.height);
+}
+
+function updateImgCanvas(id, gCanvasHeight, gCanvasWidth) {
   var image = new Image();
 
   image.src = `graphic/img/${id}.jpg`;

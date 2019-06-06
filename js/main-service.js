@@ -94,13 +94,29 @@ function updateId(id) {
 function updateGmeme() {
   gMeme = {
     id: gcurrentImgId,
-    text: {
-      content: '',
-      size: '3rem',
-      align: 'left',
-      color: 'white',
-      font: 'impact',
-      position: 1
-    }
+    position: 1,
+    text: [
+      {
+        content: '',
+        size: '3rem',
+        align: 'left',
+        color: 'white',
+        font: 'impact'
+      },
+      {
+        content: '',
+        size: '3rem',
+        align: 'left',
+        color: 'white',
+        font: 'impact'
+      },
+      {
+        content: '',
+        size: '3rem',
+        align: 'left',
+        color: 'white',
+        font: 'impact'
+      }
+    ]
   };
 }

@@ -30,12 +30,27 @@ function onUpdateId(id) {
 
 function draw(ev, txt, color) {
   console.log(ev);
-  drawText(gCanvasWidth / 3, gCanvasHeight / 10, color, txt);
+  drawText(color, txt);
   gMeme.text.content = txt;
 }
 
 // prettier-ignore
-function drawText(x,y,color = gMeme.text.color , txt= gMeme.text.content ,fontSize = gMeme.text.size,font = gMeme.text.font,position = 1) {
+function drawText(color = gMeme.text[gMeme.position].color , txt= gMeme.text[gMeme.position].content ,fontSize = gMeme.text[gMeme.position].size,font = gMeme.text[gMeme.position].font) {
+  updateImgCanvas(gMeme.id, gCanvasHeight, gCanvasWidth);
+  var x;
+  var y;
+  if (gMeme.position===1){
+    x = gCanvasWidth / 3
+    y= gCanvasHeight / 10
+  }else if(gMeme.position===2){
+    x = gCanvasWidth / 3
+    y= gCanvasHeight / 30
+  }
+  else if(gMeme.position===2){
+    x = gCanvasWidth / 3
+    y= gCanvasHeight / 70
+  }
+  
   ctx.strokeStyle = 'black';
   var w = (ctx.font = fontSize + ' ' + font);
   ctx.font = fontSize + ' ' + 'impact';
