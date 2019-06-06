@@ -70,3 +70,10 @@ function onChangeColor(pickedColor) {
 function onChangePos(diraction) {
   changePos(diraction);
 }
+
+function saveCanvas(elLink) {
+  const data = canvas.toDataURL();
+  elLink.href = data;
+  elLink.download = 'my-img.jpg';
+}
+
