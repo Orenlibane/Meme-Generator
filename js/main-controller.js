@@ -28,15 +28,20 @@ function onUpdateId(id) {
   updateId(id);
 }
 
-function draw(ev, txt, color) {
-  console.log(ev);
-  drawText(color, txt);
-  gMeme.text.content = txt;
+function draw(txt) {
+  gMeme.text[gMeme.position - 1].content = txt;
+  drawText();
 }
 
 // prettier-ignore
-function drawText(color = gMeme.text[gMeme.position].color , txt= gMeme.text[gMeme.position].content ,fontSize = gMeme.text[gMeme.position].size,font = gMeme.text[gMeme.position].font) {
+function drawText() {
   updateImgCanvas(gMeme.id, gCanvasHeight, gCanvasWidth);
+
+var color = gMeme.text[gMeme.position-1].color
+var txt = gMeme.text[gMeme.position-1].content 
+var fontSize = gMeme.text[gMeme.position-1].size
+var font = gMeme.text[gMeme.position-1].font
+
   var x;
   var y;
   if (gMeme.position===1){
@@ -50,11 +55,16 @@ function drawText(color = gMeme.text[gMeme.position].color , txt= gMeme.text[gMe
     x = gCanvasWidth / 3
     y= gCanvasHeight / 70
   }
-  
+
   ctx.strokeStyle = 'black';
   var w = (ctx.font = fontSize + ' ' + font);
   ctx.font = fontSize + ' ' + 'impact';
-  ctx.fillText(txt, x, y);
   ctx.fillStyle = color;
+  ctx.fillText(txt, x, y);
   ctx.strokeText(txt, x, y);
+}
+
+function onChangeColor(pickedColor) {
+  // debugger;
+  changeColor(pickedColor);
 }

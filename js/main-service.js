@@ -120,3 +120,11 @@ function updateGmeme() {
     ]
   };
 }
+
+function changeColor(pickedColor) {
+  gMeme.text[gMeme.position - 1].color = pickedColor;
+  drawText(
+    gMeme.text[gMeme.position - 1].color,
+    gMeme.text[gMeme.position - 1].content
+  );
+}
