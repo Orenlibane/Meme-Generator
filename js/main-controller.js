@@ -46,14 +46,14 @@ function drawText() {
     
     var x;
     var y;
-        if (gMeme.position===0){
+        if (i===0){
         x = gCanvasWidth / 3
         y= gCanvasHeight / 10
-        }else if(gMeme.position===1){
+        }else if(i===1){
         x = gCanvasWidth / 3
         y= gCanvasHeight / 2
         }
-        else if(gMeme.position===2){
+        else if(i===2){
         x = gCanvasWidth / 3
         y= gCanvasHeight -10
         }

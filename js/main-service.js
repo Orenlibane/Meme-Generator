@@ -130,7 +130,7 @@ function changeColor(pickedColor) {
 
 function changePos(direction) {
   if (direction) {
-    if (gMeme.position > 1) gMeme.position--;
+    if (gMeme.position > 0) gMeme.position--;
   } else {
     if (gMeme.position < 3) gMeme.position++;
   }
