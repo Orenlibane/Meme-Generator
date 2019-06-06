@@ -183,4 +183,7 @@ footer .logo {
     .editor-buttons {
         justify-content: center;
     }
+    .controller {
+        display: flex;
+    }
 }

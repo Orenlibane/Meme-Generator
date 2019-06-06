@@ -11,6 +11,7 @@ var canvasFactorWidth = 650;
 
 function showModal(id) {
   onUpdateId(id);
+  updateGmeme();
   document.querySelector('.memes-container').style.display = 'none';
   document.querySelector('.modal-container').style.transform = 'scale(1)';
   document.querySelector('.modal-container').style.display = 'flex';
