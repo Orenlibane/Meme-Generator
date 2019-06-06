@@ -6,7 +6,7 @@ var gId = 1;
 
 var gCanvas;
 var ctx;
-// var canvasFactorHeight;
+var canvasFactorHeight;
 var canvasFactorWidth = 650;
 var gCanvasHeight;
 var gCanvasWidth;
@@ -22,7 +22,15 @@ function showModal(id) {
   ctx = gCanvas.getContext('2d');
   if (window.innerWidth > 1295) {
     canvasFactorWidth = 650;
-  } else canvasFactorWidth = 300;
+  } else if (window.innerWidth > 740) {
+    canvasFactorWidth = 300;
+  } else canvasFactorWidth = 100;
+
+  // if (window.innerWidth > 1295) {
+  //   canvasFactorHeight = 650;
+  // } else if (window.innerWidth > 740) {
+  //   canvasFactorHeight = 500;
+  // } else canvasFactorHeight = 100;
 
   gCanvas.width = window.innerWidth - canvasFactorWidth;
   gCanvas.height = window.innerHeight - 200;
@@ -32,11 +40,6 @@ function showModal(id) {
 
   updateImgCanvas();
 }
-
-// function clearCanvas() {
-//   ctx.fillStyle = 'white';
-//   ctx.fillRect(0, 0, gCanvas.width, gCanvas.height);
-// }
 
 function updateImgCanvas() {
   var image = new Image();
