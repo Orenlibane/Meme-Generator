@@ -3,87 +3,87 @@
 var gImgs = [
   {
     id: gId++,
-    keyword: []
+    keyword: ['happy', 'dancing', 'singing']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['survivour', 'guy']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['angry', 'doodle']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['sleep', 'baby', 'dog']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['black', 'terantino', 'pulp fiction']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['geek', 'face']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['gameOfThorns', 'actor', 'movie']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['time', 'hours', 'geek']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['crying', 'face', 'big-eyes', 'geek']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['geek', 'resting']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['food', 'suprise']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['sword', 'computer', 'blood']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['dog', 'phone']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['yuda']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['baby', 'boss', 'suit']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['olympic', 'lift', 'women']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['angry', 'annoyed', 'eating', 'cereal']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['challenge', 'accepted']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['cat', 'smart', 'board', 'potions']
   },
   {
     id: gId++,
-    keyword: []
+    keyword: ['matrix', 'morphius', 'sunglasses']
   }
 ];
 var gcurrentImgId;
-var gKeywords = { happy: 12, 'funny puk': 1 };
+var gKeywords = {};
 var gMeme;
 
 function updateId(id) {
@@ -175,4 +175,29 @@ function clearMeme() {
     gMeme.text[i].content = '';
   }
   gMeme.text[gMeme.position].content = '';
+}
+
+var gKeywords = {};
+
+function showWordsSearchCount() {
+  gImgs.forEach(function(img) {
+    img.keyword.forEach(function(keyword) {
+      var count = gKeywords[keyword];
+      if (keyword) {
+        gKeywords[keyword] = count ? count + 1 : 1;
+      }
+    });
+  });
+
+  // var langName = prompt('Which is your favourite language?');
+  // var count = langVotesMap[langName];
+  // console.log('Curr Count is', count);
+
+  // if (keyword) {
+  //   gKeywords[keyword] = count ? count + 1 : 1;
+  // }
+  // for (langName in langVotesMap) {
+  //   var votesCount = langVotesMap[langName];
+  //   console.log('Language: ' + langName + ' has: ' + votesCount + ' votes');
+  // }
 }
