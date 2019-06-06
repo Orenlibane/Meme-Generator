@@ -88,7 +88,6 @@ var gMeme;
 
 function updateId(id) {
   gcurrentImgId = id;
-  console.log(gcurrentImgId);
 }
 
 function updateGmeme() {
@@ -98,21 +97,21 @@ function updateGmeme() {
     text: [
       {
         content: '',
-        size: '3rem',
+        size: 3,
         align: 'left',
         color: 'white',
         font: 'impact'
       },
       {
         content: '',
-        size: '3rem',
+        size: 3,
         align: 'left',
         color: 'white',
         font: 'impact'
       },
       {
         content: '',
-        size: '3rem',
+        size: 3,
         align: 'left',
         color: 'white',
         font: 'impact'
@@ -137,4 +136,9 @@ function changePos(direction) {
   }
 
   console.log(gMeme.position);
+}
+
+function changeSize(sizeVariation) {
+  gMeme.text[gMeme.position - 1].size += sizeVariation;
+  drawText();
 }

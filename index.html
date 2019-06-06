@@ -58,15 +58,28 @@
           />
           <div class="controller">
             <ul class=" first-editor editor-buttons flex clean-list">
-              <li><i class="fas fa-plus-square"></i></li>
-              <li><i class="fas fa-minus-square"></i></li>
+              <li>
+                <i
+                  onclick="onChangeSize(1)"
+                  class="fas fa-plus-square"
+                ></i>
+              </li>
+              <li>
+                <i
+                  onclick="onChangeSize(-1)"
+                  class="fas fa-minus-square"
+                ></i>
+              </li>
               <li><i class="fas fa-align-left"></i></li>
               <li><i class="fas fa-align-justify"></i></li>
               <li><i class="fas fa-align-right"></i></li>
+              q
             </ul>
             <ul class=" first-editor editor-buttons flex clean-list">
               <li><i onclick="onChangePos(1)" class="fas fa-arrow-up"></i></li>
-              <li><i onclick="onChangePos(0)" class="fas fa-arrow-down"></i></li>
+              <li>
+                <i onclick="onChangePos(0)" class="fas fa-arrow-down"></i>
+              </li>
               <li>
                 <i onclick="clearMeme()" class="far fa-trash-alt"></i>
               </li>

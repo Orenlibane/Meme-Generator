@@ -39,7 +39,7 @@ function drawText() {
 
 var color = gMeme.text[gMeme.position-1].color
 var txt = gMeme.text[gMeme.position-1].content 
-var fontSize = gMeme.text[gMeme.position-1].size
+var fontSize = gMeme.text[gMeme.position-1].size +"rem"
 var font = gMeme.text[gMeme.position-1].font
 
   var x;
@@ -69,4 +69,8 @@ function onChangeColor(pickedColor) {
 }
 function onChangePos(diraction) {
   changePos(diraction);
+}
+
+function onChangeSize(sizeVariation) {
+  changeSize(sizeVariation);
 }
