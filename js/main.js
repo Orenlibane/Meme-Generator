@@ -27,6 +27,6 @@ function showModal(id) {
 
   var image = new Image();
 
-  image.src = `../graphic/img/${id}.jpg`;
+  image.src = `graphic/img/${id}.jpg`;
   ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
 }
