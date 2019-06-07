@@ -208,3 +208,47 @@ function backToGallery(){
 }
 
 
+
+
+
+// -----------------------------------------------------------------------------------
+
+
+function uploadImg(elForm, ev) {
+  ev.preventDefault();
+
+  document.getElementById('imgData').value = canvas.toDataURL("image/jpeg");
+ 
+  // A function to be called if request succeeds
+  function onSuccess(uploadedImgUrl) {
+      console.log('uploadedImgUrl', uploadedImgUrl);
+
+      uploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+      document.querySelector('.share').innerHTML = `
+      <a class="w-inline-block social-share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
+         Share   
+      </a>`
+  }
+
+  doUploadImg(elForm, onSuccess);
+}
+
+function doUploadImg(elForm, onSuccess) {
+console.log (elForm)
+  var formData = new FormData(elForm);
+console.log (formData)
+
+  fetch('http://ca-upload.com/here/upload.php', {
+      method: 'POST',
+      body: formData
+  })
+  .then(function (response) {
+      return response.text()
+  })
+  .then(onSuccess)
+  .catch(function (error) {
+      console.error(error)
+  })
+}
+
+
