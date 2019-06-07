@@ -96,6 +96,7 @@ body {
     overflow: hidden;
     border-left: 2px black solid;
     border-right: 2px black solid;
+    transition: all 0.7s ease-out;
 }
 
 .modal-container {
@@ -206,4 +207,22 @@ footer .logo {
 
 .about-us-modal {
     left: 25%;
+}
+
+.memes-container i {
+    position: absolute;
+}
+
+.fa-arrow-circle-left {
+    position: absolute;
+    font-size: 3rem;
+    left: 2%;
+    cursor: pointer;
+}
+
+.fa-arrow-circle-right {
+    font-size: 3rem;
+    position: absolute;
+    right: 2%;
+    cursor: pointer;
 }

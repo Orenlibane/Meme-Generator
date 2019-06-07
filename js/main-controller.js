@@ -9,7 +9,8 @@ function renderMeme() {
   var elMemes = document.querySelector('.memes-container');
   var strHTML = '';
 
-  strHTML += `<div
+  strHTML += `     <i class="fas fa-arrow-circle-left" onclick="onPrevPage()"></i>
+  <i class="fas fa-arrow-circle-right" onclick="onNextPage()"></i><div
   }) style="background-image:url('graphic/img/add.png')" class='meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
 
   if (gFilterArr) {
@@ -134,15 +135,13 @@ function onFilterMeme() {
   renderMeme();
 }
 
-
-
 function onNextPage() {
-  nextPage()
-  renderMeme()
+  nextPage();
+  renderMeme();
 }
 function onPrevPage() {
-  prevPage()
-  renderMeme()
+  prevPage();
+  renderMeme();
 }
 function onClearMeme() {
   document.querySelector('.editor input').value = '';
