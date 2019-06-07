@@ -13,6 +13,7 @@ var gUploadFile;
 var gFilterArr;
 var gFilterBy;
 var gIsFilterOn = false;
+
 var gImgs = [
   {
     id: gId++,
@@ -421,3 +422,5 @@ function prevPage() {
     gCurrPageIdx--;
   }
 }
+
+function helloworld() {}
