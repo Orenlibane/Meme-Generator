@@ -1,5 +1,7 @@
 'use strict';
 
+const PAGE_SIZE = 14
+var gCurrPageIdx = 0
 var gId = 1;
 var gCanvas;
 var ctx;
@@ -320,4 +322,24 @@ function getFilterArr() {
     return myRe.exec(img.keywords);
   });
   return filterImages;
+}
+
+
+function getMemes() {
+  var fromIdx = gCurrPageIdx * PAGE_SIZE
+  var memes = gImgs.slice(fromIdx, fromIdx + PAGE_SIZE)
+  return memes;
+}
+
+function nextPage() {
+  if (gCurrPageIdx+1<(gImgs.length/PAGE_SIZE)) {
+
+    gCurrPageIdx ++;
+  }
+}
+
+function prevPage() {
+  if (gCurrPageIdx>0) {
+    gCurrPageIdx --;
+  }
 }

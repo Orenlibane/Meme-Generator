@@ -21,7 +21,7 @@ function renderMeme() {
       }.jpg')" class='meme'></div>`;
     });
   } else {
-    gImgs.forEach(function(meme) {
+    getMemes().forEach(function(meme) {
       strHTML += `<div data-id=${meme.id} onclick=showModal(${
         meme.id
       }) style="background-image:url('graphic/img/${
@@ -134,6 +134,16 @@ function onFilterMeme() {
   renderMeme();
 }
 
+
+
+function onNextPage() {
+  nextPage()
+  renderMeme()
+}
+function onPrevPage() {
+  prevPage()
+  renderMeme()
+}
 function onClearMeme() {
   document.querySelector('.editor input').value = '';
   clearMeme();
