@@ -2,6 +2,13 @@
 
 const PAGE_SIZE = 14
 var gCurrPageIdx = 0
+var gId = 1;
+var gCanvas;
+var ctx;
+var canvasFactorHeight;
+var canvasFactorWidth = 650;
+var gCanvasHeight;
+var gCanvasWidth;
 var gUploadFile;
 var gFilterArr;
 var gFilterBy;
@@ -91,6 +98,48 @@ var gImgs = [
 var gcurrentImgId;
 var gkeywordss = {};
 var gMeme;
+
+function showModal(id) {
+  onUpdateId(id);
+  updateGmeme();
+  document.body.classList.toggle('meme-on');
+  document.querySelector('.memes-container').style.display = 'none';
+  document.querySelector('.modal-container').style.transform = 'scale(1)';
+  document.querySelector('.modal-container').style.display = 'flex';
+
+  gCanvas = document.querySelector('#canvas');
+  ctx = gCanvas.getContext('2d');
+  if (window.innerWidth > 1295) {
+    canvasFactorWidth = 650;
+  } else if (window.innerWidth > 740) {
+    canvasFactorWidth = 300;
+  } else canvasFactorWidth = 100;
+
+  // if (window.innerWidth > 1295) {
+  //   canvasFactorHeight = 650;
+  // } else if (window.innerWidth > 740) {
+  //   canvasFactorHeight = 500;
+  // } else canvasFactorHeight = 100;
+
+  gCanvas.width = window.innerWidth - canvasFactorWidth;
+  gCanvas.height = window.innerHeight - 200;
+
+  gCanvasHeight = gCanvas.height;
+  gCanvasWidth = gCanvas.width;
+
+  updateImgCanvas();
+
+  document.querySelector('.editor input').focus();
+}
+
+function updateImgCanvas() {
+  var image = new Image();
+
+  if (gUploadFile) {
+    image.src = gUploadFile;
+  } else image.src = `graphic/img/${gMeme.id}.jpg`;
+  ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
+}
 
 function updateId(id) {
   gcurrentImgId = id;
@@ -197,58 +246,55 @@ function showWordsSearchCount() {
 
 function handleImageFromInput(ev, onImageReady) {
   var reader = new FileReader();
-  reader.onload = function (event) {
-      var img = new Image();
-      img.onload = onImageReady.bind(null, img)
-      img.src = event.target.result;
-      gUploadFile=img.src
-  }
+  reader.onload = function(event) {
+    var img = new Image();
+    img.onload = onImageReady.bind(null, img);
+    img.src = event.target.result;
+    gUploadFile = img.src;
+  };
   reader.readAsDataURL(ev.target.files[0]);
 }
 
-
-function backToGallery(){
-  gUploadFile =false;
+function backToGallery() {
+  gUploadFile = false;
 }
-
 
 function uploadImg(elForm, ev) {
   ev.preventDefault();
 
-  document.getElementById('imgData').value = canvas.toDataURL("image/jpeg");
- 
+  document.getElementById('imgData').value = canvas.toDataURL('image/jpeg');
+
   // A function to be called if request succeeds
   function onSuccess(uploadedImgUrl) {
-      console.log('uploadedImgUrl', uploadedImgUrl);
+    console.log('uploadedImgUrl', uploadedImgUrl);
 
-      uploadedImgUrl = encodeURIComponent(uploadedImgUrl)
-      document.querySelector('.share').innerHTML = `
+    uploadedImgUrl = encodeURIComponent(uploadedImgUrl);
+    document.querySelector('.share').innerHTML = `
       <a class="w-inline-block social-share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
       <i class="fas fa-arrow-up"></i>   Share   
-      </a>`
+      </a>`;
   }
 
   doUploadImg(elForm, onSuccess);
 }
 
 function doUploadImg(elForm, onSuccess) {
-console.log (elForm)
+  console.log(elForm);
   var formData = new FormData(elForm);
-console.log (formData)
+  console.log(formData);
 
   fetch('http://ca-upload.com/here/upload.php', {
-      method: 'POST',
-      body: formData
+    method: 'POST',
+    body: formData
   })
-  .then(function (response) {
-      return response.text()
-  })
-  .then(onSuccess)
-  .catch(function (error) {
-      console.error(error)
-  })
+    .then(function(response) {
+      return response.text();
+    })
+    .then(onSuccess)
+    .catch(function(error) {
+      console.error(error);
+    });
 }
-
 
 function showAboutUsModal() {
   document.querySelector('.about-us-modal').classList.toggle('show');

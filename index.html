@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style-main.css" />
     <link rel="stylesheet" href="css/helpers.css" />
     <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/media-queries.css" />
     <title>🏆🏆Meme-Generator🏆🏆</title>
   </head>
   <body onload="onInit()">
@@ -33,18 +34,17 @@
     </div>
     <section class="flex  align-center main-navbar">
       <div class="container flex main-nav align-center space-between">
-        <div class="logo">Ultimate Meme Generator</div>
-        <i onclick="easterEgg()" class=" menu-btn fas fa-hamburger"></i>
+        <div class="logo">
+          <i class="fas fa-user-secret menu-btn" onclick="easterEgg()"></i>
+          <span>Ultimate Meme Generator</span>
+        </div>
         <!-- TODO: easterEgg -->
         <nav>
           <ul class="main-nav-list flex ">
             <li class="flex both-align-center">
               <a href="index.html" onclick="onBackToGallery()">Memes Gallery</a>
             </li>
-            <!-- <li class="flex both-align-center ">
-              <a href="user-pref.html">Player-Pref</a>
-            </li>
-            <li class="flex both-align-center "><a href="map.html">Map</a></li> -->
+
             <li class="flex both-align-center " onclick="onShowAboutUsModal()">
               <a href="#">About us</a>
             </li>
