@@ -66,12 +66,26 @@ body {
     height: 70px;
 }
 
-.main-nav-list li:hover:not(:nth-child(5n)) {
+.main-nav-list li:hover:not(:nth-child(3n)) {
     border-bottom: 6px #58c93a solid;
 }
 
 .main-nav-list li a {
     text-decoration: none;
+    color: white;
+}
+
+.meme-searcher {
+    background: none;
+    border: 3px white solid;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    outline: none;
+}
+
+.meme-searcher::placeholder {
     color: white;
 }
 
@@ -131,6 +145,57 @@ footer .logo {
     font-size: 3rem;
 }
 
+.about-us-modal {
+    height: 50vh;
+    width: 50vw;
+    max-width: 500px;
+    min-width: 350px;
+    background: white;
+    border: black 2px solid;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    border-radius: 15px;
+    padding: 10px;
+    transform-origin: top center;
+    transform: scale(0);
+    transition: transform 0.7s ease-out;
+}
+
+.about-us-modal h2, h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.portfolios-container img {
+    height: 70%;
+    width: 80%;
+    border: 2px black solid;
+    border-radius: 15px;
+}
+
+.portfolios-container div {
+    margin-left: 20px;
+    height: 250px;
+    /* background: black; */
+}
+
+.indicator {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.screen {
+    height: 100vh;
+    width: 100vw;
+    background: rgb(122, 122, 122, 0.6);
+    position: absolute;
+    transform: scale(0)
+}
+
 @media (max-width: 740px) {
     .meme {
         min-height: 100px;
@@ -151,5 +216,21 @@ footer .logo {
     }
     .controller {
         display: flex;
+    }
+    .about-us-modal {
+        left: 25%;
+    }
+}
+
+@media (max-width: 540px) {
+    .about-us-modal {
+        left: 15%;
+    }
+}
+
+@media (max-width: 376px) {
+    .about-us-modal {
+        left: 2%;
+        height: 60vh;
     }
 }

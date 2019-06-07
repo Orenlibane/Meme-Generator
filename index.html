@@ -16,6 +16,21 @@
     <title>🏆🏆Meme-Generator🏆🏆</title>
   </head>
   <body onload="onInit()">
+    <div class="screen" onclick="showAboutUsModal()"></div>
+    <div class="about-us-modal">
+      <h2>About us</h2>
+      <div class="portfolios-container flex both-align-center">
+        <div class="alon-container flex column align-center">
+          <h3>Alon Dai</h3>
+          <img src="/graphic/img/1.jpg" alt="alon-portfolio" />
+        </div>
+        <div class="oren-container flex column align-center ">
+          <h3>Oren Tzezana</h3>
+          <img src="/graphic/img/1.jpg" alt="oren-portfolio" />
+        </div>
+      </div>
+      <div class="indicator">press Me</div>
+    </div>
     <section class="flex  align-center main-navbar">
       <div class="container flex main-nav align-center space-between">
         <div class="logo">Ultimate Meme Generator</div>
@@ -30,12 +45,15 @@
               <a href="user-pref.html">Player-Pref</a>
             </li>
             <li class="flex both-align-center "><a href="map.html">Map</a></li> -->
-            <li class="flex both-align-center "><a href="#">About us</a></li>
+            <li class="flex both-align-center " onclick="onShowAboutUsModal()">
+              <a href="#">About us</a>
+            </li>
             <li class="flex both-align-center ">
               <input
                 type="text"
-                placeholder="Search Meme"
-                oninput="onFilterMeme"
+                class="meme-searcher"
+                placeholder="Lets Search a Meme"
+                oninput="onFilterMeme()"
               />
             </li>
           </ul>
@@ -65,9 +83,24 @@
               <li>
                 <i onclick="onChangeSize(-1)" class="fas fa-minus-square"></i>
               </li>
-              <li><i onclick="onChangeAlign('start')" class="fas fa-align-left"></i></li>
-              <li><i onclick="onChangeAlign('center')" class="fas fa-align-justify"></i></li>
-              <li><i onclick="onChangeAlign('end')" class="fas fa-align-right"></i></li>
+              <li>
+                <i
+                  onclick="onChangeAlign('start')"
+                  class="fas fa-align-left"
+                ></i>
+              </li>
+              <li>
+                <i
+                  onclick="onChangeAlign('center')"
+                  class="fas fa-align-justify"
+                ></i>
+              </li>
+              <li>
+                <i
+                  onclick="onChangeAlign('end')"
+                  class="fas fa-align-right"
+                ></i>
+              </li>
             </ul>
             <ul class=" first-editor editor-buttons flex clean-list">
               <li><i onclick="onChangePos(1)" class="fas fa-arrow-up"></i></li>

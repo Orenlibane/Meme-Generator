@@ -112,3 +112,11 @@ function onChangeAlign(dir) {
 function onUploadImg() {
   uploadImg();
 }
+
+function onShowAboutUsModal(){
+  showAboutUsModal()
+}
+
+function onFilterMeme(){
+  filterMeme()
+}
