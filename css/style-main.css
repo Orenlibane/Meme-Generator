@@ -153,3 +153,9 @@ footer .logo {
         display: flex;
     }
 }
+
+.meme input {
+    opacity: 0;
+    padding-top: 152px;
+    width: 100%;
+}

@@ -9,8 +9,10 @@ function renderMeme() {
   var elMemes = document.querySelector('.memes-container');
   var strHTML = '';
 
-  strHTML += `<div "onclick=onUploadImg()"
-  }) style="background-image:url('graphic/img/add.png')" class='meme'></div>`;
+  
+
+  strHTML += `<div
+  }) style="background-image:url('graphic/img/add.png')" class='meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
 
   gImgs.forEach(function(meme) {
     strHTML += `<div data-id=${meme.id} onclick=showModal(${
@@ -109,6 +111,6 @@ function onChangeAlign(dir) {
   changeAlign(dir);
 }
 
-function onUploadImg() {
-  uploadImg();
+function onBackToGallery(){
+  backToGallery()
 }

@@ -1,5 +1,7 @@
 'use strict';
 
+var gUploadFile;
+
 var gImgs = [
   {
     id: gId++,
@@ -188,3 +190,21 @@ function showWordsSearchCount() {
     });
   });
 }
+
+function handleImageFromInput(ev, onImageReady) {
+  var reader = new FileReader();
+  reader.onload = function (event) {
+      var img = new Image();
+      img.onload = onImageReady.bind(null, img)
+      img.src = event.target.result;
+      gUploadFile=img.src
+  }
+  reader.readAsDataURL(ev.target.files[0]);
+}
+
+
+function backToGallery(){
+  gUploadFile =false;
+}
+
+
