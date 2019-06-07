@@ -1,4 +1,6 @@
 'use strict';
+
+var gUploadFile;
 var gFilterArr;
 var gFilterBy;
 var gIsFilterOn = false;
@@ -100,14 +102,14 @@ function updateGmeme() {
       {
         content: '',
         size: 3,
-        align: 'start',
+        align: 'center',
         color: 'white',
         font: 'impact'
       },
       {
         content: '',
         size: 3,
-        align: 'end',
+        align: 'center',
         color: 'white',
         font: 'impact'
       },
@@ -190,6 +192,61 @@ function showWordsSearchCount() {
     });
   });
 }
+
+function handleImageFromInput(ev, onImageReady) {
+  var reader = new FileReader();
+  reader.onload = function (event) {
+      var img = new Image();
+      img.onload = onImageReady.bind(null, img)
+      img.src = event.target.result;
+      gUploadFile=img.src
+  }
+  reader.readAsDataURL(ev.target.files[0]);
+}
+
+
+function backToGallery(){
+  gUploadFile =false;
+}
+
+
+function uploadImg(elForm, ev) {
+  ev.preventDefault();
+
+  document.getElementById('imgData').value = canvas.toDataURL("image/jpeg");
+ 
+  // A function to be called if request succeeds
+  function onSuccess(uploadedImgUrl) {
+      console.log('uploadedImgUrl', uploadedImgUrl);
+
+      uploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+      document.querySelector('.share').innerHTML = `
+      <a class="w-inline-block social-share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
+         Share   
+      </a>`
+  }
+
+  doUploadImg(elForm, onSuccess);
+}
+
+function doUploadImg(elForm, onSuccess) {
+console.log (elForm)
+  var formData = new FormData(elForm);
+console.log (formData)
+
+  fetch('http://ca-upload.com/here/upload.php', {
+      method: 'POST',
+      body: formData
+  })
+  .then(function (response) {
+      return response.text()
+  })
+  .then(onSuccess)
+  .catch(function (error) {
+      console.error(error)
+  })
+}
+
 
 function showAboutUsModal() {
   document.querySelector('.about-us-modal').classList.toggle('show');

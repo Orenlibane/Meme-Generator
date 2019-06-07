@@ -8,8 +8,10 @@ function renderMeme() {
   var elMemes = document.querySelector('.memes-container');
   var strHTML = '';
 
-  strHTML += `<div "onclick=onUploadImg()"
-  }) style="background-image:url('graphic/img/add.png')" class='meme'></div>`;
+  
+
+  strHTML += `<div
+  }) style="background-image:url('graphic/img/add.png')" class='meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
 
   if (gFilterArr) {
     gFilterArr.forEach(function(meme) {
@@ -117,6 +119,9 @@ function onChangeAlign(dir) {
   changeAlign(dir);
 }
 
+function onBackToGallery(){
+  backToGallery()
+}
 function onUploadImg() {
   uploadImg();
 }

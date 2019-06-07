@@ -39,7 +39,7 @@
         <nav>
           <ul class="main-nav-list flex ">
             <li class="flex both-align-center">
-              <a href="index.html">Memes Gallery</a>
+              <a href="index.html" onclick="onBackToGallery()">Memes Gallery</a>
             </li>
 
             <li class="flex both-align-center " onclick="onShowAboutUsModal()">
@@ -127,7 +127,12 @@
           </div>
         </div>
         <div class="canvas-share flex">
-          <div class="share"><i class="fab fa-facebook-square"></i></div>
+            <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+              <input name="img" id="imgData" type="hidden"/>
+              <button type="submit">Publish</button>
+            </form>
+            <div  class="share"></div>
+            <!-- <div onclick="uploadImg(this)" class="share"><i class="fab fa-facebook-square"></i></div> -->
           <div>
             <a href="#" onclick="saveCanvas(this)" download="">
               <i class="fas fa-download"></i

@@ -217,9 +217,16 @@ footer .logo {
     .controller {
         display: flex;
     }
-    .about-us-modal {
-        left: 25%;
-    }
+}
+
+.meme input {
+    opacity: 0;
+    padding-top: 152px;
+    width: 100%;
+}
+
+.about-us-modal {
+    left: 25%;
 }
 
 @media (max-width: 540px) {
