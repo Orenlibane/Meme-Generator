@@ -132,9 +132,8 @@ function changePos(direction) {
   if (direction) {
     if (gMeme.position > 0) gMeme.position--;
   } else {
-    if (gMeme.position < 3) gMeme.position++;
+    if (gMeme.position < 2) gMeme.position++;
   }
-  // debugger;
   document.querySelector('.editor input').value =
     gMeme.text[gMeme.position].content;
 }
@@ -144,7 +143,7 @@ function changeSize(sizeVariation) {
   drawText();
 }
 
-function  changeAlign (dir) {
+function changeAlign(dir) {
   gMeme.text[gMeme.position].align = dir;
   drawText();
 }
