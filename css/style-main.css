@@ -91,7 +91,7 @@ body {
 
 .memes-container {
     max-width: 1250px;
-    max-height: 83vh;
+    min-height: 83vh;
     margin: 0 auto;
     overflow: hidden;
     border-left: 2px black solid;

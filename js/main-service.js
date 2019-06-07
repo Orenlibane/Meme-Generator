@@ -1,7 +1,7 @@
 'use strict';
 
-const PAGE_SIZE = 14
-var gCurrPageIdx = 0
+const PAGE_SIZE = 14;
+var gCurrPageIdx = 0;
 var gId = 1;
 var gCanvas;
 var ctx;
@@ -93,6 +93,86 @@ var gImgs = [
   {
     id: gId++,
     keywords: ['matrix', 'morphius', 'sunglasses']
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
+  },
+  {
+    id: gId++,
+    keywords: []
   }
 ];
 var gcurrentImgId;
@@ -324,22 +404,20 @@ function getFilterArr() {
   return filterImages;
 }
 
-
 function getMemes() {
-  var fromIdx = gCurrPageIdx * PAGE_SIZE
-  var memes = gImgs.slice(fromIdx, fromIdx + PAGE_SIZE)
+  var fromIdx = gCurrPageIdx * PAGE_SIZE;
+  var memes = gImgs.slice(fromIdx, fromIdx + PAGE_SIZE);
   return memes;
 }
 
 function nextPage() {
-  if (gCurrPageIdx+1<(gImgs.length/PAGE_SIZE)) {
-
-    gCurrPageIdx ++;
+  if (gCurrPageIdx + 1 < gImgs.length / PAGE_SIZE) {
+    gCurrPageIdx++;
   }
 }
 
 function prevPage() {
-  if (gCurrPageIdx>0) {
-    gCurrPageIdx --;
+  if (gCurrPageIdx > 0) {
+    gCurrPageIdx--;
   }
 }
