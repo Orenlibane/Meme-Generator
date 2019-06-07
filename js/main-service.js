@@ -98,14 +98,14 @@ function updateGmeme() {
       {
         content: '',
         size: 3,
-        align: 'start',
+        align: 'center',
         color: 'white',
         font: 'impact'
       },
       {
         content: '',
         size: 3,
-        align: 'end',
+        align: 'center',
         color: 'white',
         font: 'impact'
       },
@@ -132,7 +132,7 @@ function changePos(direction) {
   if (direction) {
     if (gMeme.position > 0) gMeme.position--;
   } else {
-    if (gMeme.position < 3) gMeme.position++;
+    if (gMeme.position < 2) gMeme.position++;
   }
   // debugger;
   document.querySelector('.editor input').value =
