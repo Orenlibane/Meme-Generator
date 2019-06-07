@@ -1,0 +1,48 @@
+@media (max-width: 740px) {
+    .meme {
+        min-height: 100px;
+        min-width: 100px;
+    }
+    .logo {
+        font-size: 1rem;
+    }
+    .modal-container {
+        flex-direction: column;
+    }
+    .canvas-editor-container {
+        margin-top: 50px;
+        height: 40px;
+    }
+    .editor-buttons {
+        justify-content: center;
+    }
+    .controller {
+        display: flex;
+    }
+    body.meme-on footer {
+        display: none;
+    }
+    body.meme-on .modal-container {
+        min-height: 100%;
+    }
+}
+
+@media (max-width: 540px) {
+    .about-us-modal {
+        left: 15%;
+    }
+    .logo {
+        display: flex;
+    }
+    .logo i {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 376px) {
+    .about-us-modal {
+        left: 2%;
+        height: 60vh;
+    }
+}

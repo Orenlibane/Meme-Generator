@@ -14,6 +14,7 @@ var gCanvasWidth;
 function showModal(id) {
   onUpdateId(id);
   updateGmeme();
+  document.body.classList.toggle('meme-on');
   document.querySelector('.memes-container').style.display = 'none';
   document.querySelector('.modal-container').style.transform = 'scale(1)';
   document.querySelector('.modal-container').style.display = 'flex';
@@ -44,12 +45,11 @@ function showModal(id) {
 function updateImgCanvas() {
   var image = new Image();
 
-  if (gUploadFile){
-    image.src= gUploadFile;
-  }else image.src = `graphic/img/${gMeme.id}.jpg`;
+  if (gUploadFile) {
+    image.src = gUploadFile;
+  } else image.src = `graphic/img/${gMeme.id}.jpg`;
   ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
 }
-
 
 // clear canvas + input
 function onClearMeme() {
@@ -58,5 +58,5 @@ function onClearMeme() {
 }
 
 function onFileInputChange(ev) {
-  handleImageFromInput(ev, showModal)
+  handleImageFromInput(ev, showModal);
 }

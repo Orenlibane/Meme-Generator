@@ -141,7 +141,7 @@ footer .logo {
     font-size: 2rem;
 }
 
-.fa-hamburger {
+.fa-user-secret {
     font-size: 3rem;
 }
 
@@ -160,6 +160,7 @@ footer .logo {
     transform-origin: top center;
     transform: scale(0);
     transition: transform 0.7s ease-out;
+    z-index: 10;
 }
 
 .about-us-modal h2, h3 {
@@ -193,30 +194,8 @@ footer .logo {
     width: 100vw;
     background: rgb(122, 122, 122, 0.6);
     position: absolute;
-    transform: scale(0)
-}
-
-@media (max-width: 740px) {
-    .meme {
-        min-height: 100px;
-        min-width: 100px;
-    }
-    .logo {
-        font-size: 1rem;
-    }
-    .modal-container {
-        flex-direction: column;
-    }
-    .canvas-editor-container {
-        margin-top: 50px;
-        height: 40px;
-    }
-    .editor-buttons {
-        justify-content: center;
-    }
-    .controller {
-        display: flex;
-    }
+    transform: scale(0);
+    z-index: 9;
 }
 
 .meme input {
@@ -227,17 +206,4 @@ footer .logo {
 
 .about-us-modal {
     left: 25%;
-}
-
-@media (max-width: 540px) {
-    .about-us-modal {
-        left: 15%;
-    }
-}
-
-@media (max-width: 376px) {
-    .about-us-modal {
-        left: 2%;
-        height: 60vh;
-    }
 }
