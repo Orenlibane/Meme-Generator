@@ -1,91 +1,93 @@
 'use strict';
 
 var gUploadFile;
-
+var gFilterArr;
+var gFilterBy;
+var gIsFilterOn = false;
 var gImgs = [
   {
     id: gId++,
-    keyword: ['happy', 'dancing', 'singing']
+    keywords: ['happy', 'dancing', 'singing']
   },
   {
     id: gId++,
-    keyword: ['survivour', 'guy']
+    keywords: ['survivour', 'guy']
   },
   {
     id: gId++,
-    keyword: ['angry', 'doodle']
+    keywords: ['angry', 'doodle']
   },
   {
     id: gId++,
-    keyword: ['sleep', 'baby', 'dog']
+    keywords: ['sleep', 'baby', 'dog']
   },
   {
     id: gId++,
-    keyword: ['black', 'terantino', 'pulp fiction']
+    keywords: ['black', 'terantino', 'pulp fiction']
   },
   {
     id: gId++,
-    keyword: ['geek', 'face']
+    keywords: ['geek', 'face']
   },
   {
     id: gId++,
-    keyword: ['gameOfThorns', 'actor', 'movie']
+    keywords: ['gameOfThorns', 'actor', 'movie']
   },
   {
     id: gId++,
-    keyword: ['time', 'hours', 'geek']
+    keywords: ['time', 'hours', 'geek']
   },
   {
     id: gId++,
-    keyword: ['crying', 'face', 'big-eyes', 'geek']
+    keywords: ['crying', 'face', 'big-eyes', 'geek']
   },
   {
     id: gId++,
-    keyword: ['geek', 'resting']
+    keywords: ['geek', 'resting']
   },
   {
     id: gId++,
-    keyword: ['food', 'suprise']
+    keywords: ['food', 'suprise']
   },
   {
     id: gId++,
-    keyword: ['sword', 'computer', 'blood']
+    keywords: ['sword', 'computer', 'blood']
   },
   {
     id: gId++,
-    keyword: ['dog', 'phone']
+    keywords: ['dog', 'phone']
   },
   {
     id: gId++,
-    keyword: ['yuda']
+    keywords: ['yuda']
   },
   {
     id: gId++,
-    keyword: ['baby', 'boss', 'suit']
+    keywords: ['baby', 'boss', 'suit']
   },
   {
     id: gId++,
-    keyword: ['olympic', 'lift', 'women']
+    keywords: ['olympic', 'lift', 'women']
   },
   {
     id: gId++,
-    keyword: ['angry', 'annoyed', 'eating', 'cereal']
+    keywords: ['angry', 'annoyed', 'eating', 'cereal']
   },
   {
     id: gId++,
-    keyword: ['challenge', 'accepted']
+    keywords: ['challenge', 'accepted']
   },
   {
     id: gId++,
-    keyword: ['cat', 'smart', 'board', 'potions']
+    keywords: ['cat', 'smart', 'board', 'potions']
   },
   {
     id: gId++,
-    keyword: ['matrix', 'morphius', 'sunglasses']
+    keywords: ['matrix', 'morphius', 'sunglasses']
   }
 ];
 var gcurrentImgId;
-var gKeywords = {};
+var gkeywordss = {};
 var gMeme;
 
 function updateId(id) {
@@ -178,14 +180,14 @@ function clearMeme() {
   gMeme.text[gMeme.position].content = '';
 }
 
-var gKeywords = {};
+var gkeywordss = {};
 
 function showWordsSearchCount() {
   gImgs.forEach(function(img) {
-    img.keyword.forEach(function(keyword) {
-      var count = gKeywords[keyword];
-      if (keyword) {
-        gKeywords[keyword] = count ? count + 1 : 1;
+    img.keywords.forEach(function(keywords) {
+      var count = gkeywordss[keywords];
+      if (keywords) {
+        gkeywordss[keywords] = count ? count + 1 : 1;
       }
     });
   });
@@ -206,12 +208,6 @@ function handleImageFromInput(ev, onImageReady) {
 function backToGallery(){
   gUploadFile =false;
 }
-
-
-
-
-
-// -----------------------------------------------------------------------------------
 
 
 function uploadImg(elForm, ev) {
@@ -252,3 +248,30 @@ console.log (formData)
 }
 
 
+function showAboutUsModal() {
+  document.querySelector('.about-us-modal').classList.toggle('show');
+  document.querySelector('.screen').classList.toggle('show');
+}
+
+function filterMeme() {
+  gFilterArr = getFilterArr();
+  console.log(gFilterArr);
+}
+
+function checkIfFilterOn() {
+  var filterInput = document.querySelector('.meme-searcher').value;
+
+  if (!filterInput) gIsFilterOn = false;
+}
+
+function getFilterArr() {
+  gIsFilterOn = true;
+  gFilterBy = document.querySelector('.meme-searcher').value;
+  if (!gFilterBy) return gImgs;
+  var myRe = new RegExp('^' + `${gFilterBy}`, 'i');
+
+  var filterImages = gImgs.filter(function(img) {
+    return myRe.exec(img.keywords);
+  });
+  return filterImages;
+}
