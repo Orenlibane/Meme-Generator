@@ -130,17 +130,14 @@
           </div>
         </div>
         <div class="canvas-share flex">
-          <form
-            action=""
-            method="POST"
-            enctype="multipart/form-data"
-            onsubmit="uploadImg(this, event)"
-          >
-            <input name="img" id="imgData" type="hidden" />
-            <button type="submit">Publish</button>
-          </form>
-          <div class="share"></div>
-          <!-- <div onclick="uploadImg(this)" class="share"><i class="fab fa-facebook-square"></i></div> -->
+          <div>
+            <form class="flex" action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+              <input name="img" id="imgData" type="hidden"/>
+              <button type="submit"><div class="share"><i class="fab fa-facebook-square"></i></div></button>
+            </form>
+          </div>
+            <!-- <div class="share"></div> -->
+            <!-- <div onclick="uploadImg(this)" class="share"><i class="fab fa-facebook-square"></i></div> -->
           <div>
             <a href="#" onclick="saveCanvas(this)" download="">
               <i class="fas fa-download"></i
