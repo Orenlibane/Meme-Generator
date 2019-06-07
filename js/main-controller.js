@@ -13,7 +13,7 @@ function renderMeme() {
   <i class="fas fa-arrow-circle-right" onclick="onNextPage()"></i><div
   }) style="background-image:url('graphic/img/add.png')" class='meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
 
-  if (gFilterArr) {
+  if (gFilterArr && gFilterArr.length !== gImgs.length) {
     gFilterArr.forEach(function(meme) {
       strHTML += `<div data-id=${meme.id} onclick=showModal(${
         meme.id

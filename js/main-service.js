@@ -177,7 +177,7 @@ var gImgs = [
   }
 ];
 var gcurrentImgId;
-var gkeywordss = {};
+var gkeywords = {};
 var gMeme;
 
 function showModal(id) {
@@ -312,19 +312,6 @@ function clearMeme() {
   gMeme.text[gMeme.position].content = '';
 }
 
-var gkeywordss = {};
-
-function showWordsSearchCount() {
-  gImgs.forEach(function(img) {
-    img.keywords.forEach(function(keywords) {
-      var count = gkeywordss[keywords];
-      if (keywords) {
-        gkeywordss[keywords] = count ? count + 1 : 1;
-      }
-    });
-  });
-}
-
 function handleImageFromInput(ev, onImageReady) {
   var reader = new FileReader();
   reader.onload = function(event) {
@@ -382,29 +369,6 @@ function showAboutUsModal() {
   document.querySelector('.screen').classList.toggle('show');
 }
 
-function filterMeme() {
-  gFilterArr = getFilterArr();
-  console.log(gFilterArr);
-}
-
-function checkIfFilterOn() {
-  var filterInput = document.querySelector('.meme-searcher').value;
-
-  if (!filterInput) gIsFilterOn = false;
-}
-
-function getFilterArr() {
-  gIsFilterOn = true;
-  gFilterBy = document.querySelector('.meme-searcher').value;
-  if (!gFilterBy) return gImgs;
-  var myRe = new RegExp('^' + `${gFilterBy}`, 'i');
-
-  var filterImages = gImgs.filter(function(img) {
-    return myRe.exec(img.keywords);
-  });
-  return filterImages;
-}
-
 function getMemes() {
   var fromIdx = gCurrPageIdx * PAGE_SIZE;
   var memes = gImgs.slice(fromIdx, fromIdx + PAGE_SIZE);
@@ -423,4 +387,55 @@ function prevPage() {
   }
 }
 
-function helloworld() {}
+// for regular filtering
+
+function filterMeme() {
+  gFilterArr = getFilterArr();
+}
+
+function checkIfFilterOn() {
+  var filterInput = document.querySelector('.meme-searcher').value;
+
+  if (!filterInput) gIsFilterOn = false;
+}
+
+function getFilterArr() {
+  gIsFilterOn = true;
+  gFilterBy = document.querySelector('.meme-searcher').value;
+  if (!gFilterBy) return gImgs;
+  var myRe = new RegExp('^' + `${gFilterBy}`, 'i');
+
+  var filterImages = gImgs.filter(function(img) {
+    for (var i = 0; i < img.keywords.length; i++) {
+      if (myRe.exec(img.keywords[i])) {
+        return myRe.exec(img.keywords[i]);
+      }
+    }
+    return myRe.exec(img.keywords[i]);
+  });
+  return filterImages;
+}
+
+// this is the part for the filter by keyWord
+var gkeywords = {};
+
+function showWordsSearchCount() {
+  gImgs.forEach(function(img) {
+    img.keywords.forEach(function(keywords) {
+      var count = gkeywords[keywords];
+      if (keywords) {
+        gkeywords[keywords] = count ? count + 1 : 1;
+      }
+    });
+  });
+
+  // var wordsCount = 0;
+  // var num = '';
+  // for (var key in gkeywords) {
+  //   if (gkeywords[key] > wordsCount) {
+  //     num = key;
+  //     wordsCount = gkeywords[key];
+  //   }
+  // }
+  console.log(gkeywords);
+}
