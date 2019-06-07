@@ -1,6 +1,7 @@
 'use strict';
+var gFilterArr;
 var gFilterBy;
-
+var gIsFilterOn = false;
 var gImgs = [
   {
     id: gId++,
@@ -196,14 +197,24 @@ function showAboutUsModal() {
 }
 
 function filterMeme() {
+  gFilterArr = getFilterArr();
+  console.log(gFilterArr);
+}
+
+function checkIfFilterOn() {
+  var filterInput = document.querySelector('.meme-searcher').value;
+
+  if (!filterInput) gIsFilterOn = false;
+}
+
+function getFilterArr() {
+  gIsFilterOn = true;
   gFilterBy = document.querySelector('.meme-searcher').value;
-  console.log(gFilterBy);
   if (!gFilterBy) return gImgs;
   var myRe = new RegExp('^' + `${gFilterBy}`, 'i');
+
   var filterImages = gImgs.filter(function(img) {
-    console.log(filterImages);
     return myRe.exec(img.keywords);
   });
-  console.log(filterImages);
   return filterImages;
 }

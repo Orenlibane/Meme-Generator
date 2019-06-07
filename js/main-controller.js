@@ -5,21 +5,29 @@ function onInit() {
 }
 
 function renderMeme() {
-  //   debugger;
   var elMemes = document.querySelector('.memes-container');
   var strHTML = '';
 
   strHTML += `<div "onclick=onUploadImg()"
   }) style="background-image:url('graphic/img/add.png')" class='meme'></div>`;
 
-  gImgs.forEach(function(meme) {
-    strHTML += `<div data-id=${meme.id} onclick=showModal(${
-      meme.id
-    }) style="background-image:url('graphic/img/${
-      meme.id
-    }.jpg')" class='meme'></div>`;
-  });
-
+  if (gFilterArr) {
+    gFilterArr.forEach(function(meme) {
+      strHTML += `<div data-id=${meme.id} onclick=showModal(${
+        meme.id
+      }) style="background-image:url('graphic/img/${
+        meme.id
+      }.jpg')" class='meme'></div>`;
+    });
+  } else {
+    gImgs.forEach(function(meme) {
+      strHTML += `<div data-id=${meme.id} onclick=showModal(${
+        meme.id
+      }) style="background-image:url('graphic/img/${
+        meme.id
+      }.jpg')" class='meme'></div>`;
+    });
+  }
   elMemes.innerHTML = strHTML;
 }
 
@@ -113,10 +121,11 @@ function onUploadImg() {
   uploadImg();
 }
 
-function onShowAboutUsModal(){
-  showAboutUsModal()
+function onShowAboutUsModal() {
+  showAboutUsModal();
 }
 
-function onFilterMeme(){
-  filterMeme()
+function onFilterMeme() {
+  filterMeme();
+  renderMeme();
 }
