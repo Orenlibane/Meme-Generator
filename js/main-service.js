@@ -134,7 +134,6 @@ function changePos(direction) {
   } else {
     if (gMeme.position < 2) gMeme.position++;
   }
-  // debugger;
   document.querySelector('.editor input').value =
     gMeme.text[gMeme.position].content;
 }
@@ -144,7 +143,7 @@ function changeSize(sizeVariation) {
   drawText();
 }
 
-function  changeAlign (dir) {
+function changeAlign(dir) {
   gMeme.text[gMeme.position].align = dir;
   drawText();
 }
@@ -188,16 +187,4 @@ function showWordsSearchCount() {
       }
     });
   });
-
-  // var langName = prompt('Which is your favourite language?');
-  // var count = langVotesMap[langName];
-  // console.log('Curr Count is', count);
-
-  // if (keyword) {
-  //   gKeywords[keyword] = count ? count + 1 : 1;
-  // }
-  // for (langName in langVotesMap) {
-  //   var votesCount = langVotesMap[langName];
-  //   console.log('Language: ' + langName + ' has: ' + votesCount + ' votes');
-  // }
 }

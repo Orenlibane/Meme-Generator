@@ -111,7 +111,8 @@ body {
 }
 
 .meme:hover {
-    transform: scale(1.5)
+    transform: scale(1.1);
+    border: 3px blue solid;
 }
 
 footer {
