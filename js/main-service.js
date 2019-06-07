@@ -191,7 +191,7 @@ function showModal(id) {
   gCanvas = document.querySelector('#canvas');
   ctx = gCanvas.getContext('2d');
   if (window.innerWidth > 1295) {
-    canvasFactorWidth = 650;
+    canvasFactorWidth = 950;
   } else if (window.innerWidth > 740) {
     canvasFactorWidth = 300;
   } else canvasFactorWidth = 100;

@@ -75,6 +75,19 @@ body {
     color: white;
 }
 
+nav select {
+    background: none;
+    color: white;
+    border-radius: 15px;
+    outline: none;
+    height: 50%;
+    border: 2px white solid;
+}
+
+nav select option {
+    color: black;
+}
+
 .meme-searcher {
     background: none;
     border: 3px white solid;
@@ -97,6 +110,7 @@ body {
     border-left: 2px black solid;
     border-right: 2px black solid;
     transition: all 0.7s ease-out;
+    background: #1d1d1d
 }
 
 .modal-container {
@@ -118,7 +132,7 @@ body {
     margin: 15px 5px 10px 25px;
     min-height: 180px;
     min-width: 180px;
-    border: 1px black solid;
+    border: 1px white solid;
     background-position: center;
     background-size: cover;
     border-radius: 20px;
