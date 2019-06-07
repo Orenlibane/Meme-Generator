@@ -2,13 +2,12 @@
 
 function onInit() {
   renderMeme();
+  document.querySelector('.meme-searcher').focus();
 }
 
 function renderMeme() {
   var elMemes = document.querySelector('.memes-container');
   var strHTML = '';
-
-  
 
   strHTML += `<div
   }) style="background-image:url('graphic/img/add.png')" class='meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
@@ -119,8 +118,8 @@ function onChangeAlign(dir) {
   changeAlign(dir);
 }
 
-function onBackToGallery(){
-  backToGallery()
+function onBackToGallery() {
+  backToGallery();
 }
 function onUploadImg() {
   uploadImg();
@@ -133,4 +132,13 @@ function onShowAboutUsModal() {
 function onFilterMeme() {
   filterMeme();
   renderMeme();
+}
+
+function onClearMeme() {
+  document.querySelector('.editor input').value = '';
+  clearMeme();
+}
+
+function onFileInputChange(ev) {
+  handleImageFromInput(ev, showModal);
 }

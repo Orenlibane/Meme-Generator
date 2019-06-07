@@ -121,7 +121,7 @@ body {
     background-position: center;
     background-size: cover;
     border-radius: 20px;
-    transition: transform 0.3s ease-out
+    transition: transform 0.3s ease-out;
 }
 
 .meme:hover {
