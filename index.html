@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="css/helpers.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/media-queries.css" />
-    <title>🏆🏆Meme-Generator🏆🏆</title>
+    <title>🏆Meme-Generator🏆</title>
   </head>
   <body onload="onInit()">
     <div class="screen" onclick="showAboutUsModal()"></div>
     <div class="about-us-modal">
-      <h2>About us</h2>
+      <h2 data-trans="about-us">About us</h2>
       <div class="portfolios-container flex both-align-center">
         <div class="alon-container flex column align-center">
           <h3>Alon Dai</h3>
@@ -42,11 +42,16 @@
         <nav>
           <ul class="main-nav-list flex ">
             <li class="flex both-align-center">
-              <a href="index.html" onclick="onBackToGallery()">Memes Gallery</a>
+              <a
+                href="index.html"
+                data-trans="memes-gallery"
+                onclick="onBackToGallery()"
+                >Memes Gallery</a
+              >
             </li>
 
             <li class="flex both-align-center " onclick="onShowAboutUsModal()">
-              <a href="#">About us</a>
+              <a href="#" data-trans="about-us">About us</a>
             </li>
             <li class="flex both-align-center ">
               <input
@@ -56,10 +61,10 @@
                 oninput="onFilterMeme()"
               />
             </li>
-            <select>
-              <option data-translate="">Langaue</option>
-              <option value="english">english</option>
-              <option value="heberew">heberew</option>
+            <select onchange="onSetLang(this.value)">
+              <option data-trans="langaue">Langaue</option>
+              <option value="en">english</option>
+              <option value="he">heberew</option>
             </select>
           </ul>
         </nav>
@@ -76,6 +81,7 @@
       >
         <div class="editor">
           <input
+            data-trans="enter-messege"
             type="text"
             placeholder="Enter a messge"
             oninput="draw(this.value)"
@@ -180,5 +186,6 @@
     <script src="js/canvas-controller.js"></script>
     <script src="js/canvas-service.js"></script>
     <script src="js/uti.js"></script>
+    <script src="js/i18n.js"></script>
   </body>
 </html>

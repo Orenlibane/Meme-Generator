@@ -151,3 +151,11 @@ function onClearMeme() {
 function onFileInputChange(ev) {
   handleImageFromInput(ev, showModal);
 }
+
+function onSetLang(lang) {
+  setLang(lang);
+  if (lang === 'he') document.body.classList.add('rtl');
+  else document.body.classList.remove('rtl');
+
+  doTrans();
+}
