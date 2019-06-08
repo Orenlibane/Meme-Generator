@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/helpers.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/media-queries.css" />
-    <title>🏆Meme-Generator🏆</title>
+    <title>נ†Meme-Generatorנ†</title>
   </head>
   <body onload="onInit()">
     <div class="screen" onclick="showAboutUsModal()"></div>
@@ -43,7 +43,7 @@
       <div class="container flex main-nav align-center space-between">
         <div class="logo">
           <i class="fas fa-user-secret menu-btn" onclick="easterEgg()"></i>
-          <span>Ultimate Meme Generator</span>
+          <span data-trans="brand">Ultimate Meme Generator</span>
         </div>
         <!-- TODO: easterEgg -->
         <nav>
@@ -66,9 +66,10 @@
                 class="meme-searcher"
                 placeholder="Search Meme"
                 oninput="onFilterMeme()"
+                data-trans="search"
               />
             </li>
-            <li onclick="onShowKeywordsSearch()">Keywords</li>
+            <li  data-trans="keywords" onclick="onShowKeywordsSearch()">Keywords</li>
             <select onchange="onSetLang(this.value)">
               <option data-trans="langaue">Langaue</option>
               <option value="en">english</option>
@@ -180,7 +181,7 @@
     </div>
     <footer>
       <section>
-        <div class="logo">
+        <div class="logo"  data-trans="brand">
           Ultimate Meme-Generator
         </div>
       </section>
