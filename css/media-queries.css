@@ -59,12 +59,17 @@
         display: block;
     }
 
+    .up{
+        display: none;
+    }
+
     .key-words-modal{
         left: 0;
         min-width: 250px;
     }
     .memes-container {
         padding: 0 13% 0 9%;
+        min-height: 85vh;
     }
     .fa-arrow-circle-right, .fa-arrow-circle-left {
         color: white;

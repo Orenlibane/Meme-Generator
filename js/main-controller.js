@@ -14,7 +14,7 @@ function renderMeme() {
 
   strHTML += `     <i class="fas fa-arrow-circle-left" onclick="onPrevPage()"></i>
   <i class="fas fa-arrow-circle-right" onclick="onNextPage()"></i><div
-  }) style="background-image:url('graphic/img/add.png')" class='upload meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
+  }) style="background-image:url('graphic/img/add.png')" class='up meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
 
   if (gFilterArr && gFilterArr.length !== gImgs.length) {
     gFilterArr.forEach(function(meme) {
@@ -157,8 +157,8 @@ function onFileInputChange(ev) {
 
 function onSetLang(lang) {
   setLang(lang);
-  if (lang === 'he') document.body.classList.add('rtl');
-  else document.body.classList.remove('rtl');
+  if (lang === 'he') document.querySelector('body').style.direction='rtl';
+  else document.querySelector('body').style.direction='ltr';
 
   doTrans();
 }
