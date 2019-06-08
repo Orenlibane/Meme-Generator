@@ -3,6 +3,8 @@
 function onInit() {
   renderMeme();
   document.querySelector('.meme-searcher').focus();
+  createSmallObj();
+  gettingTop5MaxesKeyWords();
 }
 
 function renderMeme() {
@@ -166,7 +168,6 @@ function onAddSearch(elKeyWord) {
 
 function onShowKeywordsSearch() {
   showKeywordSearch();
-  gettingTop5MaxesKeyWords();
   renderTopKeyWords();
 }
 

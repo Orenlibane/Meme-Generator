@@ -479,6 +479,12 @@ function findTop5Maxes() {
   //   debugger;
   for (var i = 5; i < keys.length; i++) {
     if (gkeywords[keys[i]] > smallObj[smallObj.length - 1].count) {
+      var isKeyIn = smallObj.filter(function(idx) {
+        return idx.name === keys[i];
+      });
+
+      // if( )
+
       var newMax = {};
       newMax.key = keys[i];
       newMax.count = gkeywords[keys[i]];
@@ -491,7 +497,6 @@ function findTop5Maxes() {
 }
 
 function gettingTop5MaxesKeyWords() {
-  createSmallObj();
   sortSmallObj();
   findTop5Maxes();
   console.log(smallObj);
