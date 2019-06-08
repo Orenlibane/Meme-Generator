@@ -47,8 +47,14 @@
         </div>
         <!-- TODO: easterEgg -->
         <nav>
-
-            <i onclick="onShowMenu()" class=" hamburger fas fa-bars"></i>
+          <i onclick="onShowMenu()" class=" hamburger fas fa-bars"></i>
+          <div class="upload">
+            <input
+              type="file"
+              name="image"
+              onchange="onFileInputChange(event)"
+            />
+          </div>
           <ul class="main-nav-list flex ">
             <li class="flex both-align-center">
               <a

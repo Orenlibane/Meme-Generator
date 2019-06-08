@@ -54,12 +54,17 @@
         right: 21px;
         font-size: 2rem;
     }
-    .key-words-modal {
+
+    .upload {
+        display: block;
+    }
+
+    .key-words-modal{
         left: 0;
         min-width: 250px;
     }
     .memes-container {
-        padding: 0 17% 0 15%;
+        padding: 0 13% 0 9%;
     }
     .fa-arrow-circle-right, .fa-arrow-circle-left {
         color: white;

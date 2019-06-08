@@ -23,6 +23,10 @@ body {
     display: none;
 }
 
+.upload {
+    display: none;
+}
+
 .main {
     height: 70vh;
     width: 100w;
