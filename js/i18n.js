@@ -28,6 +28,11 @@ var gTrans = {
     en: 'The Ultimate Meme Generator',
     he: 'מכולל הממים האולטימטיבי'
   }
+  ,
+  'keywords': {
+    en: 'Key Words',
+    he: 'מילות מפתח'
+  }
 };
 
 function doTrans() {
