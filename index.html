@@ -43,7 +43,7 @@
       <div class="container flex main-nav align-center space-between">
         <div class="logo">
           <i class="fas fa-user-secret menu-btn" onclick="easterEgg()"></i>
-          <span data-trans="about-us">Ultimate Meme Generator</span>
+          <span data-trans="brand">Ultimate Meme Generator</span>
         </div>
         <!-- TODO: easterEgg -->
         <nav>
@@ -69,7 +69,9 @@
                 data-trans="search"
               />
             </li>
-            <li data-trans="keywords" onclick="onShowKeywordsSearch()">Keywords</li>
+            <li data-trans="keywords" onclick="onShowKeywordsSearch()">
+              Keywords
+            </li>
             <select onchange="onSetLang(this.value)">
               <option data-trans="langaue">Langaue</option>
               <option value="en">english</option>
