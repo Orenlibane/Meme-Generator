@@ -18,6 +18,14 @@ var gTrans = {
   'enter-messege': {
     en: 'Enter-Messege',
     he: 'הכנס טקסט'
+  },
+  'brand': {
+    en: 'The Ultimate Meme Generator',
+    he: 'מכולל הממים האולטימטיבי'
+  },
+  'keywords': {
+    en: 'Key Words',
+    he: 'מילות מפתח'
   }
 };
 

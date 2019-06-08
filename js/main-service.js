@@ -19,163 +19,163 @@ var gkeywords = {};
 var gImgs = [
   {
     id: gId++,
-    keywords: ['happy', 'dancing', 'singing']
+    keywords: ['happy', 'dancing', 'singing', 'שירה', 'ריקוד', 'שמח', 'רוקד', 'שר']
   },
   {
     id: gId++,
-    keywords: ['survivour', 'guy']
+    keywords: ['survivour', 'guy', 'שורד', 'בחור', 'גבר', 'אולטימטיבי']
   },
   {
     id: gId++,
-    keywords: ['angry', 'doodle']
+    keywords: ['angry', 'doodle', 'כועס']
   },
   {
     id: gId++,
-    keywords: ['sleep', 'baby', 'dog']
+    keywords: ['sleep', 'baby', 'dog', 'כלב', 'תינוק', 'שינה', 'ישן']
   },
   {
     id: gId++,
-    keywords: ['black', 'terantino', 'pulp fiction', 'happy']
+    keywords: ['black', 'terantino', 'pulp fiction', 'שחור', 'טרנטינו', 'ספרות', 'זולה']
   },
   {
     id: gId++,
-    keywords: ['geek', 'face']
+    keywords: ['geek', 'face', 'פנים', 'חנון']
   },
   {
     id: gId++,
-    keywords: ['gameOfThorns', 'actor', 'movie']
+    keywords: ['gameOfThorns', 'actor', 'movie', 'שחקן', 'סרט', 'משחקי-הכס', 'חורף']
   },
   {
     id: gId++,
-    keywords: ['time', 'hours', 'geek']
+    keywords: ['time', 'hours', 'geek', 'זמן', 'שעות', 'חנון']
   },
   {
     id: gId++,
-    keywords: ['crying', 'face', 'big-eyes', 'geek']
+    keywords: ['crying', 'face', 'big-eyes', 'geek', 'חנון', 'עיניים-גדולות', 'בכי', 'פנים']
   },
   {
     id: gId++,
-    keywords: ['geek', 'resting', 'guy']
+    keywords: ['geek', 'resting', 'חנון', 'מנוחה']
   },
   {
     id: gId++,
-    keywords: ['food', 'suprise']
+    keywords: ['food', 'suprise', 'אוכל', 'הפתעה']
   },
   {
     id: gId++,
-    keywords: ['sword', 'computer', 'blood', 'guy']
+    keywords: ['sword', 'computer', 'blood','guy', 'חרב', 'מחשב', 'דם', 'כעס']
   },
   {
     id: gId++,
-    keywords: ['dog', 'phone']
+    keywords: ['dog', 'phone', 'כלב', 'פלאפון']
   },
   {
     id: gId++,
-    keywords: ['yuda']
+    keywords: ['yuda', 'יודה', 'מלחמת-הכוכבים']
   },
   {
     id: gId++,
-    keywords: ['baby', 'boss', 'suit']
+    keywords: ['baby', 'boss', 'suit', 'תינוק', 'בוס', 'חליפה', 'קשוח']
   },
   {
     id: gId++,
-    keywords: ['olympic', 'lift', 'women']
+    keywords: ['olympic', 'lift', 'women', 'אישה', 'משקולות', 'אולימפי', 'חזק']
   },
   {
     id: gId++,
-    keywords: ['angry', 'annoyed', 'eating', 'cereal']
+    keywords: ['angry', 'annoyed', 'eating', 'cereal', 'כועס', 'עצבני', 'אוכל', 'זעם']
   },
   {
     id: gId++,
-    keywords: ['challenge', 'accepted']
+    keywords: ['challenge', 'accepted', 'אתגר', 'התקבל']
   },
   {
     id: gId++,
-    keywords: ['cat', 'smart', 'board', 'potions']
+    keywords: ['cat', 'smart', 'board', 'potions', 'חתול', 'חכם', 'לוח', 'שיקויים']
   },
   {
     id: gId++,
-    keywords: ['matrix', 'morphius', 'sunglasses']
+    keywords: ['cry', 'cat', 'sad', 'חתול', 'בכי', 'עצוב']
   },
   {
     id: gId++,
-    keywords: ['cat']
+    keywords: ['nerd', 'bad-ass', 'hat', 'חנון', 'כובע', 'מגניב']
   },
   {
     id: gId++,
-    keywords: ['cat']
+    keywords: ['duck', 'colors', 'ברווז', 'צבעים']
   },
   {
     id: gId++,
-    keywords: ['geek']
+    keywords: ['god', 'wtf', 'אלוהים', 'מה']
   },
   {
     id: gId++,
-    keywords: ['matrix']
+    keywords: ['dog', 'suprise', 'colors', 'כלב', 'מופתע', 'צבעים']
   },
   {
     id: gId++,
-    keywords: ['matrix']
+    keywords: ['girl', 'scream', 'ילדה', 'צעקה', 'צועקת']
   },
   {
     id: gId++,
-    keywords: ['matrix']
+    keywords: ['chicken', 'colors', 'תרנגול', 'צבעים']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['nerd', 'boy', 'smile', 'חנון', 'חיוך', 'ילד']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['sponge-bob', 'minutes', 'later', 'בובספוג', 'דקות', 'לאחר-מכן']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['girl', 'smile', 'burn', 'שריפה', 'ילדה', 'חיוך']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['look', 'amaze', 'rainbow', 'מבט', 'נדהם', 'קשת']
   },
   {
     id: gId++,
-    keywords: ['cat']
+    keywords: ['xzibit', 'black', 'guy', 'smile', 'בחור', 'חיוך']
   },
   {
     id: gId++,
-    keywords: ['cat']
+    keywords: ['nicolas', 'cage', 'say', 'ניקולס', 'קייג', 'אומר']
   },
   {
     id: gId++,
-    keywords: ['cat']
+    keywords: ['are', 'man', 'thumb', 'בסדר', 'גבר', 'אגודל']
   },
   {
     id: gId++,
-    keywords: ['cat']
+    keywords: ['success', 'smile', 'happy', 'הצלחה', 'חיוך', 'שמחה']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['pink', 'pokemon', 'פוקימון', 'ורוד']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['hours', 'later', 'spongebob', 'בובספוג', 'שעות', 'אחר-כך']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['brain', 'smart', 'מוח', 'חכם']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['guy', 'girl', 'computer', 'בחור', 'בחורה', 'מחשב']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['hide', 'computer', 'scared', 'מחשב', 'מפחד', 'מסתתר']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['guy', 'arabic', 'בחור', 'ערבי']
   }
 ];
 var gcurrentImgId;
