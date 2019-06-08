@@ -18,6 +18,13 @@
   </head>
   <body onload="onInit()">
     <div class="screen" onclick="showAboutUsModal()"></div>
+    <div class="top-five-keywords key-words-modal">
+      <div class="top1" onclick="onAddSearch(this)">X</div>
+      <div class="top2" onclick="onAddSearch(this)">Y</div>
+      <div class="top3" onclick="onAddSearch(this)">Z</div>
+      <div class="top4" onclick="onAddSearch(this)">S</div>
+      <div class="top5" onclick="onAddSearch(this)">W</div>
+    </div>
     <div class="about-us-modal">
       <h2 data-trans="about-us">About us</h2>
       <div class="portfolios-container flex both-align-center">
@@ -61,6 +68,7 @@
                 oninput="onFilterMeme()"
               />
             </li>
+            <li onclick="onShowKeywordsSearch()">Keywords</li>
             <select onchange="onSetLang(this.value)">
               <option data-trans="langaue">Langaue</option>
               <option value="en">english</option>

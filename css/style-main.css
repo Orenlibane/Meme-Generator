@@ -96,6 +96,7 @@ nav select option {
     font-weight: bold;
     border-radius: 10px;
     outline: none;
+    width: 100px;
 }
 
 .meme-searcher::placeholder {
@@ -239,4 +240,58 @@ footer .logo {
     position: absolute;
     right: 5%;
     cursor: pointer;
+}
+
+.top1 {
+    position: absolute;
+    top: 10%;
+    left: 70%;
+    font-size: 3rem;
+}
+
+.top2 {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    font-size: 2.5rem;
+}
+
+.top3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+}
+
+.top4 {
+    position: absolute;
+    top: 75%;
+    left: 70%;
+    font-size: 1.5rem;
+}
+
+.top5 {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    font-size: 1rem;
+}
+
+.key-words-modal {
+    height: 20vh;
+    width: 50vw;
+    max-width: 500px;
+    min-width: 350px;
+    background: white;
+    border: black 2px solid;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    border-radius: 15px;
+    padding: 10px;
+    transform-origin: top center;
+    transform: scale(0);
+    transition: transform 0.7s ease-out;
+    z-index: 10;
+    text-transform: capitalize;
 }

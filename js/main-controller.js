@@ -159,3 +159,21 @@ function onSetLang(lang) {
 
   doTrans();
 }
+
+function onAddSearch(elKeyWord) {
+  filterByKeyword(elKeyWord);
+}
+
+function onShowKeywordsSearch() {
+  showKeywordSearch();
+  gettingTop5MaxesKeyWords();
+  renderTopKeyWords();
+}
+
+function renderTopKeyWords() {
+  document.querySelector('.top1').innerText = `${smallObj[0].key}`;
+  document.querySelector('.top2').innerText = `${smallObj[1].key}`;
+  document.querySelector('.top3').innerText = `${smallObj[2].key}`;
+  document.querySelector('.top4').innerText = `${smallObj[3].key}`;
+  document.querySelector('.top5').innerText = `${smallObj[4].key}`;
+}
