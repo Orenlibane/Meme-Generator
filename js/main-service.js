@@ -13,6 +13,7 @@ var gUploadFile;
 var gFilterArr;
 var gFilterBy;
 var gIsFilterOn = false;
+var smallObj = [];
 
 var gImgs = [
   {
@@ -33,7 +34,7 @@ var gImgs = [
   },
   {
     id: gId++,
-    keywords: ['black', 'terantino', 'pulp fiction']
+    keywords: ['black', 'terantino', 'pulp fiction', 'happy']
   },
   {
     id: gId++,
@@ -53,7 +54,7 @@ var gImgs = [
   },
   {
     id: gId++,
-    keywords: ['geek', 'resting']
+    keywords: ['geek', 'resting', 'guy']
   },
   {
     id: gId++,
@@ -61,7 +62,7 @@ var gImgs = [
   },
   {
     id: gId++,
-    keywords: ['sword', 'computer', 'blood']
+    keywords: ['sword', 'computer', 'blood', 'guy']
   },
   {
     id: gId++,
@@ -105,19 +106,19 @@ var gImgs = [
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['geek']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['matrix']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['matrix']
   },
   {
     id: gId++,
-    keywords: []
+    keywords: ['matrix']
   },
   {
     id: gId++,
@@ -414,28 +415,4 @@ function getFilterArr() {
     return myRe.exec(img.keywords[i]);
   });
   return filterImages;
-}
-
-// this is the part for the filter by keyWord
-var gkeywords = {};
-
-function showWordsSearchCount() {
-  gImgs.forEach(function(img) {
-    img.keywords.forEach(function(keywords) {
-      var count = gkeywords[keywords];
-      if (keywords) {
-        gkeywords[keywords] = count ? count + 1 : 1;
-      }
-    });
-  });
-
-  // var wordsCount = 0;
-  // var num = '';
-  // for (var key in gkeywords) {
-  //   if (gkeywords[key] > wordsCount) {
-  //     num = key;
-  //     wordsCount = gkeywords[key];
-  //   }
-  // }
-  console.log(gkeywords);
 }
