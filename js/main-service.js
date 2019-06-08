@@ -183,6 +183,7 @@ var gkeywords = {};
 var gMeme;
 
 function showModal(id) {
+  updateKeywordMap();
   onUpdateId(id);
   updateGmeme();
   document.body.classList.toggle('meme-on');
@@ -470,6 +471,13 @@ function createSmallObj() {
     obj.count = gkeywords[keys[i]];
     smallObj.push(obj);
   }
+
+  if (loadKeywordsFromLocalStorage()) {
+    loadKeywordsFromLocalStorage();
+    return true;
+  } else {
+    uploadKeywordsToLocalStorage();
+  }
 }
 //TODO:creating new obj is double code! make it a function!
 
@@ -499,5 +507,15 @@ function findTop5Maxes() {
 function gettingTop5MaxesKeyWords() {
   sortSmallObj();
   findTop5Maxes();
-  console.log(smallObj);
+}
+
+function updateKeywordMap() {
+  var newKeyword = document.querySelector('.meme-searcher').value;
+  if (newKeyword) {
+    var count = gkeywords[newKeyword];
+    if (newKeyword) {
+      gkeywords[newKeyword] = count ? count + 1 : 1;
+    }
+  }
+  uploadKeywordsToLocalStorage();
 }

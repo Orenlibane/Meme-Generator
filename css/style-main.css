@@ -96,7 +96,7 @@ nav select option {
     font-weight: bold;
     border-radius: 10px;
     outline: none;
-    width: 100px;
+    max-width: 110px;
 }
 
 .meme-searcher::placeholder {
