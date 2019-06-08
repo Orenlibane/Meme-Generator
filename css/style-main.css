@@ -23,8 +23,6 @@ body {
     display: none;
 }
 
-
-
 .main {
     height: 70vh;
     width: 100w;
@@ -63,6 +61,8 @@ body {
     margin: 0;
     padding: 0;
     z-index: 2;
+    transform-origin: top right;
+    transition: all 0.7s ease-out
 }
 
 .main-nav-list li {
@@ -301,3 +301,5 @@ footer .logo {
     z-index: 10;
     text-transform: capitalize;
 }
+
+/*  */

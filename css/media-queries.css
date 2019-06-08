@@ -39,14 +39,14 @@
         margin-right: 5px;
     }
     .main-nav-list {
-        display: none;
+        /* display: none; */
+        transform: scale(0);
         flex-direction: column;
         position: relative;
         top: 170px;
         background-color: #292929;
         align-items: center;
     }
-
     .hamburger {
         display: block;
         position: absolute;
@@ -54,20 +54,17 @@
         right: 21px;
         font-size: 2rem;
     }
-
-    .key-words-modal{
+    .key-words-modal {
         left: 0;
         min-width: 250px;
     }
     .memes-container {
         padding: 0 17% 0 15%;
     }
-
-    .fa-arrow-circle-right , .fa-arrow-circle-left {
+    .fa-arrow-circle-right, .fa-arrow-circle-left {
         color: white;
     }
-
-    .main-navbar , .main-nav {
+    .main-navbar, .main-nav {
         height: 8vh;
     }
 }
@@ -79,15 +76,9 @@
     }
 }
 
-
-
-
-
-
-
-
-
 /* ---------------------------------------------------------------------- */
+
 .toggle-menu {
-    display: block;
+    /* display: block; */
+    transform: scale(1)
 }
