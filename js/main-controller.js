@@ -14,7 +14,7 @@ function renderMeme() {
 
   strHTML += `     <i class="fas fa-arrow-circle-left" onclick="onPrevPage()"></i>
   <i class="fas fa-arrow-circle-right" onclick="onNextPage()"></i><div
-  }) style="background-image:url('graphic/img/add.png')" class='upload meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
+  }) style="background-image:url('graphic/img/add.png')" class='up meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
 
   if (gFilterArr && gFilterArr.length !== gImgs.length) {
     gFilterArr.forEach(function(meme) {

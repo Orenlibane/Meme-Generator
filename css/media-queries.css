@@ -59,6 +59,10 @@
         display: block;
     }
 
+    .up{
+        display: none;
+    }
+
     .key-words-modal{
         left: 0;
         min-width: 250px;
