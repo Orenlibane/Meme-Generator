@@ -10,8 +10,23 @@
         flex-direction: column;
     }
     .canvas-editor-container {
-        margin-top: 50px;
-        height: 40px;
+        margin-top: 12px;
+        height: 150px;
+    }
+    .editor {
+        height: 150px;
+    }
+    .controller {
+        display: flex;
+        flex-direction: column;
+    }
+    .first-editor {
+        display: flex;
+        align-self: flex-start;
+    }
+    .first-editor li {
+        padding-left: 0;
+        padding-right: 0;
     }
     .editor-buttons {
         justify-content: center;
