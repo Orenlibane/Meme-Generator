@@ -18,6 +18,15 @@ var gTrans = {
   'enter-messege': {
     en: 'Enter-Messege',
     he: 'הכנס טקסט'
+  },
+  'search': {
+    en: 'Lets Search a Meme',
+    he: 'חפש/י מימ'
+  }
+  ,
+  'brand': {
+    en: 'The Ultimate Meme Generator',
+    he: 'מכולל הממים האולטימטיבי'
   }
 };
 
