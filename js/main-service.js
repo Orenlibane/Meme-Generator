@@ -19,7 +19,16 @@ var gkeywords = {};
 var gImgs = [
   {
     id: gId++,
-    keywords: ['happy', 'dancing', 'singing', 'שירה', 'ריקוד', 'שמח', 'רוקד', 'שר']
+    keywords: [
+      'happy',
+      'dancing',
+      'singing',
+      'שירה',
+      'ריקוד',
+      'שמח',
+      'רוקד',
+      'שר'
+    ]
   },
   {
     id: gId++,
@@ -35,7 +44,15 @@ var gImgs = [
   },
   {
     id: gId++,
-    keywords: ['black', 'terantino', 'pulp fiction', 'שחור', 'טרנטינו', 'ספרות', 'זולה']
+    keywords: [
+      'black',
+      'terantino',
+      'pulp fiction',
+      'שחור',
+      'טרנטינו',
+      'ספרות',
+      'זולה'
+    ]
   },
   {
     id: gId++,
@@ -43,7 +60,15 @@ var gImgs = [
   },
   {
     id: gId++,
-    keywords: ['gameOfThorns', 'actor', 'movie', 'שחקן', 'סרט', 'משחקי-הכס', 'חורף']
+    keywords: [
+      'gameOfThorns',
+      'actor',
+      'movie',
+      'שחקן',
+      'סרט',
+      'משחקי-הכס',
+      'חורף'
+    ]
   },
   {
     id: gId++,
@@ -51,7 +76,16 @@ var gImgs = [
   },
   {
     id: gId++,
-    keywords: ['crying', 'face', 'big-eyes', 'geek', 'חנון', 'עיניים-גדולות', 'בכי', 'פנים']
+    keywords: [
+      'crying',
+      'face',
+      'big-eyes',
+      'geek',
+      'חנון',
+      'עיניים-גדולות',
+      'בכי',
+      'פנים'
+    ]
   },
   {
     id: gId++,
@@ -63,7 +97,7 @@ var gImgs = [
   },
   {
     id: gId++,
-    keywords: ['sword', 'computer', 'blood','guy', 'חרב', 'מחשב', 'דם', 'כעס']
+    keywords: ['sword', 'computer', 'blood', 'guy', 'חרב', 'מחשב', 'דם', 'כעס']
   },
   {
     id: gId++,
@@ -83,7 +117,16 @@ var gImgs = [
   },
   {
     id: gId++,
-    keywords: ['angry', 'annoyed', 'eating', 'cereal', 'כועס', 'עצבני', 'אוכל', 'זעם']
+    keywords: [
+      'angry',
+      'annoyed',
+      'eating',
+      'cereal',
+      'כועס',
+      'עצבני',
+      'אוכל',
+      'זעם'
+    ]
   },
   {
     id: gId++,
@@ -91,7 +134,16 @@ var gImgs = [
   },
   {
     id: gId++,
-    keywords: ['cat', 'smart', 'board', 'potions', 'חתול', 'חכם', 'לוח', 'שיקויים']
+    keywords: [
+      'cat',
+      'smart',
+      'board',
+      'potions',
+      'חתול',
+      'חכם',
+      'לוח',
+      'שיקויים'
+    ]
   },
   {
     id: gId++,

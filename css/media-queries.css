@@ -25,6 +25,29 @@
     body.meme-on .modal-container {
         min-height: 100%;
     }
+    .main-nav-list li {
+        width: 100%;
+        border-top: 0.5px white solid;
+        border-bottom: 0.5px white solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-nav-list input {
+        border: none;
+        border-bottom: 2px white solid;
+    }
+    .main-nav-list select {
+        border: none;
+        /* border-bottom: 2px white solid; */
+    }
+    .top-five-keywords {
+        width: 100%;
+    }
+    /*  trying to make no focus on load in mobile */
+    .editor input {
+        font-size: 17px;
+    }
 }
 
 @media (max-width: 540px) {
@@ -54,16 +77,13 @@
         right: 21px;
         font-size: 2rem;
     }
-
     .upload {
         display: block;
     }
-
-    .up{
+    .up {
         display: none;
     }
-
-    .key-words-modal{
+    .key-words-modal {
         left: 0;
         min-width: 250px;
     }

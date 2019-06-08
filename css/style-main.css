@@ -76,7 +76,7 @@ body {
     height: 70px;
 }
 
-.main-nav-list li:hover:not(:nth-child(3n)) {
+.main-nav-list li:hover {
     border-bottom: 6px #58c93a solid;
 }
 
