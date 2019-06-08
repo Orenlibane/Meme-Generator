@@ -48,13 +48,7 @@
         <!-- TODO: easterEgg -->
         <nav>
           <i onclick="onShowMenu()" class=" hamburger fas fa-bars"></i>
-          <div class="upload">
-            <input
-              type="file"
-              name="image"
-              onchange="onFileInputChange(event)"
-            />
-          </div>
+
           <ul class="main-nav-list flex ">
             <li class="flex both-align-center">
               <a
@@ -64,7 +58,14 @@
                 >Memes Gallery</a
               >
             </li>
-
+            <li>
+              <input
+                type="file"
+                name="image"
+                onchange="onFileInputChange(event)"
+                class="upload"
+              />
+            </li>
             <li class="flex both-align-center " onclick="onShowAboutUsModal()">
               <a href="#" data-trans="about-us">About us</a>
             </li>

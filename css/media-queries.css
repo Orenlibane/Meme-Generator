@@ -4,7 +4,7 @@
         min-width: 100px;
     }
     .logo {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     .modal-container {
         flex-direction: column;
@@ -54,8 +54,12 @@
     .about-us-modal {
         left: 15%;
     }
+    nav {
+        width: 80px;
+    }
     .logo {
         display: flex;
+        width: 95%
     }
     .logo i {
         margin-left: 5px;
@@ -66,7 +70,7 @@
         transform: scale(0);
         flex-direction: column;
         position: relative;
-        top: 170px;
+        top: 240px;
         background-color: #292929;
         align-items: center;
     }
