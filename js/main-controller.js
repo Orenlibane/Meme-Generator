@@ -4,6 +4,8 @@ function onInit() {
   setMemesCount()
   renderMeme();
   document.querySelector('.meme-searcher').focus();
+  createSmallObj();
+  gettingTop5MaxesKeyWords();
 }
 
 function renderMeme() {
@@ -163,5 +165,21 @@ function onSetLang(lang) {
 
 function setMemesCount() {
   if (window.innerWidth < 650) changePageSize(9)
+}
 
+function onAddSearch(elKeyWord) {
+  filterByKeyword(elKeyWord);
+}
+
+function onShowKeywordsSearch() {
+  showKeywordSearch();
+  renderTopKeyWords();
+}
+
+function renderTopKeyWords() {
+  document.querySelector('.top1').innerText = `${smallObj[0].key}`;
+  document.querySelector('.top2').innerText = `${smallObj[1].key}`;
+  document.querySelector('.top3').innerText = `${smallObj[2].key}`;
+  document.querySelector('.top4').innerText = `${smallObj[3].key}`;
+  document.querySelector('.top5').innerText = `${smallObj[4].key}`;
 }

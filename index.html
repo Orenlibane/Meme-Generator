@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" />
-
-  <link rel="stylesheet" href="css/canvas.css" />
-  <link rel="stylesheet" href="css/style-main.css" />
-  <link rel="stylesheet" href="css/helpers.css" />
-  <link rel="stylesheet" href="css/fonts.css" />
-  <link rel="stylesheet" href="css/media-queries.css" />
-  <title>🏆Meme-Generator🏆</title>
-</head>
-
-<body onload="onInit()">
-  <div class="screen" onclick="showAboutUsModal()"></div>
-  <div class="about-us-modal">
-    <h2 data-trans="about-us">About us</h2>
-    <div class="portfolios-container flex both-align-center">
-      <div class="alon-container flex column align-center">
-        <h3>Alon Dai</h3>
-        <img src="graphic/img/1.jpg" alt="alon-portfolio" />
-      </div>
-      <div class="oren-container flex column align-center ">
-        <h3>Oren Tzezana</h3>
-        <img src="graphic/img/oren.png" alt="oren-portfolio" />
+    <link rel="stylesheet" href="css/canvas.css" />
+    <link rel="stylesheet" href="css/style-main.css" />
+    <link rel="stylesheet" href="css/helpers.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/media-queries.css" />
+    <title>🏆Meme-Generator🏆</title>
+  </head>
+  <body onload="onInit()">
+    <div class="screen" onclick="showAboutUsModal()"></div>
+    <div class="top-five-keywords key-words-modal">
+      <div class="top1" onclick="onAddSearch(this)">X</div>
+      <div class="top2" onclick="onAddSearch(this)">Y</div>
+      <div class="top3" onclick="onAddSearch(this)">Z</div>
+      <div class="top4" onclick="onAddSearch(this)">S</div>
+      <div class="top5" onclick="onAddSearch(this)">W</div>
+    </div>
+    <div class="about-us-modal">
+      <h2 data-trans="about-us">About us</h2>
+      <div class="portfolios-container flex both-align-center">
+        <div class="alon-container flex column align-center">
+          <h3>Alon Dai</h3>
+          <img src="graphic/img/1.jpg" alt="alon-portfolio" />
+        </div>
+        <div class="oren-container flex column align-center ">
+          <h3>Oren Tzezana</h3>
+          <img src="graphic/img/oren.png" alt="oren-portfolio" />
+        </div>
       </div>
     </div>
     <div class="indicator">press Me</div>
@@ -80,15 +81,20 @@
             <li>
               <i onclick="onChangeSize(-1)" class="fas fa-minus-square"></i>
             </li>
-            <li>
-              <i onclick="onChangeAlign('start')" class="fas fa-align-left"></i>
+            <li class="flex both-align-center ">
+              <input
+                type="text"
+                class="meme-searcher"
+                placeholder="Search Meme"
+                oninput="onFilterMeme()"
+              />
             </li>
-            <li>
-              <i onclick="onChangeAlign('center')" class="fas fa-align-justify"></i>
-            </li>
-            <li>
-              <i onclick="onChangeAlign('end')" class="fas fa-align-right"></i>
-            </li>
+            <li onclick="onShowKeywordsSearch()">Keywords</li>
+            <select onchange="onSetLang(this.value)">
+              <option data-trans="langaue">Langaue</option>
+              <option value="en">english</option>
+              <option value="he">heberew</option>
+            </select>
           </ul>
           <ul class=" first-editor editor-buttons flex clean-list">
             <li><i onclick="onChangePos(1)" class="fas fa-arrow-up"></i></li>
@@ -122,11 +128,26 @@
             </button>
           </form>
         </div>
-        <!-- <div class="share"></div> -->
-        <!-- <div onclick="uploadImg(this)" class="share"><i class="fab fa-facebook-square"></i></div> -->
-        <div>
-          <a href="#" onclick="saveCanvas(this)" download="">
-            <i class="fas fa-download"></i></a>
+        <div class="canvas-share flex">
+          <div>
+            <form
+              class="flex"
+              action=""
+              method="POST"
+              enctype="multipart/form-data"
+              onsubmit="uploadImg(this, event)"
+            >
+              <input name="img" id="imgData" type="hidden" />
+              <button type="submit">
+                <div class="share"><i class="fab fa-facebook-square"></i></div>
+              </button>
+            </form>
+          </div>
+          <div>
+            <a href="#" onclick="saveCanvas(this)" download="">
+              <i class="fas fa-download"></i
+            ></a>
+          </div>
         </div>
       </div>
     </div>
@@ -155,4 +176,13 @@
   <script src="js/i18n.js"></script>
 </body>
 
+    <script src="js/main.js"></script>
+    <script src="js/main-controller.js"></script>
+    <script src="js/main-service.js"></script>
+    <script src="js/canvas-controller.js"></script>
+    <script src="js/canvas-service.js"></script>
+    <script src="js/uti.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/test-for-drag-drop.js"></script>
+  </body>
 </html>
