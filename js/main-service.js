@@ -1,6 +1,6 @@
 'use strict';
 
-const PAGE_SIZE = 14;
+var gPageSize = 14;
 var gCurrPageIdx = 0;
 var gId = 1;
 var gCanvas;
@@ -373,13 +373,13 @@ function showAboutUsModal() {
 }
 
 function getMemes() {
-  var fromIdx = gCurrPageIdx * PAGE_SIZE;
-  var memes = gImgs.slice(fromIdx, fromIdx + PAGE_SIZE);
+  var fromIdx = gCurrPageIdx * gPageSize;
+  var memes = gImgs.slice(fromIdx, fromIdx + gPageSize);
   return memes;
 }
 
 function nextPage() {
-  if (gCurrPageIdx + 1 < gImgs.length / PAGE_SIZE) {
+  if (gCurrPageIdx + 1 < gImgs.length / gPageSize) {
     gCurrPageIdx++;
   }
 }
@@ -518,4 +518,8 @@ function updateKeywordMap() {
     }
   }
   uploadKeywordsToLocalStorage();
+}
+
+function setMemesCount(width) {
+  if (width < 650) gPageSize = 8;
 }

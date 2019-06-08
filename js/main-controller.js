@@ -1,6 +1,7 @@
 'use strict';
 
 function onInit() {
+  handleMemesNumOnPage()
   renderMeme();
   document.querySelector('.meme-searcher').focus();
   createSmallObj();
@@ -177,4 +178,15 @@ function renderTopKeyWords() {
   document.querySelector('.top3').innerText = `${smallObj[2].key}`;
   document.querySelector('.top4').innerText = `${smallObj[3].key}`;
   document.querySelector('.top5').innerText = `${smallObj[4].key}`;
+}
+
+function handleMemesNumOnPage() {
+var width = window.innerWidth;
+setMemesCount(width);
+}
+
+function onShowMenu(){
+  
+  
+  document.querySelector ('.main-nav-list').classList.toggle('toggle-menu');
 }
