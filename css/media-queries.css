@@ -69,6 +69,7 @@
     }
     .memes-container {
         padding: 0 13% 0 9%;
+        min-height: 85vh;
     }
 
     .fa-arrow-circle-right , .fa-arrow-circle-left {
