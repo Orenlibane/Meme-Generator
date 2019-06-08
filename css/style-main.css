@@ -19,6 +19,12 @@ body {
     width: 100vw;
 }
 
+.hamburger {
+    display: none;
+}
+
+
+
 .main {
     height: 70vh;
     width: 100w;

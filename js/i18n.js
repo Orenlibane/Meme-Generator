@@ -26,6 +26,10 @@ var gTrans = {
   'keywords': {
     en: 'Key Words',
     he: 'מילות מפתח'
+  },
+  'search': {
+    en: 'Search Meme',
+    he: 'חפש/י מימ'
   }
 };
 

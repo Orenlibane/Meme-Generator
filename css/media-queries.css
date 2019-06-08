@@ -38,6 +38,38 @@
         margin-left: 5px;
         margin-right: 5px;
     }
+    .main-nav-list {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        top: 170px;
+        background-color: #292929;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 6px;
+        right: 21px;
+        font-size: 2rem;
+    }
+
+    .key-words-modal{
+        left: 0;
+        min-width: 250px;
+    }
+    .memes-container {
+        padding: 0 17% 0 15%;
+    }
+
+    .fa-arrow-circle-right , .fa-arrow-circle-left {
+        color: white;
+    }
+
+    .main-navbar , .main-nav {
+        height: 8vh;
+    }
 }
 
 @media (max-width: 376px) {
@@ -45,4 +77,17 @@
         left: 2%;
         height: 60vh;
     }
+}
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------- */
+.toggle-menu {
+    display: block;
 }
