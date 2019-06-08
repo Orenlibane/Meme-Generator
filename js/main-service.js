@@ -484,14 +484,13 @@ function createSmallObj() {
 function findTop5Maxes() {
   var keys = Object.keys(gkeywords);
 
-  //   debugger;
   for (var i = 5; i < keys.length; i++) {
     if (gkeywords[keys[i]] > smallObj[smallObj.length - 1].count) {
       var isKeyIn = smallObj.filter(function(idx) {
         return idx.name === keys[i];
       });
 
-      // if( )
+      // if( ) // need to add here the functionality to it will also update words count in the small object
 
       var newMax = {};
       newMax.key = keys[i];
