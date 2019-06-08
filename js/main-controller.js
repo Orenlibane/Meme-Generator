@@ -1,7 +1,6 @@
 'use strict';
 
 function onInit() {
-  setMemesCount()
   renderMeme();
   document.querySelector('.meme-searcher').focus();
   createSmallObj();
@@ -161,10 +160,6 @@ function onSetLang(lang) {
   else document.body.classList.remove('rtl');
 
   doTrans();
-}
-
-function setMemesCount() {
-  if (window.innerWidth < 650) changePageSize(9)
 }
 
 function onAddSearch(elKeyWord) {

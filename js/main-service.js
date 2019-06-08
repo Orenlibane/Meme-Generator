@@ -1,12 +1,12 @@
 'use strict';
 
-var gPageSize = 14;
+const PAGE_SIZE = 14;
 var gCurrPageIdx = 0;
 var gId = 1;
 var gCanvas;
 var ctx;
 var canvasFactorHeight;
-var canvasFactorWidth;
+var canvasFactorWidth = 650;
 var gCanvasHeight;
 var gCanvasWidth;
 var gUploadFile;
@@ -19,163 +19,163 @@ var gkeywords = {};
 var gImgs = [
   {
     id: gId++,
-    keywords: ['happy', 'dancing', 'singing', 'שירה', 'ריקוד', 'שמח', 'רוקד', 'שר']
+    keywords: ['happy', 'dancing', 'singing']
   },
   {
     id: gId++,
-    keywords: ['survivour', 'guy', 'שורד', 'בחור', 'גבר', 'אולטימטיבי']
+    keywords: ['survivour', 'guy']
   },
   {
     id: gId++,
-    keywords: ['angry', 'doodle', 'כועס']
+    keywords: ['angry', 'doodle']
   },
   {
     id: gId++,
-    keywords: ['sleep', 'baby', 'dog', 'כלב', 'תינוק', 'שינה', 'ישן']
+    keywords: ['sleep', 'baby', 'dog']
   },
   {
     id: gId++,
-    keywords: ['black', 'terantino', 'pulp fiction', 'שחור', 'טרנטינו', 'ספרות', 'זולה']
+    keywords: ['black', 'terantino', 'pulp fiction', 'happy']
   },
   {
     id: gId++,
-    keywords: ['geek', 'face', 'פנים', 'חנון']
+    keywords: ['geek', 'face']
   },
   {
     id: gId++,
-    keywords: ['gameOfThorns', 'actor', 'movie', 'שחקן', 'סרט', 'משחקי-הכס', 'חורף']
+    keywords: ['gameOfThorns', 'actor', 'movie']
   },
   {
     id: gId++,
-    keywords: ['time', 'hours', 'geek', 'זמן', 'שעות', 'חנון']
+    keywords: ['time', 'hours', 'geek']
   },
   {
     id: gId++,
-    keywords: ['crying', 'face', 'big-eyes', 'geek', 'חנון', 'עיניים-גדולות', 'בכי', 'פנים']
+    keywords: ['crying', 'face', 'big-eyes', 'geek']
   },
   {
     id: gId++,
-    keywords: ['geek', 'resting', 'חנון', 'מנוחה']
+    keywords: ['geek', 'resting', 'guy']
   },
   {
     id: gId++,
-    keywords: ['food', 'suprise', 'אוכל', 'הפתעה']
+    keywords: ['food', 'suprise']
   },
   {
     id: gId++,
-    keywords: ['sword', 'computer', 'blood','guy', 'חרב', 'מחשב', 'דם', 'כעס']
+    keywords: ['sword', 'computer', 'blood', 'guy']
   },
   {
     id: gId++,
-    keywords: ['dog', 'phone', 'כלב', 'פלאפון']
+    keywords: ['dog', 'phone']
   },
   {
     id: gId++,
-    keywords: ['yuda', 'יודה', 'מלחמת-הכוכבים']
+    keywords: ['yuda']
   },
   {
     id: gId++,
-    keywords: ['baby', 'boss', 'suit', 'תינוק', 'בוס', 'חליפה', 'קשוח']
+    keywords: ['baby', 'boss', 'suit']
   },
   {
     id: gId++,
-    keywords: ['olympic', 'lift', 'women', 'אישה', 'משקולות', 'אולימפי', 'חזק']
+    keywords: ['olympic', 'lift', 'women']
   },
   {
     id: gId++,
-    keywords: ['angry', 'annoyed', 'eating', 'cereal', 'כועס', 'עצבני', 'אוכל', 'זעם']
+    keywords: ['angry', 'annoyed', 'eating', 'cereal']
   },
   {
     id: gId++,
-    keywords: ['challenge', 'accepted', 'אתגר', 'התקבל']
+    keywords: ['challenge', 'accepted']
   },
   {
     id: gId++,
-    keywords: ['cat', 'smart', 'board', 'potions', 'חתול', 'חכם', 'לוח', 'שיקויים']
+    keywords: ['cat', 'smart', 'board', 'potions']
   },
   {
     id: gId++,
-    keywords: ['cry', 'cat', 'sad', 'חתול', 'בכי', 'עצוב']
+    keywords: ['matrix', 'morphius', 'sunglasses']
   },
   {
     id: gId++,
-    keywords: ['nerd', 'bad-ass', 'hat', 'חנון', 'כובע', 'מגניב']
+    keywords: ['cat']
   },
   {
     id: gId++,
-    keywords: ['duck', 'colors', 'ברווז', 'צבעים']
+    keywords: ['cat']
   },
   {
     id: gId++,
-    keywords: ['god', 'wtf', 'אלוהים', 'מה']
+    keywords: ['geek']
   },
   {
     id: gId++,
-    keywords: ['dog', 'suprise', 'colors', 'כלב', 'מופתע', 'צבעים']
+    keywords: ['matrix']
   },
   {
     id: gId++,
-    keywords: ['girl', 'scream', 'ילדה', 'צעקה', 'צועקת']
+    keywords: ['matrix']
   },
   {
     id: gId++,
-    keywords: ['chicken', 'colors', 'תרנגול', 'צבעים']
+    keywords: ['matrix']
   },
   {
     id: gId++,
-    keywords: ['nerd', 'boy', 'smile', 'חנון', 'חיוך', 'ילד']
+    keywords: []
   },
   {
     id: gId++,
-    keywords: ['sponge-bob', 'minutes', 'later', 'בובספוג', 'דקות', 'לאחר-מכן']
+    keywords: []
   },
   {
     id: gId++,
-    keywords: ['girl', 'smile', 'burn', 'שריפה', 'ילדה', 'חיוך']
+    keywords: []
   },
   {
     id: gId++,
-    keywords: ['look', 'amaze', 'rainbow', 'מבט', 'נדהם', 'קשת']
+    keywords: []
   },
   {
     id: gId++,
-    keywords: ['xzibit', 'black', 'guy', 'smile', 'בחור', 'חיוך']
+    keywords: ['cat']
   },
   {
     id: gId++,
-    keywords: ['nicolas', 'cage', 'say', 'ניקולס', 'קייג', 'אומר']
+    keywords: ['cat']
   },
   {
     id: gId++,
-    keywords: ['are', 'man', 'thumb', 'בסדר', 'גבר', 'אגודל']
+    keywords: ['cat']
   },
   {
     id: gId++,
-    keywords: ['success', 'smile', 'happy', 'הצלחה', 'חיוך', 'שמחה']
+    keywords: ['cat']
   },
   {
     id: gId++,
-    keywords: ['pink', 'pokemon', 'פוקימון', 'ורוד']
+    keywords: []
   },
   {
     id: gId++,
-    keywords: ['hours', 'later', 'spongebob', 'בובספוג', 'שעות', 'אחר-כך']
+    keywords: []
   },
   {
     id: gId++,
-    keywords: ['brain', 'smart', 'מוח', 'חכם']
+    keywords: []
   },
   {
     id: gId++,
-    keywords: ['guy', 'girl', 'computer', 'בחור', 'בחורה', 'מחשב']
+    keywords: []
   },
   {
     id: gId++,
-    keywords: ['hide', 'computer', 'scared', 'מחשב', 'מפחד', 'מסתתר']
+    keywords: []
   },
   {
     id: gId++,
-    keywords: ['guy', 'arabic', 'בחור', 'ערבי']
+    keywords: []
   }
 ];
 var gcurrentImgId;
@@ -194,7 +194,7 @@ function showModal(id) {
   gCanvas = document.querySelector('#canvas');
   ctx = gCanvas.getContext('2d');
   if (window.innerWidth > 1295) {
-    canvasFactorWidth = 650;
+    canvasFactorWidth = 950;
   } else if (window.innerWidth > 740) {
     canvasFactorWidth = 300;
   } else canvasFactorWidth = 100;
@@ -208,8 +208,8 @@ function showModal(id) {
   gCanvas.width = window.innerWidth - canvasFactorWidth;
   gCanvas.height = window.innerHeight - 200;
 
-  // gCanvasHeight = gCanvas.height;
-  // gCanvasWidth = gCanvas.width;
+  gCanvasHeight = gCanvas.height;
+  gCanvasWidth = gCanvas.width;
 
   updateImgCanvas();
 
@@ -217,16 +217,12 @@ function showModal(id) {
 }
 
 function updateImgCanvas() {
-
   var image = new Image();
 
   if (gUploadFile) {
     image.src = gUploadFile;
   } else image.src = `graphic/img/${gMeme.id}.jpg`;
-  gCanvas.width = image.width*(gCanvas.width/image.width); //keep the ratio
   ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
-  // ctx.drawImage(image, 0, 0, image.width, image.height, 0, 0, gCanvas.width, gCanvas.height);
-
 }
 
 function updateId(id) {
@@ -321,7 +317,7 @@ function clearMeme() {
 
 function handleImageFromInput(ev, onImageReady) {
   var reader = new FileReader();
-  reader.onload = function (event) {
+  reader.onload = function(event) {
     var img = new Image();
     img.onload = onImageReady.bind(null, img);
     img.src = event.target.result;
@@ -362,11 +358,11 @@ function doUploadImg(elForm, onSuccess) {
     method: 'POST',
     body: formData
   })
-    .then(function (response) {
+    .then(function(response) {
       return response.text();
     })
     .then(onSuccess)
-    .catch(function (error) {
+    .catch(function(error) {
       console.error(error);
     });
 }
@@ -377,13 +373,13 @@ function showAboutUsModal() {
 }
 
 function getMemes() {
-  var fromIdx = gCurrPageIdx * gPageSize;
-  var memes = gImgs.slice(fromIdx, fromIdx + gPageSize);
+  var fromIdx = gCurrPageIdx * PAGE_SIZE;
+  var memes = gImgs.slice(fromIdx, fromIdx + PAGE_SIZE);
   return memes;
 }
 
 function nextPage() {
-  if (gCurrPageIdx + 1 < gImgs.length / gPageSize) {
+  if (gCurrPageIdx + 1 < gImgs.length / PAGE_SIZE) {
     gCurrPageIdx++;
   }
 }
@@ -412,7 +408,7 @@ function getFilterArr() {
   if (!gFilterBy) return gImgs;
   var myRe = new RegExp('^' + `${gFilterBy}`, 'i');
 
-  var filterImages = gImgs.filter(function (img) {
+  var filterImages = gImgs.filter(function(img) {
     for (var i = 0; i < img.keywords.length; i++) {
       if (myRe.exec(img.keywords[i])) {
         return myRe.exec(img.keywords[i]);
@@ -434,8 +430,8 @@ function showKeywordSearch() {
 }
 
 function showWordsSearchCount() {
-  gImgs.forEach(function (img) {
-    img.keywords.forEach(function (keywords) {
+  gImgs.forEach(function(img) {
+    img.keywords.forEach(function(keywords) {
       var count = gkeywords[keywords];
       if (keywords) {
         gkeywords[keywords] = count ? count + 1 : 1;
@@ -488,13 +484,14 @@ function createSmallObj() {
 function findTop5Maxes() {
   var keys = Object.keys(gkeywords);
 
+  //   debugger;
   for (var i = 5; i < keys.length; i++) {
     if (gkeywords[keys[i]] > smallObj[smallObj.length - 1].count) {
       var isKeyIn = smallObj.filter(function(idx) {
         return idx.name === keys[i];
       });
 
-      // if( ) // need to add here the functionality to it will also update words count in the small object
+      // if( )
 
       var newMax = {};
       newMax.key = keys[i];
@@ -521,8 +518,4 @@ function updateKeywordMap() {
     }
   }
   uploadKeywordsToLocalStorage();
-}
-
-function changePageSize(num) {
-  gPageSize = num;
 }
