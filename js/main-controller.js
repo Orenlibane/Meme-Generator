@@ -157,8 +157,8 @@ function onFileInputChange(ev) {
 
 function onSetLang(lang) {
   setLang(lang);
-  if (lang === 'he') document.body.classList.add('rtl');
-  else document.body.classList.remove('rtl');
+  if (lang === 'he') document.querySelector('body').style.direction='rtl';
+  else document.querySelector('body').style.direction='ltr';
 
   doTrans();
 }
