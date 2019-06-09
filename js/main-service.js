@@ -247,10 +247,16 @@ function showModal(id) {
   ctx = gCanvas.getContext('2d');
   if (window.innerWidth > 1295) {
     canvasFactorWidth = 950;
+  } else if (window.innerWidth > 1000) {
+    canvasFactorWidth = 700;
+  } else if (window.innerWidth > 850) {
+    canvasFactorWidth = 450;
   } else if (window.innerWidth > 740) {
-    canvasFactorWidth = 300;
+    canvasFactorWidth = 400;
+  } else if (window.innerWidth > 550) {
+    canvasFactorWidth = 350;
   } else {
-    canvasFactorWidth = 0;
+    canvasFactorWidth = 50;
   }
 
   gCanvas.width = window.innerWidth - canvasFactorWidth;
@@ -260,8 +266,6 @@ function showModal(id) {
   gCanvasWidth = gCanvas.width;
 
   updateImgCanvas();
-
-  // document.querySelector('.editor input').focus();
 }
 
 function updateImgCanvas() {

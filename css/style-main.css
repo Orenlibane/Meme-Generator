@@ -101,42 +101,26 @@ i select {
     border: 3px white solid;
     padding: 5px;
     color: white;
-    font-weight: bold;
     border-radius: 10px;
     outline: none;
     max-width: 110px;
+    font-family: "VT", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1rem;
 }
 
 .meme-searcher::placeholder {
     color: white;
 }
 
+/* Main gallery */
+
 .memes-container {
     max-width: 1250px;
     min-height: 83vh;
     margin: 0 auto;
-    overflow: hidden;
-    border-left: 2px black solid;
-    border-right: 2px black solid;
+    /* overflow: hidden; */
     transition: all 0.7s ease-out;
     background: #1d1d1d
-}
-
-.modal-container {
-    max-width: 1250px;
-    min-height: 83vh;
-    margin: 0 auto;
-    overflow: hidden;
-    border-left: 2px black solid;
-    border-right: 2px black solid;
-    transform: scale(0);
-    transform-origin: top center;
-    transition: transform 0.7s ease-out;
-    display: none;
-    background: #1d1d1d;
-    justify-content: space-around;
-    /* align-items: center; */
-    /* TODO: fix the transform transition - dosent work  */
 }
 
 .meme {
@@ -152,13 +136,15 @@ i select {
 
 .meme:hover {
     transform: scale(1.1);
-    border: 3px blue solid;
+    border: 3px rgb(32, 204, 161) solid;
 }
+
+/* Footer */
 
 footer {
     background: #292929;
     text-align: center;
-    border-top: 1px solid #e1e0e0;
+    border-top: 2px solid #e1e0e0;
     height: 7vh;
 }
 
@@ -317,6 +303,19 @@ footer .logo {
     transition: transform 0.7s ease-out;
     z-index: 10;
     text-transform: capitalize;
+}
+
+.modal-container {
+    max-width: 1250px;
+    min-height: 92vh;
+    margin: 0 auto;
+    /* overflow: hidden; */
+    transform: scale(0);
+    transform-origin: top center;
+    transition: transform 0.7s ease-out;
+    display: none;
+    justify-content: space-around;
+    background: #1d1d1d;
 }
 
 /* Garbage */

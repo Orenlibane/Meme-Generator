@@ -36,9 +36,6 @@
     body.meme-on footer {
         display: none;
     }
-    body.meme-on .modal-container {
-        min-height: 92vh;
-    }
     .main-nav-list li {
         width: 100%;
         border-top: 0.5px white solid;
