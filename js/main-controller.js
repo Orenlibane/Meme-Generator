@@ -198,3 +198,8 @@ function onShowMenu() {
   document.querySelector('.main-nav-list').classList.toggle('toggle-menu');
 }
 
+function onSendMsg() {
+  window.open(
+    'https://mail.google.com/mail/?view=cm&fs=1&to=me@example.com&su=SUBJECT&body=BODY'
+  );
+}
