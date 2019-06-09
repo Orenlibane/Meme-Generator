@@ -14,7 +14,7 @@ shareBtn.addEventListener('click', () => {
     navigator.share({
       title: 'My awesome meme',
       text: 'my meme',
-      url: 'https://www.google.com'
+      url: gCanvas.toDataURL()
     }).then(() => {
       showMessage(shareBtn, 'Thanks! 😄');
     })

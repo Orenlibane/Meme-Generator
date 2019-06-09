@@ -261,7 +261,7 @@ function showModal(id) {
 
   updateImgCanvas();
 
-  document.querySelector('.editor input').focus();
+  // document.querySelector('.editor input').focus();
 }
 
 function updateImgCanvas() {
