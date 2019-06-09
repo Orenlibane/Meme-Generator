@@ -5,7 +5,7 @@ var gCurrPageIdx = 0;
 var gId = 1;
 var gCanvas;
 var ctx;
-var canvasFactorHeight = 150;
+// var canvasFactorHeight = 150;
 var canvasFactorWidth = 650;
 var gCanvasHeight;
 var gCanvasWidth;
@@ -254,7 +254,9 @@ function showModal(id) {
   } else if (window.innerWidth > 740) {
     canvasFactorWidth = 400;
   } else if (window.innerWidth > 550) {
-    canvasFactorWidth = 350;
+    canvasFactorWidth = 250;
+  } else if (window.innerWidth > 350) {
+    canvasFactorWidth = 100;
   } else {
     canvasFactorWidth = 50;
   }
@@ -264,11 +266,6 @@ function showModal(id) {
 
   gCanvasHeight = gCanvas.height;
   gCanvasWidth = gCanvas.width;
-
-  if (window.innerWidth < 550) {
-    gCanvas.height = 275;
-    gCanvas.width = 275;
-  }
 
   updateImgCanvas();
 }
