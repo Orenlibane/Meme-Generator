@@ -187,6 +187,7 @@ setMemesCount(width);
 
 function onShowMenu(){
   
-  
+
   document.querySelector ('.main-nav-list').classList.toggle('toggle-menu');
 }
+

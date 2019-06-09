@@ -92,9 +92,6 @@
     }
     .hamburger {
         display: block;
-        position: absolute;
-        top: 6px;
-        right: 21px;
         font-size: 2rem;
     }
     .upload {
