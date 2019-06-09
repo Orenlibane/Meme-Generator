@@ -12,8 +12,9 @@ const url = document.querySelector('link[rel=canonical]') &&
 shareBtn.addEventListener('click', () => {
   if (navigator.share) {
     navigator.share({
-      title,
-      url
+      title: 'My awesome meme',
+      text: 'my meme',
+      url: window.location.href
     }).then(() => {
       showMessage(shareBtn, 'Thanks! 😄');
     })
