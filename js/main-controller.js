@@ -171,6 +171,8 @@ function onSetLang(lang) {
 }
 
 function onAddSearch(elKeyWord) {
+  document.querySelector('.key-words-modal').classList.toggle('show');
+  document.querySelector('.main-nav-list').classList.toggle('toggle-menu');
   filterByKeyword(elKeyWord);
 }
 

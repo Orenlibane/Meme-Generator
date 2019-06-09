@@ -255,7 +255,7 @@ function showModal(id) {
 
 
   gCanvas.width = window.innerWidth - canvasFactorWidth;
-  gCanvas.height = window.innerHeight - 300;
+  gCanvas.height = window.innerHeight - 250;
 
   gCanvasHeight = gCanvas.height;
   gCanvasWidth = gCanvas.width;
