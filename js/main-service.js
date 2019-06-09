@@ -5,7 +5,7 @@ var gCurrPageIdx = 0;
 var gId = 1;
 var gCanvas;
 var ctx;
-var canvasFactorHeight;
+var canvasFactorHeight = 150;
 var canvasFactorWidth = 650;
 var gCanvasHeight;
 var gCanvasWidth;
@@ -249,16 +249,13 @@ function showModal(id) {
     canvasFactorWidth = 950;
   } else if (window.innerWidth > 740) {
     canvasFactorWidth = 300;
-  } else canvasFactorWidth = 100;
+  } else  {
+    canvasFactorWidth = 0;
+  }
 
-  // if (window.innerWidth > 1295) {
-  //   canvasFactorHeight = 650;
-  // } else if (window.innerWidth > 740) {
-  //   canvasFactorHeight = 500;
-  // } else canvasFactorHeight = 100;
 
   gCanvas.width = window.innerWidth - canvasFactorWidth;
-  gCanvas.height = window.innerHeight - 200;
+  gCanvas.height = window.innerHeight - 300;
 
   gCanvasHeight = gCanvas.height;
   gCanvasWidth = gCanvas.width;
@@ -274,7 +271,9 @@ function updateImgCanvas() {
   if (gUploadFile) {
     image.src = gUploadFile;
   } else image.src = `graphic/img/${gMeme.id}.jpg`;
+  // gCanvas.width = gCanvas.width*(gCanvas.height/image.height)
   ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
+  // ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height, 0, 0, gCanvas.width, gCanvas.height)
 }
 
 function updateId(id) {

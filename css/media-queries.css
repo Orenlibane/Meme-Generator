@@ -114,6 +114,17 @@
     .main-navbar, .main-nav {
         height: 8vh;
     }
+    .editor {
+        margin-top: 36px;
+    }
+    .canvas-share {
+        height: 35%;
+        width: 55%;
+    }
+
+   .canvas-share .fas , .fab  {
+        color: white;
+    }
 }
 
 @media (max-width: 376px) {
