@@ -127,15 +127,14 @@
     .canvas-share .fas, .fab {
         color: white;
     }
-    /* } */
     @media (max-width: 376px) {
         .about-us-modal {
             left: 2%;
             height: 50vh;
         }
     }
-    /* ---------------------------------------------------------------------- */
-    .toggle-menu {
-        /* display: block; */
-        transform: scale(1)
-    }
+}
+
+.toggle-menu {
+    transform: scale(1)
+}

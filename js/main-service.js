@@ -15,7 +15,7 @@ var gUploadFile;
 var gFilterArr;
 var gFilterBy;
 var gIsFilterOn = false;
-var smallObj = [];
+var compareArr = [];
 var gkeywords = {};
 
 var gImgs = [
@@ -266,8 +266,6 @@ function showModal(id) {
   gCanvas.width = window.innerWidth - canvasFactorWidth;
   gCanvas.height = window.innerHeight - 250;
 
-  //TODO: Remove if no change
-
   gCanvasHeight = gCanvas.height;
   gCanvasWidth = gCanvas.width;
 
@@ -495,18 +493,18 @@ function showWordsSearchCount() {
   });
 }
 
-function sortSmallObj() {
+function sortArrForComp() {
   var swapped;
 
   do {
     swapped = false;
 
-    for (var i = 0; i < smallObj.length - 1; i++) {
-      if (smallObj[i].count < smallObj[i + 1].count) {
-        var temp = smallObj[i];
+    for (var i = 0; i < compareArr.length - 1; i++) {
+      if (compareArr[i].count < compareArr[i + 1].count) {
+        var temp = compareArr[i];
 
-        smallObj[i] = smallObj[i + 1];
-        smallObj[i + 1] = temp;
+        compareArr[i] = compareArr[i + 1];
+        compareArr[i + 1] = temp;
 
         swapped = true;
       }
@@ -514,9 +512,7 @@ function sortSmallObj() {
   } while (swapped);
 }
 
-//
-
-function createSmallObj() {
+function createArrForCompare() {
   showWordsSearchCount();
   var keys = Object.keys(gkeywords);
 
@@ -524,7 +520,7 @@ function createSmallObj() {
     var obj = {};
     obj.key = keys[i];
     obj.count = gkeywords[keys[i]];
-    smallObj.push(obj);
+    compareArr.push(obj);
   }
 
   if (loadKeywordsFromLocalStorage()) {
@@ -539,28 +535,21 @@ function createSmallObj() {
 function findTop5Maxes() {
   var keys = Object.keys(gkeywords);
 
-  //   debugger;
-  for (var i = 5; i < keys.length; i++) {
-    if (gkeywords[keys[i]] > smallObj[smallObj.length - 1].count) {
-      var isKeyIn = smallObj.filter(function(idx) {
-        return idx.name === keys[i];
-      });
-
-      // if( )
-
+  for (var i = 0; i < keys.length - 1; i++) {
+    if (gkeywords[keys[i]] > compareArr[compareArr.length - 1].count) {
       var newMax = {};
       newMax.key = keys[i];
       newMax.count = gkeywords[keys[i]];
 
-      smallObj.pop();
-      smallObj.push(newMax);
-      sortSmallObj();
+      compareArr.pop();
+      compareArr.push(newMax);
+      sortArrForComp();
     }
   }
 }
 
 function gettingTop5MaxesKeyWords() {
-  sortSmallObj();
+  sortArrForComp();
   findTop5Maxes();
 }
 
@@ -572,6 +561,8 @@ function updateKeywordMap() {
       gkeywords[newKeyword] = count ? count + 1 : 1;
     }
   }
+
+  updateComapreArr(newKeyword);
   uploadKeywordsToLocalStorage();
 }
 
@@ -579,4 +570,24 @@ function sendMsg() {
   window.open(
     'https://mail.google.com/mail/?view=cm&fs=1&to=me@example.com&su=SUBJECT&body=BODY'
   );
+}
+
+function updateComapreArr(newKeyword) {
+  var duplicate = false;
+  if (gkeywords[newKeyword] > compareArr[compareArr.length - 1].count) {
+    for (var idx = 1; idx < compareArr.length; idx++) {
+      if (newKeyword === compareArr[compareArr.length - idx].key) {
+        compareArr[compareArr.length - idx].count++;
+        duplicate = true;
+      }
+    }
+    if (!duplicate) {
+      compareArr.pop();
+      var newMax = {};
+      newMax.key = newKeyword;
+      newMax.count = gkeywords[newKeyword];
+      compareArr.push(newMax);
+    }
+  }
+  sortArrForComp();
 }
