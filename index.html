@@ -166,30 +166,32 @@
               <li onclick="onChangeFont(2)">Impact</li>
               <li onclick="onChangeFont(3)" class="indie">Indie</li>
             </ul>
-          </div>
-        </div>
-        <div class="canvas-share flex">
-          <div>
-            <form
-              class="flex"
-              action=""
-              method="POST"
-              enctype="multipart/form-data"
-              onsubmit="uploadImg(this, event)"
-            >
-              <input name="img" id="imgData" type="hidden" />
-              <button type="submit">
-                <div class="share"><i class="fab fa-facebook-square"></i></div>
-              </button>
-            </form>
-          </div>
-          <div>
-            <a href="#" onclick="saveCanvas(this)" download="">
-              <i class="fas fa-download"></i
-            ></a>
-          </div>
-          <div>
-            <a href="#"> <i class="fas fa-share"></i></a>
+            <div class="canvas-share flex ">
+              <div>
+                <form
+                  class="flex"
+                  action=""
+                  method="POST"
+                  enctype="multipart/form-data"
+                  onsubmit="uploadImg(this, event)"
+                >
+                  <input name="img" id="imgData" type="hidden" />
+                  <button type="submit">
+                    <div class="share">
+                      <i class="fab fa-facebook-square"></i>
+                    </div>
+                  </button>
+                </form>
+              </div>
+              <div>
+                <a href="#" onclick="saveCanvas(this)" download="">
+                  <i class="fas fa-download"></i
+                ></a>
+              </div>
+              <div>
+                <a href="#"> <i class="fas fa-share"></i></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
