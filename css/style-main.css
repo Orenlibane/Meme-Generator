@@ -74,6 +74,14 @@ body {
     box-shadow: -1px 0 0 #1d1d1d, inset -1px 0 0 #1d1d1d;
     transition: all 0.3s ease-out;
     height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.upload-parent {
+    display: none;
 }
 
 .main-nav-list li:hover {
