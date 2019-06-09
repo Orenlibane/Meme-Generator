@@ -93,9 +93,6 @@
     }
     .hamburger {
         display: block;
-        position: absolute;
-        top: 6px;
-        right: 21px;
         font-size: 2rem;
     }
     .up {
@@ -126,6 +123,16 @@
         opacity: 0;
         width: 50%;
         position: absolute;
+    }
+    .editor {
+        margin-top: 36px;
+    }
+    .canvas-share {
+        height: 35%;
+        width: 55%;
+    }
+    .canvas-share .fas, .fab {
+        color: white;
     }
 }
 
