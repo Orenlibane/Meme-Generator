@@ -3,45 +3,13 @@
     box-sizing: border-box;
 }
 
-i select {
-    position: absolute;
-    /* right: 30px; */
-    /* top: 20px; */
-    top: 55px;
-    right: 0;
-    border: 3px white solid;
-    border-radius: 10px;
-    outline: none;
-}
-
 body {
     height: 100vh;
     width: 100vw;
-    font-family: "VT"
+    font-family: "VT", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
-.hamburger {
-    display: none;
-}
-
-.upload {
-    display: none;
-}
-
-.main-nav-list li.upload-parent {
-    display: none;
-}
-
-.main {
-    height: 70vh;
-    width: 100w;
-}
-
-.container {
-    max-width: 980px;
-    margin: 0 auto;
-    padding-right: 25px;
-}
+/*  Nav bar */
 
 .main-navbar {
     height: 10vh;
@@ -52,17 +20,16 @@ body {
 
 .main-nav {
     width: 100%;
-    box-shadow: inset 0 -6px 0 #1e1e1e;
     padding-left: -20px;
     padding-right: 0px;
+    box-shadow: inset 0 -6px 0 #1e1e1e;
 }
 
 .logo {
     font-size: 2rem;
-    letter-spacing: 0.25rem;
-    color: #ffffff;
     font-weight: 400;
     letter-spacing: -0.8px;
+    color: #ffffff;
 }
 
 .main-nav-list {
@@ -94,17 +61,39 @@ body {
     color: white;
 }
 
+.main-nav-list li.upload-parent {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
 nav select {
     background: none;
     color: white;
-    border-radius: 15px;
     outline: none;
     height: 50%;
-    border: 2px white solid;
+    border: none;
+    font-family: "VT";
+    font-size: 1rem;
 }
 
 nav select option {
     color: black;
+}
+
+i select {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    border: 3px white solid;
+    border-radius: 10px;
+    outline: none;
+}
+
+.upload {
+    display: none;
 }
 
 .meme-searcher {
@@ -328,4 +317,11 @@ footer .logo {
     transition: transform 0.7s ease-out;
     z-index: 10;
     text-transform: capitalize;
+}
+
+/* Garbage */
+
+.main {
+    height: 70vh;
+    width: 100w;
 }

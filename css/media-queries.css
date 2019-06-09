@@ -63,7 +63,7 @@
     }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 660px) {
     .logo {
         display: flex;
         width: 100%;
@@ -71,9 +71,6 @@
     }
     .about-us-modal {
         left: 15%;
-    }
-    nav {
-        width: 80px;
     }
     .logo i {
         margin-left: 5px;

@@ -46,3 +46,9 @@
 .show {
     transform: scale(1);
 }
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding-right: 25px;
+}
