@@ -265,12 +265,6 @@ function showModal(id) {
   gCanvasHeight = gCanvas.height;
   gCanvasWidth = gCanvas.width;
 
-  if (window.innerWidth < 550) {
-    gCanvas.height =275;
-    gCanvas.width = 275;
-
-  }
-
   updateImgCanvas();
 }
 
