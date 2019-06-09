@@ -1,11 +1,13 @@
 'use strict';
+// var canvasFactorHeight = 150;
 
 var gPageSize = 14;
 var gCurrPageIdx = 0;
-var gId = 1;
+var gImgId = 1;
+var gcurrentImgId;
 var gCanvas;
 var ctx;
-// var canvasFactorHeight = 150;
+var gMeme;
 var canvasFactorWidth = 650;
 var gCanvasHeight;
 var gCanvasWidth;
@@ -18,7 +20,7 @@ var gkeywords = {};
 
 var gImgs = [
   {
-    id: gId++,
+    id: gImgId++,
     keywords: [
       'happy',
       'dancing',
@@ -31,19 +33,19 @@ var gImgs = [
     ]
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['survivour', 'guy', 'שורד', 'בחור', 'גבר', 'אולטימטיבי']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['angry', 'doodle', 'כועס']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['sleep', 'baby', 'dog', 'כלב', 'תינוק', 'שינה', 'ישן']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: [
       'black',
       'terantino',
@@ -55,11 +57,11 @@ var gImgs = [
     ]
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['geek', 'face', 'פנים', 'חנון']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: [
       'gameOfThorns',
       'actor',
@@ -71,11 +73,11 @@ var gImgs = [
     ]
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['time', 'hours', 'geek', 'זמן', 'שעות', 'חנון']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: [
       'crying',
       'face',
@@ -88,35 +90,35 @@ var gImgs = [
     ]
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['geek', 'resting', 'חנון', 'מנוחה']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['food', 'suprise', 'אוכל', 'הפתעה']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['sword', 'computer', 'blood', 'guy', 'חרב', 'מחשב', 'דם', 'כעס']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['dog', 'phone', 'כלב', 'פלאפון']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['yuda', 'יודה', 'מלחמת-הכוכבים']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['baby', 'boss', 'suit', 'תינוק', 'בוס', 'חליפה', 'קשוח']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['olympic', 'lift', 'women', 'אישה', 'משקולות', 'אולימפי', 'חזק']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: [
       'angry',
       'annoyed',
@@ -129,11 +131,11 @@ var gImgs = [
     ]
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['challenge', 'accepted', 'אתגר', 'התקבל']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: [
       'cat',
       'smart',
@@ -146,105 +148,105 @@ var gImgs = [
     ]
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['cry', 'cat', 'sad', 'חתול', 'בכי', 'עצוב']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['nerd', 'bad-ass', 'hat', 'חנון', 'כובע', 'מגניב']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['duck', 'colors', 'ברווז', 'צבעים']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['god', 'wtf', 'אלוהים', 'מה']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['dog', 'suprise', 'colors', 'כלב', 'מופתע', 'צבעים']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['girl', 'scream', 'ילדה', 'צעקה', 'צועקת']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['chicken', 'colors', 'תרנגול', 'צבעים']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['nerd', 'boy', 'smile', 'חנון', 'חיוך', 'ילד']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['sponge-bob', 'minutes', 'later', 'בובספוג', 'דקות', 'לאחר-מכן']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['girl', 'smile', 'burn', 'שריפה', 'ילדה', 'חיוך']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['look', 'amaze', 'rainbow', 'מבט', 'נדהם', 'קשת']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['xzibit', 'black', 'guy', 'smile', 'בחור', 'חיוך']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['nicolas', 'cage', 'say', 'ניקולס', 'קייג', 'אומר']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['are', 'man', 'thumb', 'בסדר', 'גבר', 'אגודל']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['success', 'smile', 'happy', 'הצלחה', 'חיוך', 'שמחה']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['pink', 'pokemon', 'פוקימון', 'ורוד']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['hours', 'later', 'spongebob', 'בובספוג', 'שעות', 'אחר-כך']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['brain', 'smart', 'מוח', 'חכם']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['guy', 'girl', 'computer', 'בחור', 'בחורה', 'מחשב']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['hide', 'computer', 'scared', 'מחשב', 'מפחד', 'מסתתר']
   },
   {
-    id: gId++,
+    id: gImgId++,
     keywords: ['guy', 'arabic', 'בחור', 'ערבי']
   }
 ];
-var gcurrentImgId;
-var gkeywords = {};
-var gMeme;
 
 function showModal(id) {
   updateKeywordMap();
   onUpdateId(id);
-  updateGmeme();
-  document.body.classList.toggle('meme-on');
+  createGmemeStrucute();
+  document.body.classList.toggle('footer-display');
   document.querySelector('.memes-container').style.display = 'none';
   document.querySelector('.modal-container').style.transform = 'scale(1)';
   document.querySelector('.modal-container').style.display = 'flex';
 
   gCanvas = document.querySelector('#canvas');
   ctx = gCanvas.getContext('2d');
+
+  // js media queries
+
   if (window.innerWidth > 1295) {
     canvasFactorWidth = 950;
   } else if (window.innerWidth > 1000) {
@@ -263,6 +265,8 @@ function showModal(id) {
 
   gCanvas.width = window.innerWidth - canvasFactorWidth;
   gCanvas.height = window.innerHeight - 250;
+
+  //TODO: Remove if no change
 
   gCanvasHeight = gCanvas.height;
   gCanvasWidth = gCanvas.width;
@@ -283,7 +287,7 @@ function updateId(id) {
   gcurrentImgId = id;
 }
 
-function updateGmeme() {
+function createGmemeStrucute() {
   gMeme = {
     id: gcurrentImgId,
     position: 0,
@@ -315,10 +319,7 @@ function updateGmeme() {
 
 function changeColor(pickedColor) {
   gMeme.text[gMeme.position].color = pickedColor;
-  drawText(
-    gMeme.text[gMeme.position].color,
-    gMeme.text[gMeme.position].content
-  );
+  drawText();
 }
 
 function changePos(direction) {
@@ -362,7 +363,6 @@ function changeFont(fontNumber) {
 
 function clearMeme() {
   updateImgCanvas();
-  // debugger;
   for (var i = 0; i < gMeme.text.length; i++) {
     gMeme.text[i].content = '';
   }
@@ -384,7 +384,7 @@ function backToGallery() {
   gUploadFile = false;
 }
 
-function uploadImg(elForm, ev) {
+function upLoadToFb(elForm, ev) {
   ev.preventDefault();
 
   document.getElementById('imgData').value = canvas.toDataURL('image/jpeg');
@@ -396,17 +396,14 @@ function uploadImg(elForm, ev) {
     uploadedImgUrl = encodeURIComponent(uploadedImgUrl);
     document.querySelector('.share').innerHTML = `
       <a class="w-inline-block social-share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
-      <i class="fas fa-arrow-up"></i>   Share   
-      </a>`;
+      <i class="fas fa-arrow-up"></i>   Share  </a>`;
   }
 
-  doUploadImg(elForm, onSuccess);
+  doupLoadToFb(elForm, onSuccess);
 }
 
-function doUploadImg(elForm, onSuccess) {
-  console.log(elForm);
+function doupLoadToFb(elForm, onSuccess) {
   var formData = new FormData(elForm);
-  console.log(formData);
 
   fetch('http://ca-upload.com/here/upload.php', {
     method: 'POST',
@@ -430,6 +427,10 @@ function getMemes() {
   var fromIdx = gCurrPageIdx * gPageSize;
   var memes = gImgs.slice(fromIdx, fromIdx + gPageSize);
   return memes;
+}
+
+function setMemesCount(width) {
+  if (width < 650) gPageSize = 8;
 }
 
 function nextPage() {
@@ -533,7 +534,7 @@ function createSmallObj() {
     uploadKeywordsToLocalStorage();
   }
 }
-//TODO:creating new obj is double code! make it a function!
+//TODO:creating new obj is a bit of double code! make it a function!
 
 function findTop5Maxes() {
   var keys = Object.keys(gkeywords);
@@ -574,6 +575,8 @@ function updateKeywordMap() {
   uploadKeywordsToLocalStorage();
 }
 
-function setMemesCount(width) {
-  if (width < 650) gPageSize = 8;
+function sendMsg() {
+  window.open(
+    'https://mail.google.com/mail/?view=cm&fs=1&to=me@example.com&su=SUBJECT&body=BODY'
+  );
 }

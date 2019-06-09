@@ -33,7 +33,7 @@
     .controller {
         display: flex;
     }
-    body.meme-on footer {
+    body.footer-display footer {
         display: none;
     }
     .main-nav-list li {

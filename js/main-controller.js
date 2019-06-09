@@ -36,13 +36,11 @@ function renderMeme() {
   elMemes.innerHTML = strHTML;
 }
 
-function showId(id) {
-  console.log(id);
-}
-
 function onUpdateId(id) {
   updateId(id);
 }
+
+// TODO: Ask if the draws function should be in controller.
 
 function draw(txt) {
   gMeme.text[gMeme.position].content = txt;
@@ -61,6 +59,8 @@ function drawText() {
     var font = gMeme.text[i].font
     var textAlign = gMeme.text[i].align
     
+
+//TODO: make this a function for aligning text - returning a object with x and y
     var x;
     var y;
         if (i===0){
@@ -125,8 +125,8 @@ function onChangeAlign(dir) {
 function onBackToGallery() {
   backToGallery();
 }
-function onUploadImg() {
-  uploadImg();
+function onupLoadToFb() {
+  upLoadToFb();
 }
 
 function onShowAboutUsModal() {
@@ -146,6 +146,8 @@ function onPrevPage() {
   prevPage();
   renderMeme();
 }
+
+//we think its better to clean all, should we just clean 1 line
 function onClearMeme() {
   document.querySelector('.editor input').value = '';
   clearMeme();
@@ -199,7 +201,5 @@ function onShowMenu() {
 }
 
 function onSendMsg() {
-  window.open(
-    'https://mail.google.com/mail/?view=cm&fs=1&to=me@example.com&su=SUBJECT&body=BODY'
-  );
+  sendMsg();
 }
