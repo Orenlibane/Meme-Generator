@@ -54,14 +54,13 @@
     }
     .main-nav-list select {
         border: none;
-        /* border-bottom: 2px white solid; */
     }
     .top-five-keywords {
         width: 100%;
     }
     /*  trying to make no focus on load in mobile */
     .editor input {
-        font-size: 17px;
+        font-size: 16px;
     }
 }
 
@@ -94,6 +93,7 @@
     .hamburger {
         display: block;
         font-size: 2rem;
+        text-align: center;
     }
     .up {
         display: none;

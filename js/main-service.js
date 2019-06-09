@@ -249,10 +249,9 @@ function showModal(id) {
     canvasFactorWidth = 950;
   } else if (window.innerWidth > 740) {
     canvasFactorWidth = 300;
-  } else  {
+  } else {
     canvasFactorWidth = 0;
   }
-
 
   gCanvas.width = window.innerWidth - canvasFactorWidth;
   gCanvas.height = window.innerHeight - 250;
@@ -271,9 +270,7 @@ function updateImgCanvas() {
   if (gUploadFile) {
     image.src = gUploadFile;
   } else image.src = `graphic/img/${gMeme.id}.jpg`;
-  // gCanvas.width = gCanvas.width*(gCanvas.height/image.height)
   ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
-  // ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height, 0, 0, gCanvas.width, gCanvas.height)
 }
 
 function updateId(id) {

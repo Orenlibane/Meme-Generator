@@ -38,6 +38,18 @@ var gTrans = {
   english: {
     en: 'English',
     he: 'אנגלית'
+  },
+  'alon-dai': {
+    en: 'Alon Dai',
+    he: 'אלון דאי'
+  },
+  'oren-tzezana': {
+    en: 'Oren Tzezana',
+    he: 'אורן ציזאנה'
+  },
+  story: {
+    en: 'We are 2 working students, working our best',
+    he: 'שלום, אנחנו 2 מתכנתים ששואפים ל...'
   }
 };
 
