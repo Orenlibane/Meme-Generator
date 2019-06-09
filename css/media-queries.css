@@ -66,15 +66,16 @@
 }
 
 @media (max-width: 540px) {
+    .logo {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
     .about-us-modal {
         left: 15%;
     }
     nav {
         width: 80px;
-    }
-    .logo {
-        display: flex;
-        width: 95%
     }
     .logo i {
         margin-left: 5px;
@@ -97,9 +98,6 @@
         right: 21px;
         font-size: 2rem;
     }
-    .upload {
-        display: block;
-    }
     .up {
         display: none;
     }
@@ -117,12 +115,24 @@
     .main-navbar, .main-nav {
         height: 8vh;
     }
+    .main-nav span {
+        display: flex;
+        align-items: center;
+    }
+    .upload-parent {
+        font-size: 2rem;
+    }
+    .upload-parent .upload {
+        opacity: 0;
+        width: 50%;
+        position: absolute;
+    }
 }
 
 @media (max-width: 376px) {
     .about-us-modal {
         left: 2%;
-        height: 60vh;
+        height: 50vh;
     }
 }
 

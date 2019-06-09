@@ -19,17 +19,25 @@ var gTrans = {
     en: 'Enter-Messege',
     he: 'הכנס טקסט'
   },
-  'brand': {
+  brand: {
     en: 'The Ultimate Meme Generator',
     he: 'מכולל הממים האולטימטיבי'
   },
-  'keywords': {
+  keywords: {
     en: 'Key Words',
     he: 'מילות מפתח'
   },
-  'search': {
+  search: {
     en: 'Search Meme',
     he: 'חפש/י מימ'
+  },
+  heberew: {
+    en: 'heberew',
+    he: 'עברית'
+  },
+  english: {
+    en: 'English',
+    he: 'אנגלית'
   }
 };
 

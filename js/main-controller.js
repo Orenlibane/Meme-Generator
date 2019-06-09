@@ -1,7 +1,7 @@
 'use strict';
 
 function onInit() {
-  handleMemesNumOnPage()
+  handleMemesNumOnPage();
   renderMeme();
   document.querySelector('.meme-searcher').focus();
   createSmallObj();
@@ -157,8 +157,15 @@ function onFileInputChange(ev) {
 
 function onSetLang(lang) {
   setLang(lang);
-  if (lang === 'he') document.querySelector('body').style.direction='rtl';
-  else document.querySelector('body').style.direction='ltr';
+  if (lang === 'he') {
+    document.querySelector('body').style.direction = 'rtl';
+    document.querySelector('body').classList.toggle('rtl');
+  } else {
+    if (document.body.classList.contains('rtl')) {
+      document.querySelector('body').classList.toggle('rtl');
+    }
+    document.querySelector('body').style.direction = 'ltr';
+  }
 
   doTrans();
 }
@@ -181,12 +188,10 @@ function renderTopKeyWords() {
 }
 
 function handleMemesNumOnPage() {
-var width = window.innerWidth;
-setMemesCount(width);
+  var width = window.innerWidth;
+  setMemesCount(width);
 }
 
-function onShowMenu(){
-  
-  
-  document.querySelector ('.main-nav-list').classList.toggle('toggle-menu');
+function onShowMenu() {
+  document.querySelector('.main-nav-list').classList.toggle('toggle-menu');
 }

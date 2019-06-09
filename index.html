@@ -30,14 +30,15 @@
       <div class="portfolios-container flex both-align-center">
         <div class="alon-container flex column align-center">
           <h3>Alon Dai</h3>
-          <img src="graphic/img/1.jpg" alt="alon-portfolio" />
+          <img src="graphic/img/alon.png" alt="alon-portfolio" />
         </div>
         <div class="oren-container flex column align-center ">
           <h3>Oren Tzezana</h3>
           <img src="graphic/img/oren.png" alt="oren-portfolio" />
         </div>
       </div>
-      <div class="indicator">press Me</div>
+      <hr />
+      <div class="indicator">we are 2 students, working our best ...</div>
     </div>
     <section class="flex  align-center main-navbar">
       <div class="container flex main-nav align-center space-between">
@@ -65,6 +66,7 @@
                 onchange="onFileInputChange(event)"
                 class="upload"
               />
+              <i class="fas fa-file-upload"></i>
             </li>
             <li class="flex both-align-center " onclick="onShowAboutUsModal()">
               <a href="#" data-trans="about-us">About us</a>
@@ -84,8 +86,8 @@
             <li>
               <select onchange="onSetLang(this.value)">
                 <option data-trans="langaue">Langaue</option>
-                <option value="en">english</option>
-                <option value="he">heberew</option>
+                <option data-trans="english" value="en">English</option>
+                <option data-trans="heberew" value="he">Heberew</option>
               </select>
             </li>
           </ul>
