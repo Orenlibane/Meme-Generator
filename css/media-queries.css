@@ -61,6 +61,9 @@
 }
 
 @media (max-width: 660px) {
+    .main-nav-list li.upload-parent {
+        display: flex;
+    }
     .logo {
         display: flex;
         width: 100%;
