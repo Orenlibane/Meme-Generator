@@ -8,9 +8,10 @@
     }
     .modal-container {
         flex-direction: column;
+        justify-content: flex-start;
     }
     .canvas-editor-container {
-        margin-top: 12px;
+        margin-top: 4px;
         height: 150px;
     }
     .controller {

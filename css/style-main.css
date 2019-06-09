@@ -144,7 +144,9 @@ nav select option {
     transform-origin: top center;
     transition: transform 0.7s ease-out;
     display: none;
-    background: #1d1d1d
+    background: #1d1d1d;
+    justify-content: space-around;
+    /* align-items: center; */
     /* TODO: fix the transform transition - dosent work  */
 }
 
