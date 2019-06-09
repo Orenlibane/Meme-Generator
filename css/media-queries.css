@@ -13,16 +13,14 @@
         margin-top: 12px;
         height: 150px;
     }
-    .editor {
-        height: 150px;
-    }
     .controller {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .first-editor {
         display: flex;
-        align-self: flex-start;
     }
     .first-editor li {
         padding-left: 0;
@@ -38,7 +36,7 @@
         display: none;
     }
     body.meme-on .modal-container {
-        min-height: 100%;
+        min-height: 92vh;
     }
     .main-nav-list li {
         width: 100%;
@@ -129,7 +127,7 @@
     }
     .canvas-share {
         height: 35%;
-        width: 55%;
+        width: 73%;
     }
     .canvas-share .fas, .fab {
         color: white;

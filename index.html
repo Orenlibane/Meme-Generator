@@ -41,6 +41,9 @@
       <div class="indicator" data-trans="story">
         we are 2 students, working our best ...
       </div>
+      <div class="flex both-align-center contact-container">
+        <button onclick="onSendMsg()">Contact us</button>
+      </div>
     </div>
     <section class="flex  align-center main-navbar">
       <div class="container flex main-nav align-center space-between">
@@ -99,7 +102,6 @@
 
     <div class="memes-container flex flex-wrap both-align-center"></div>
     <div class="modal-container  ">
-
       <div class="flex both-align-center">
         <canvas id="canvas" width="500" height="500">
           update your browser! it dosent support canvas
@@ -167,30 +169,32 @@
               <li onclick="onChangeFont(2)">Impact</li>
               <li onclick="onChangeFont(3)" class="indie">Indie</li>
             </ul>
-          </div>
-        </div>
-        <div class="canvas-share flex">
-          <div>
-            <form
-              class="flex"
-              action=""
-              method="POST"
-              enctype="multipart/form-data"
-              onsubmit="uploadImg(this, event)"
-            >
-              <input name="img" id="imgData" type="hidden" />
-              <button type="submit">
-                <div class="share"><i class="fab fa-facebook-square"></i></div>
-              </button>
-            </form>
-          </div>
-          <div>
-            <a href="#" onclick="saveCanvas(this)" download="">
-              <i class="fas fa-download"></i
-            ></a>
-          </div>
-          <div>
-            <a href="#"> <i class="fas fa-share"></i></a>
+            <div class="canvas-share flex ">
+              <div>
+                <form
+                  class="flex"
+                  action=""
+                  method="POST"
+                  enctype="multipart/form-data"
+                  onsubmit="uploadImg(this, event)"
+                >
+                  <input name="img" id="imgData" type="hidden" />
+                  <button type="submit">
+                    <div class="share">
+                      <i class="fab fa-facebook-square"></i>
+                    </div>
+                  </button>
+                </form>
+              </div>
+              <div>
+                <a href="#" onclick="saveCanvas(this)" download="">
+                  <i class="fas fa-download"></i
+                ></a>
+              </div>
+              <div>
+                <a href="#"> <i class="fas fa-share"></i></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
