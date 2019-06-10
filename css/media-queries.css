@@ -15,9 +15,8 @@
     height: 150px;
   }
   .canvas-editor-container i {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
-
   .fa-palette input {
     bottom: 20px;
   }
@@ -109,12 +108,10 @@
     padding: 0 13% 0 9%;
     min-height: 85vh;
   }
-  .fa-arrow-circle-right,
-  .fa-arrow-circle-left {
+  .fa-arrow-circle-right, .fa-arrow-circle-left {
     color: white;
   }
-  .main-navbar,
-  .main-nav {
+  .main-navbar, .main-nav {
     height: 8vh;
   }
   .main-nav span {
@@ -127,7 +124,6 @@
   .upload-parent i {
     font-size: 2rem;
   }
-
   .upload-parent .upload {
     opacity: 0;
     width: 50%;
@@ -140,8 +136,7 @@
     height: 35%;
     width: 73%;
   }
-  .canvas-share .fas,
-  .fab {
+  .canvas-share .fas, .fab {
     color: white;
   }
   @media (max-width: 376px) {
