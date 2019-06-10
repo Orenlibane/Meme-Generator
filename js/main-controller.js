@@ -50,7 +50,7 @@ function draw(txt) {
 
 // prettier-ignore
 function drawText() {
-  updateImgCanvas(gMeme.id, gCanvasHeight, gCanvasWidth);
+  updateImgCanvas();
 
 
   for (var i=0; i<gMeme.text.length;i++){
