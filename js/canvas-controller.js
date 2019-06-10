@@ -41,3 +41,7 @@ function onClearMeme() {
   document.querySelector('.editor input').value = '';
   clearMeme();
 }
+
+function onAddIconsToText(icon) {
+  addIconsToText(icon);
+}

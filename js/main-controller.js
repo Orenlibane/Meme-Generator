@@ -84,6 +84,7 @@ function onPrevPage() {
 //we think its better to clean all, should we just clean 1 line
 
 function onFileInputChange(ev) {
+  debugger;
   handleImageFromInput(ev, showModal);
 }
 
@@ -143,13 +144,5 @@ function handlePaging() {
 }
 
 function onShowModal(id) {
-  //delete footer and show canvas and editor
-  document.body.classList.toggle('footer-display');
-  document.querySelector('.memes-container').style.display = 'none';
-  document.querySelector('.modal-container').style.transform = 'scale(1)';
-  document.querySelector('.modal-container').style.display = 'flex';
-
-  gCanvas = document.querySelector('#canvas');
-  ctx = gCanvas.getContext('2d');
   showModal(id);
 }

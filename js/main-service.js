@@ -24,6 +24,15 @@ function showModal(id) {
   onUpdateId(id);
   createGmemeStrucute();
 
+  //delete footer and show canvas and editor
+  document.body.classList.toggle('footer-display');
+  document.querySelector('.memes-container').style.display = 'none';
+  document.querySelector('.modal-container').style.transform = 'scale(1)';
+  document.querySelector('.modal-container').style.display = 'flex';
+
+  gCanvas = document.querySelector('#canvas');
+  ctx = gCanvas.getContext('2d');
+
   // js media queries
   if (window.innerWidth > 1295) {
     canvasFactorWidth = 950;

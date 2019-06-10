@@ -32,6 +32,14 @@ canvas {
   background: white;
 }
 
+.editor li select {
+  /* position: relative; */
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  height: 50px;
+}
+
 .editor-buttons i {
   padding: 10px 10px 10px 0;
   cursor: pointer;

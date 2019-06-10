@@ -167,3 +167,10 @@ function drawText() {
     }
        
   }
+
+function addIconsToText(icon) {
+  gMeme.text[gMeme.position].content += icon;
+  document.querySelector('.editor input').value =
+    gMeme.text[gMeme.position].content;
+  drawText();
+}
