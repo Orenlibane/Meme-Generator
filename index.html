@@ -78,7 +78,7 @@
             <li class="flex both-align-center " onclick="onShowAboutUsModal()">
               <a href="#" data-trans="about-us">About us</a>
             </li>
-            <li class="flex both-align-center ">
+            <li class="flex search-meme ">
               <input
                 type="text"
                 class="meme-searcher"
@@ -87,7 +87,11 @@
                 data-trans="search"
               />
             </li>
-            <li data-trans="keywords" onclick="onShowKeywordsSearch()">
+            <li
+              class="keywords"
+              data-trans="keywords"
+              onclick="onShowKeywordsSearch()"
+            >
               Keywords
             </li>
             <li>
@@ -149,9 +153,9 @@
               </li>
             </ul>
             <ul class=" first-editor editor-buttons flex clean-list">
-              <li><i onclick="onChangePos(1)" class="fas fa-arrow-up"></i></li>
+              <li><i onclick="onChangePos(1)" class="fas fa-sort-up"></i></li>
               <li>
-                <i onclick="onChangePos(0)" class="fas fa-arrow-down"></i>
+                <i onclick="onChangePos(0)" class="fas fa-sort-down"></i>
               </li>
               <li>
                 <i onclick="onClearMeme()" class="far fa-trash-alt"></i>
