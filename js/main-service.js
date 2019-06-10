@@ -126,7 +126,8 @@ function showMemes() {
 
 // function for setting the memes per pages and pages navigation
 function setMemesCount(width) {
-  if (width < 650) gPageSize = 8;
+  if (width < 1024) gPageSize = 8;
+  // else if (width > 650 && width< 1024) gPageSize = 10;
 }
 
 function nextPage() {
