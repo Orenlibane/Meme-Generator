@@ -48,58 +48,24 @@ function draw(txt) {
   drawText();
 }
 
-// prettier-ignore
-function drawText() {
-  updateImgCanvas();
-
-
-  for (var i=0; i<gMeme.text.length;i++){
-    var color = gMeme.text[i].color
-    var txt = gMeme.text[i].content 
-    var fontSize = gMeme.text[i].size +"rem"
-    var font = gMeme.text[i].font
-    var textAlign = gMeme.text[i].align
-    
-
-//TODO: make this a function for aligning text - returning a object with x and y
-    var x;
-    var y;
-        if (i===0){
-        y= gCanvasHeight / 6
-        }else if(i===1){
-        y= gCanvasHeight / 2
-        }
-        else if(i===2){
-        y= gCanvasHeight -10
-        }
-
-        x = alignText(textAlign,x)
-      
-    ctx.strokeStyle = 'black';
-    ctx.textAlign = textAlign;
-    ctx.font = fontSize + ' ' + font;
-    ctx.fillStyle = color;
-    ctx.fillText(txt, x, y);
-    ctx.strokeText(txt, x, y);
-  }
-
-     
-}
-
 function onChangeColor(pickedColor) {
   changeColor(pickedColor);
 }
 function onChangePos(diraction) {
   changePos(diraction);
+  drawText();
 }
 
 function onChangeSize(sizeVariation) {
   changeSize(sizeVariation);
 }
 function saveCanvas(elLink) {
+  gDownload = true;
+  drawText();
   const data = gCanvas.toDataURL();
   elLink.href = data;
   elLink.download = 'my-img.jpg';
+  gDownload = false;
 }
 
 function onShowFonts() {
@@ -117,8 +83,8 @@ function onChangeAlign(dir) {
 function onBackToGallery() {
   backToGallery();
 }
-function onupLoadToFb() {
-  upLoadToFb();
+function onupLoadToFb(elbtn, ev) {
+  upLoadToFb(elbtn, ev);
 }
 
 function onShowAboutUsModal() {

@@ -18,6 +18,7 @@ var gIsFilterOn = false;
 var compareArr = [];
 var gkeywords = {};
 var gScreenSize = 500;
+var gDownload;
 
 var gImgs = [
   {
@@ -411,6 +412,8 @@ function backToGallery() {
 }
 
 function upLoadToFb(elForm, ev) {
+  gDownload = true;
+  drawText();
   ev.preventDefault();
 
   document.getElementById('imgData').value = canvas.toDataURL('image/jpeg');
@@ -426,6 +429,7 @@ function upLoadToFb(elForm, ev) {
   }
 
   doupLoadToFb(elForm, onSuccess);
+  gDownload = false;
 }
 
 function doupLoadToFb(elForm, onSuccess) {
@@ -659,4 +663,53 @@ function alignText(textAlign, x) {
     }
   }
   return x;
+}
+
+function drawRect(x, y, ch, color) {
+  ctx.strokeStyle = color;
+  ctx.strokeRect(x, y, canvas.width - 5, ch);
+}
+
+// prettier-ignore
+function drawText() {
+  updateImgCanvas();
+
+
+  for (var i=0; i<gMeme.text.length;i++){
+    var color = gMeme.text[i].color
+    var txt = gMeme.text[i].content 
+    var fontSize = gMeme.text[i].size +"rem"
+    var font = gMeme.text[i].font
+    var textAlign = gMeme.text[i].align
+    
+
+//TODO: make this a function for aligning text - returning a object with x and y
+    var x;
+    var y;
+        if (i===0){
+        y= gCanvasHeight / 6
+        }else if(i===1){
+        y= gCanvasHeight / 2
+        }
+        else if(i===2){
+        y= gCanvasHeight -10
+        }
+
+        x = alignText(textAlign,x)
+      
+    ctx.strokeStyle = 'black';
+    ctx.textAlign = textAlign;
+    ctx.font = fontSize + ' ' + font;
+    ctx.fillStyle = color;
+    ctx.fillText(txt, x, y);
+    ctx.strokeText(txt, x, y);
+
+if(gDownload) continue
+else {
+    if (gMeme.position===0) drawRect(4,canvas.height/18, canvas.height/6, "blue")
+    else if (gMeme.position===1) drawRect(4,canvas.height/2.7, canvas.height/6, "blue")
+    else if (gMeme.position===2) drawRect(4,canvas.height/1.2, canvas.height/6, "blue") 
+  }
+  }
+     
 }
