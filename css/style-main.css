@@ -1,322 +1,324 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    font-family: "VT", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 16px;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'VT', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 16px;
 }
 
 /*  Nav bar */
 
 .main-navbar {
-    height: 10vh;
-    width: 100%;
-    background: #292929;
-    color: #ffffff;
+  height: 10vh;
+  width: 100%;
+  background: #292929;
+  color: #ffffff;
 }
 
 .main-nav {
-    width: 100%;
-    padding-left: -20px;
-    padding-right: 0px;
-    box-shadow: inset 0 -6px 0 #1e1e1e;
+  width: 100%;
+  padding-left: -20px;
+  padding-right: 0px;
+  box-shadow: inset 0 -6px 0 #1e1e1e;
 }
 
 .logo {
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: -0.8px;
-    color: #ffffff;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  color: #ffffff;
 }
 
 .main-nav-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    z-index: 2;
-    transform-origin: top right;
-    transition: all 0.7s ease-out
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  transform-origin: top right;
+  transition: all 0.7s ease-out;
 }
 
 .main-nav-list li {
-    padding: 0 20px;
-    box-shadow: -1px 0 0 #1d1d1d, inset -1px 0 0 #1d1d1d;
-    transition: all 0.3s ease-out;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  padding: 0 20px;
+  box-shadow: -1px 0 0 #1d1d1d, inset -1px 0 0 #1d1d1d;
+  transition: all 0.3s ease-out;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .main-nav-list li:hover {
-    border-bottom: 6px #58c93a solid;
+  border-bottom: 6px #58c93a solid;
 }
 
 .main-nav-list li a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .main-nav-list li.upload-parent {
-    display: none;
+  display: none;
 }
 
 .hamburger {
-    display: none;
+  display: none;
 }
 
 nav select {
-    background: none;
-    color: white;
-    outline: none;
-    height: 50%;
-    border: none;
-    font-family: "VT";
-    font-size: 1rem;
+  background: none;
+  color: white;
+  outline: none;
+  height: 50%;
+  border: none;
+  font-family: 'VT';
+  font-size: 1rem;
 }
 
 nav select option {
-    color: black;
+  color: black;
 }
 
 i select {
-    position: absolute;
-    top: 55px;
-    right: 0;
-    border: 3px white solid;
-    border-radius: 10px;
-    outline: none;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  border: 3px white solid;
+  border-radius: 10px;
+  outline: none;
 }
 
 .meme-searcher {
-    background: none;
-    border: 3px white solid;
-    padding: 5px;
-    color: white;
-    border-radius: 10px;
-    outline: none;
-    max-width: 110px;
-    font-family: "VT", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1rem;
+  background: none;
+  border: 3px white solid;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  max-width: 110px;
+  font-family: 'VT', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1rem;
 }
 
 .meme-searcher::placeholder {
-    color: white;
+  color: white;
 }
 
 /* Main gallery */
 
 .memes-container {
-    max-width: 1250px;
-    min-height: 83vh;
-    margin: 0 auto;
-    /* overflow: hidden; */
-    transition: all 0.7s ease-out;
-    background: #1d1d1d
+  max-width: 1250px;
+  min-height: 83vh;
+  margin: 0 auto;
+  /* overflow: hidden; */
+  transition: all 0.7s ease-out;
+  background: #1d1d1d;
 }
 
 .meme {
-    margin: 15px 5px 10px 25px;
-    min-height: 180px;
-    min-width: 180px;
-    border: 1px white solid;
-    background-position: center;
-    background-size: cover;
-    border-radius: 20px;
-    transition: transform 0.3s ease-out;
+  margin: 15px 5px 10px 25px;
+  min-height: 180px;
+  min-width: 180px;
+  border: 1px white solid;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  /* transform-origin: top left; */
+  transition: transform 0.7s ease-out;
 }
 
 .meme:hover {
-    transform: scale(1.1);
-    border: 3px rgb(32, 204, 161) solid;
+  transform: scale(1.1);
+  border: 3px rgb(32, 204, 161) solid;
 }
 
 /* Footer */
 
 footer {
-    background: #292929;
-    text-align: center;
-    border-top: 2px solid #e1e0e0;
-    height: 7vh;
+  background: #292929;
+  text-align: center;
+  border-top: 2px solid #e1e0e0;
+  height: 7vh;
 }
 
 footer .logo {
-    color: white;
-    font-size: 2rem;
+  color: white;
+  font-size: 2rem;
 }
 
 .fa-user-secret {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .contact-container {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .contact-container button {
-    border: 2px black solid;
-    border-radius: 10px;
-    padding: 5px;
+  border: 2px black solid;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .about-us-modal {
-    height: 50vh;
-    width: 50vw;
-    max-width: 500px;
-    min-width: 350px;
-    background: white;
-    border: black 2px solid;
-    position: absolute;
-    top: 10%;
-    left: 30%;
-    border-radius: 15px;
-    padding: 10px;
-    transform-origin: top center;
-    transform: scale(0);
-    transition: transform 0.7s ease-out;
-    z-index: 10;
+  height: 50vh;
+  width: 50vw;
+  max-width: 500px;
+  min-width: 350px;
+  background: white;
+  border: black 2px solid;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  border-radius: 15px;
+  padding: 10px;
+  transform-origin: top center;
+  transform: scale(0);
+  transition: transform 0.7s ease-out;
+  z-index: 10;
 }
 
-.about-us-modal h2, h3 {
-    text-align: center;
-    margin-bottom: 10px;
-    text-transform: capitalize;
+.about-us-modal h2,
+h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .portfolios-container img {
-    height: 70%;
-    width: 70%;
-    border: 2px black solid;
-    border-radius: 15px;
+  height: 70%;
+  width: 70%;
+  border: 2px black solid;
+  border-radius: 15px;
 }
 
 .portfolios-container div {
-    height: 150px;
+  height: 150px;
 }
 
 .indicator {
-    text-align: center;
-    font-size: 2rem;
-    text-transform: capitalize;
-    font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
 .screen {
-    height: 100vh;
-    width: 100vw;
-    background: rgb(122, 122, 122, 0.6);
-    position: absolute;
-    transform: scale(0);
-    z-index: 9;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(122, 122, 122, 0.6);
+  position: absolute;
+  transform: scale(0);
+  z-index: 9;
 }
 
 .meme input {
-    opacity: 0;
-    padding-top: 152px;
-    width: 100%;
+  opacity: 0;
+  padding-top: 152px;
+  width: 100%;
 }
 
 .about-us-modal {
-    left: 25%;
+  left: 25%;
 }
 
 .memes-container i {
-    position: absolute;
+  position: absolute;
 }
 
 .fa-arrow-circle-left {
-    position: absolute;
-    font-size: 3rem;
-    left: 5%;
-    cursor: pointer;
+  position: absolute;
+  font-size: 3rem;
+  left: 5%;
+  cursor: pointer;
 }
 
 .fa-arrow-circle-right {
-    font-size: 3rem;
-    position: absolute;
-    right: 5%;
-    cursor: pointer;
+  font-size: 3rem;
+  position: absolute;
+  right: 5%;
+  cursor: pointer;
 }
 
 .top1 {
-    position: absolute;
-    top: 10%;
-    left: 70%;
-    font-size: 3rem;
-    cursor: pointer;
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  font-size: 3rem;
+  cursor: pointer;
 }
 
 .top2 {
-    cursor: pointer;
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    font-size: 2.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  font-size: 2.5rem;
 }
 
 .top3 {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2rem;
 }
 
 .top4 {
-    cursor: pointer;
-    position: absolute;
-    top: 75%;
-    left: 70%;
-    font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 75%;
+  left: 70%;
+  font-size: 1.5rem;
 }
 
 .top5 {
-    cursor: pointer;
-    position: absolute;
-    top: 70%;
-    left: 10%;
-    font-size: 1rem;
+  cursor: pointer;
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  font-size: 1rem;
 }
 
 .key-words-modal {
-    height: 20vh;
-    width: 50vw;
-    max-width: 500px;
-    min-width: 350px;
-    background: white;
-    border: black 2px solid;
-    position: absolute;
-    top: 10%;
-    left: 30%;
-    border-radius: 15px;
-    padding: 10px;
-    transform-origin: top center;
-    transform: scale(0);
-    transition: transform 0.7s ease-out;
-    z-index: 10;
+  height: 20vh;
+  width: 50vw;
+  max-width: 500px;
+  min-width: 350px;
+  background: white;
+  border: black 2px solid;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  border-radius: 15px;
+  padding: 10px;
+  transform-origin: top center;
+  transform: scale(0);
+  transition: transform 0.7s ease-out;
+  z-index: 10;
 }
 
 .modal-container {
-    max-width: 1250px;
-    min-height: 92vh;
-    margin: 0 auto;
-    /* overflow: hidden; */
-    transform: scale(0);
-    transform-origin: top center;
-    transition: transform 0.7s ease-out;
-    display: none;
-    justify-content: space-around;
-    background: #1d1d1d;
+  max-width: 1250px;
+  min-height: 92vh;
+  margin: 0 auto;
+  /* overflow: hidden; */
+  transform: scale(0);
+  transform-origin: top center;
+  transition: transform 0.7s ease-out;
+  display: none;
+  justify-content: space-around;
+  background: #1d1d1d;
 }
 
 /* Garbage */
 
 .main {
-    height: 70vh;
-    width: 100w;
+  height: 70vh;
+  width: 100w;
 }

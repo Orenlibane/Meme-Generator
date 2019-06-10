@@ -21,7 +21,7 @@ var gTrans = {
   },
   brand: {
     en: 'The Ultimate Meme Generator',
-    he: 'מכולל הממים האולטימטיבי'
+    he: 'מחולל הממים האולטימטיבי'
   },
   keywords: {
     en: 'Key Words',

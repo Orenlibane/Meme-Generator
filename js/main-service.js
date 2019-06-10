@@ -591,3 +591,14 @@ function updateComapreArr(newKeyword) {
   }
   sortArrForComp();
 }
+
+function showMemes() {
+  var memes = document.querySelectorAll('.meme');
+  var i = 500;
+  memes.forEach(function(meme) {
+    setTimeout(function() {
+      meme.classList.remove('hide');
+    }, i);
+    i -= 30;
+  });
+}

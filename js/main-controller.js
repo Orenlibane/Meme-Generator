@@ -22,7 +22,7 @@ function renderMeme() {
         meme.id
       }) style="background-image:url('graphic/img/${
         meme.id
-      }.jpg')" class='meme'></div>`;
+      }.jpg')" class='meme hide'></div>`;
     });
   } else {
     getMemes().forEach(function(meme) {
@@ -30,10 +30,11 @@ function renderMeme() {
         meme.id
       }) style="background-image:url('graphic/img/${
         meme.id
-      }.jpg')" class='meme'></div>`;
+      }.jpg')" class='meme hide'></div>`;
     });
   }
   elMemes.innerHTML = strHTML;
+  showMemes();
 }
 
 function onUpdateId(id) {
