@@ -595,6 +595,7 @@ function gettingTop5MaxesKeyWords() {
 
 function updateKeywordMap() {
   var newKeyword = document.querySelector('.meme-searcher').value;
+  newKeyword = newKeyword.toLowerCase();
   if (newKeyword) {
     var count = gkeywords[newKeyword];
     if (newKeyword) {
@@ -639,6 +640,6 @@ function showMemes() {
     setTimeout(function() {
       meme.classList.remove('hide');
     }, i);
-    i -= 30;
+    i += 30;
   });
 }
