@@ -48,8 +48,14 @@ var gTrans = {
     he: 'אורן ציזאנה'
   },
   story: {
-    en: 'We are 2 working students, working our best',
-    he: 'שלום, אנחנו 2 מתכנתים ששואפים ל...'
+    en:
+      'we are 2 developers with passion for memes! we wanted to make the world a better place, and of course adding memes will do just that.',
+    he:
+      'אנחנו 2 מתכנתים עם תשוקה לממים! רצינו לעשות את העולם מקום יותר טוב, ובוודאי שהדרך לעשות את זה היא להוסיף עוד ממים. תהנו!'
+  },
+  'add-file': {
+    en: 'Add File',
+    he: 'הוסף קובץ'
   }
 };
 

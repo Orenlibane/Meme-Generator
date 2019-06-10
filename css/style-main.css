@@ -315,7 +315,6 @@ footer .logo {
   max-width: 1250px;
   min-height: 83vh;
   margin: 0 auto;
-  /* overflow: hidden; */
   transform: scale(0);
   transform-origin: top center;
   transition: transform 0.7s ease-out;
@@ -324,9 +323,15 @@ footer .logo {
   background: #1d1d1d;
 }
 
+.up-meme {
+  background-color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 /* Garbage */
 
-.main {
+/* .main {
   height: 70vh;
   width: 100w;
-}
+} */

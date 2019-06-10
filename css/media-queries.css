@@ -1,4 +1,7 @@
 @media (max-width: 740px) {
+  .up-meme {
+    display: none;
+  }
   .meme {
     min-height: 100px;
     min-width: 100px;

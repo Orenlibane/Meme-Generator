@@ -6,32 +6,32 @@ function onInit() {
   document.querySelector('.meme-searcher').focus();
   createArrForCompare();
   gettingTop5MaxesKeyWords();
-  handlePaging ()
+  handlePaging();
 }
 
 function renderMeme() {
   var elMemes = document.querySelector('.memes-container');
   var strHTML = '';
 
-  strHTML += `     <i class="fas fa-arrow-circle-left" onclick="onPrevPage()"></i>
+  strHTML += `<i class="fas fa-arrow-circle-left" onclick="onPrevPage()"></i>
   <i class="fas fa-arrow-circle-right" onclick="onNextPage()"></i><div
-  }) style="background-image:url('graphic/img/add.png')" class='up meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
+  }) style="background-image:url('graphic/img/add.png')" class='up-meme meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
 
   if (gFilterArr && gFilterArr.length !== gImgs.length) {
-    gFilterArr.forEach(function (meme) {
+    gFilterArr.forEach(function(meme) {
       strHTML += `<div data-id=${meme.id} onclick=showModal(${
         meme.id
-        }) style="background-image:url('graphic/img/${
+      }) style="background-image:url('graphic/img/${
         meme.id
-        }.jpg')" class='meme hide'></div>`;
+      }.jpg')" class='meme hide'></div>`;
     });
   } else {
-    getMemes().forEach(function (meme) {
+    getMemes().forEach(function(meme) {
       strHTML += `<div data-id=${meme.id} onclick=showModal(${
         meme.id
-        }) style="background-image:url('graphic/img/${
+      }) style="background-image:url('graphic/img/${
         meme.id
-        }.jpg')" class='meme hide'></div>`;
+      }.jpg')" class='meme hide'></div>`;
     });
   }
   elMemes.innerHTML = strHTML;
@@ -102,14 +102,10 @@ function onNextPage() {
   if (checkIfNotLastPage) {
     renderMeme();
 
-    if (gCurrPageIdx + 1 === (gImgs.length / gPageSize)) {
+    if (gCurrPageIdx + 1 === gImgs.length / gPageSize) {
       document.querySelector('.fa-arrow-circle-right').style.display = 'none';
-
     }
-
-  }
-  else;
-
+  } else;
 }
 function onPrevPage() {
   var checkIfLastPage = prevPage();
@@ -178,7 +174,7 @@ function onSendMsg() {
   sendMsg();
 }
 
-function handlePaging () {
+function handlePaging() {
   if (!gCurrPageIdx) {
     document.querySelector('.fa-arrow-circle-left').style.display = 'none';
   }
