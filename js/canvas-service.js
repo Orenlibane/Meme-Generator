@@ -6,7 +6,7 @@ function updateImgCanvas() {
   if (gUploadFile) {
     image.src = gUploadFile;
   } else image.src = `graphic/img/${gMeme.id}.jpg`;
-  // ---------------------------------------------------------------------------
+
   var hRatio = gScreenSize / image.width;
   var vRatio = gScreenSize / image.height;
 
@@ -63,7 +63,6 @@ function showFonts() {
   document.querySelector('.fonts').classList.toggle('show');
 }
 
-//TODO: need to update so we build array of fonts and then putting the idx into gmeme font
 function changeFont(fontNumber) {
   if (!fontNumber) {
     gMeme.text[gMeme.position].font = 'VT';
@@ -136,7 +135,6 @@ function drawText() {
       var textAlign = gMeme.text[i].align
       
   
-  //TODO: make this a function for aligning text - returning a object with x and y
       var x;
       var y;
           if (i===0){

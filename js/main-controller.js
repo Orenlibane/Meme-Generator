@@ -42,8 +42,6 @@ function onUpdateId(id) {
   updateId(id);
 }
 
-// TODO: Ask if the draws function should be in controller.
-
 function draw(txt) {
   gMeme.text[gMeme.position].content = txt;
   drawText();
@@ -81,10 +79,8 @@ function onPrevPage() {
     }
   }
 }
-//we think its better to clean all, should we just clean 1 line
 
 function onFileInputChange(ev) {
-  
   handleImageFromInput(ev, showModal);
 }
 
