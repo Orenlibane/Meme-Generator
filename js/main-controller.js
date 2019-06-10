@@ -6,6 +6,7 @@ function onInit() {
   document.querySelector('.meme-searcher').focus();
   createArrForCompare();
   gettingTop5MaxesKeyWords();
+  handlePaging ()
 }
 
 function renderMeme() {
@@ -17,20 +18,20 @@ function renderMeme() {
   }) style="background-image:url('graphic/img/add.png')" class='up meme'><input type="file" name="image" onchange="onFileInputChange(event)" /></div>`;
 
   if (gFilterArr && gFilterArr.length !== gImgs.length) {
-    gFilterArr.forEach(function(meme) {
+    gFilterArr.forEach(function (meme) {
       strHTML += `<div data-id=${meme.id} onclick=showModal(${
         meme.id
-      }) style="background-image:url('graphic/img/${
+        }) style="background-image:url('graphic/img/${
         meme.id
-      }.jpg')" class='meme hide'></div>`;
+        }.jpg')" class='meme hide'></div>`;
     });
   } else {
-    getMemes().forEach(function(meme) {
+    getMemes().forEach(function (meme) {
       strHTML += `<div data-id=${meme.id} onclick=showModal(${
         meme.id
-      }) style="background-image:url('graphic/img/${
+        }) style="background-image:url('graphic/img/${
         meme.id
-      }.jpg')" class='meme hide'></div>`;
+        }.jpg')" class='meme hide'></div>`;
     });
   }
   elMemes.innerHTML = strHTML;
@@ -97,14 +98,28 @@ function onFilterMeme() {
 }
 
 function onNextPage() {
-  var checkIfLastPage = nextPage();
-  if (checkIfLastPage) renderMeme();
+  var checkIfNotLastPage = nextPage();
+  if (checkIfNotLastPage) {
+    renderMeme();
+
+    if (gCurrPageIdx + 1 === (gImgs.length / gPageSize)) {
+      document.querySelector('.fa-arrow-circle-right').style.display = 'none';
+
+    }
+
+  }
+  else;
+
 }
 function onPrevPage() {
   var checkIfLastPage = prevPage();
-  if (checkIfLastPage) renderMeme();
+  if (checkIfLastPage) {
+    renderMeme();
+    if (!gCurrPageIdx) {
+      document.querySelector('.fa-arrow-circle-left').style.display = 'none';
+    }
+  }
 }
-
 //we think its better to clean all, should we just clean 1 line
 function onClearMeme() {
   document.querySelector('.editor input').value = '';
@@ -161,4 +176,10 @@ function onShowMenu() {
 
 function onSendMsg() {
   sendMsg();
+}
+
+function handlePaging () {
+  if (!gCurrPageIdx) {
+    document.querySelector('.fa-arrow-circle-left').style.display = 'none';
+  }
 }
