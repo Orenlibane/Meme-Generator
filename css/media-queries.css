@@ -13,6 +13,7 @@
   .canvas-editor-container {
     margin-top: -100px;
     height: 150px;
+    justify-content: space-around;
   }
   .canvas-editor-container i {
     font-size: 1.5rem;
@@ -28,6 +29,7 @@
   }
   .first-editor {
     display: flex;
+    margin-bottom: 0;
   }
   .first-editor li {
     padding-left: 0;
@@ -63,6 +65,12 @@
   /*  trying to make no focus on load in mobile */
   .editor input {
     font-size: 16px;
+  }
+  .editor {
+    height: 100%;
+  }
+  .canvas-container {
+    margin-top: 25px;
   }
 }
 

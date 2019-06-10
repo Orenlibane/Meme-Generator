@@ -107,14 +107,12 @@
 
     <div class="memes-container flex flex-wrap both-align-center"></div>
     <div class="modal-container  ">
-      <div class="flex both-align-center">
+      <div class="flex both-align-center canvas-container">
         <canvas id="canvas" width="500" height="500">
           update your browser! it dosent support canvas
         </canvas>
       </div>
-      <div
-        class="canvas-editor-container flex column align-center flex-space-around"
-      >
+      <div class="canvas-editor-container flex column align-center flex-end">
         <div class="editor">
           <input
             data-trans="enter-messege"
@@ -122,7 +120,7 @@
             placeholder="Enter a messge"
             oninput="draw(this.value)"
           />
-          <div class="controller">
+          <div class="controller flex column both-align-center">
             <ul class=" first-editor editor-buttons flex clean-list">
               <li>
                 <i onclick="onChangeSize(1)" class="fas fa-plus-square"></i>
