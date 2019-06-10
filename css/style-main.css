@@ -33,6 +33,11 @@ body {
   color: #ffffff;
 }
 
+.logo a {
+  text-decoration: none;
+  color: white;
+}
+
 .main-nav-list {
   list-style-type: none;
   margin: 0;

@@ -50,8 +50,6 @@
   }
   .main-nav-list li {
     width: 100%;
-    border-top: 0.5px white solid;
-    border-bottom: 0.5px white solid;
     display: flex;
     justify-content: space-around;
     align-items: center;
