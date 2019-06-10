@@ -10,6 +10,11 @@ const url = document.querySelector('link[rel=canonical]') &&
             window.location.href;
 
 shareBtn.addEventListener('click', () => {
+
+
+
+
+  
   if (navigator.share) {
     navigator.share({
       title: 'My awesome meme',
