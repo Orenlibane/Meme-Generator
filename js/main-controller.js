@@ -65,7 +65,7 @@ function drawText() {
     var x;
     var y;
         if (i===0){
-        y= gCanvasHeight / 10
+        y= gCanvasHeight / 6
         }else if(i===1){
         y= gCanvasHeight / 2
         }
