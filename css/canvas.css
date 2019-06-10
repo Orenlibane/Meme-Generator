@@ -33,7 +33,6 @@ canvas {
 }
 
 .editor li select {
-  /* position: relative; */
   border: none;
   outline: none;
   font-size: 1.5rem;
