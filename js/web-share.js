@@ -10,12 +10,13 @@ const url = document.querySelector('link[rel=canonical]') &&
             window.location.href;
 
 shareBtn.addEventListener('click', () => {
+
   if (navigator.share) {
     navigator.share({
       title: 'My awesome meme',
       text: 'my meme',
-    //   url: 'https://www.google.com'
-      url: gCanvas.toDataURL()
+      url: ''
+      // url: gCanvas.toDataURL()
     }).then(() => {
       showMessage(shareBtn, 'Thanks! 😄');
     })
