@@ -1,6 +1,6 @@
 canvas {
-    background-color: hsl(0, 0%, 11%);
-    /* border: 3px solid green; */
+  background-color: hsl(0, 0%, 11%);
+  /* border: 3px solid green; */
 }
 
 .canvas-editor-container {
@@ -29,6 +29,7 @@ canvas {
 .editor {
   border: 2px black solid;
   width: 90%;
+  height: 50%;
   border-radius: 15px;
   background: white;
 }

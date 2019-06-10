@@ -64,6 +64,12 @@
   .editor input {
     font-size: 16px;
   }
+  .editor {
+    height: 100%;
+  }
+  .canvas-container {
+    margin-top: 25px;
+  }
 }
 
 @media (max-width: 660px) {
