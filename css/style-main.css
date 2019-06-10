@@ -93,6 +93,10 @@ i select {
   outline: none;
 }
 
+.main-nav-list li.webshare {
+  display: none;
+}
+
 .meme-searcher {
   background: none;
   border: 3px white solid;

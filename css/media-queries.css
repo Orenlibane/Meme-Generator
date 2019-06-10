@@ -105,6 +105,10 @@
     font-size: 2rem;
     text-align: center;
   }
+
+  .main-nav-list li.webshare {
+    display: flex;
+  }
   .up {
     display: none;
   }
