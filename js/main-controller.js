@@ -160,6 +160,7 @@ function onSetLang(lang) {
     }
     document.querySelector('body').style.direction = 'ltr';
   }
+  document.querySelector('.controller').style.direction = 'ltr';
 
   doTrans();
 }

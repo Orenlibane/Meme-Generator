@@ -313,7 +313,7 @@ footer .logo {
 
 .modal-container {
   max-width: 1250px;
-  min-height: 92vh;
+  min-height: 83vh;
   margin: 0 auto;
   /* overflow: hidden; */
   transform: scale(0);

@@ -307,10 +307,6 @@ function updateImgCanvas() {
 
   gCanvasHeight = image.height * ratio;
   gCanvasWidth = image.width * ratio;
-
-  // ---------------------------------------------------------------------------
-
-  // ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
 }
 
 function updateId(id) {

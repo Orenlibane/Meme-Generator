@@ -17,3 +17,15 @@
     font-family: Zcool;
     src: url(../graphic/fonts/ZCOOLKuaiLe-Regular.ttf)
 }
+
+.dancing {
+    font-family: DancingScript, Impact;
+}
+
+.indie {
+    font-family: Indie, Impact;
+}
+
+.vt {
+    font-family: VT, Impact;
+}
