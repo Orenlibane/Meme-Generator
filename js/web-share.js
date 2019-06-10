@@ -14,7 +14,7 @@ shareBtn.addEventListener('click', () => {
   if (navigator.share) {
     navigator.share({
       title: 'My awesome meme',
-      text: 'my meme',
+      text: 'The Ultimate Meme Generator',
       url: ''
       // url: gCanvas.toDataURL()
     }).then(() => {
