@@ -63,7 +63,6 @@ function onFilterMeme() {
 }
 
 function onNextPage() {
-  // debugger;
   var checkIfNotLastPage = nextPage();
   if (checkIfNotLastPage) {
     renderMeme();
