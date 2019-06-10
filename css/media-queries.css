@@ -55,7 +55,6 @@
   }
   .main-nav-list input {
     border: none;
-    border-bottom: 2px white solid;
   }
   .main-nav-list select {
     border: none;
@@ -72,6 +71,9 @@
   }
   .canvas-container {
     margin-top: 25px;
+  }
+  .footer-display .keywords, .footer-display .main-nav-list .search-meme {
+    display: none;
   }
 }
 

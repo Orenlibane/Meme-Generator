@@ -704,6 +704,7 @@ function drawText() {
     ctx.fillText(txt, x, y);
     ctx.strokeText(txt, x, y);
 
+    // add square around text current position.
 if(gDownload) continue
 else {
     if (gMeme.position===0) drawRect(4,canvas.height/18, canvas.height/6, "blue")
