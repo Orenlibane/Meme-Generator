@@ -2,7 +2,7 @@
 
 
 
-const shareBtn = document.querySelector('.fa-share');
+const shareBtn = document.querySelector('.webshare');
 const ogBtnContent = shareBtn.textContent;
 // const title = document.querySelector('h1').textContent;
 const url = document.querySelector('link[rel=canonical]') &&
