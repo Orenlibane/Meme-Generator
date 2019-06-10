@@ -645,12 +645,22 @@ function showMemes() {
 }
 
 function alignText(textAlign, x) {
-  if (textAlign === 'center') {
-    x = gCanvasWidth / 2;
-  } else if (textAlign === 'start') {
-    x = gCanvasWidth / 6;
-  } else if (textAlign === 'end') {
-    x = gCanvasWidth / 1.1;
+  if (document.body.classList.contains('rtl')) {
+    if (textAlign === 'center') {
+      x = gCanvasWidth / 2;
+    } else if (textAlign === 'start') {
+      x = gCanvasWidth / 1.1;
+    } else if (textAlign === 'end') {
+      x = gCanvasWidth / 6;
+    }
+  } else {
+    if (textAlign === 'center') {
+      x = gCanvasWidth / 2;
+    } else if (textAlign === 'start') {
+      x = gCanvasWidth / 6;
+    } else if (textAlign === 'end') {
+      x = gCanvasWidth / 1.1;
+    }
   }
   return x;
 }
