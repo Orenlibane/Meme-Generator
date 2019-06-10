@@ -1,143 +1,157 @@
 @media (max-width: 740px) {
-    .meme {
-        min-height: 100px;
-        min-width: 100px;
-    }
-    .logo {
-        font-size: 1.5rem;
-    }
-    .modal-container {
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-    .canvas-editor-container {
-        margin-top: 4px;
-        height: 150px;
-    }
-    .controller {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .first-editor {
-        display: flex;
-    }
-    .first-editor li {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .editor-buttons {
-        justify-content: center;
-    }
-    .controller {
-        display: flex;
-    }
-    body.footer-display footer {
-        display: none;
-    }
-    .main-nav-list li {
-        width: 100%;
-        border-top: 0.5px white solid;
-        border-bottom: 0.5px white solid;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .main-nav-list input {
-        border: none;
-        border-bottom: 2px white solid;
-    }
-    .main-nav-list select {
-        border: none;
-    }
-    .top-five-keywords {
-        width: 100%;
-    }
-    /*  trying to make no focus on load in mobile */
-    .editor input {
-        font-size: 16px;
-    }
+  .meme {
+    min-height: 100px;
+    min-width: 100px;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .modal-container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .canvas-editor-container {
+    margin-top: 4px;
+    height: 150px;
+  }
+  .canvas-editor-container i {
+    font-size: 1rem;
+  }
+
+  .fa-palette input {
+    bottom: 20px;
+  }
+  .controller {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .first-editor {
+    display: flex;
+  }
+  .first-editor li {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .editor-buttons {
+    justify-content: center;
+  }
+  .controller {
+    display: flex;
+  }
+  body.footer-display footer {
+    display: none;
+  }
+  .main-nav-list li {
+    width: 100%;
+    border-top: 0.5px white solid;
+    border-bottom: 0.5px white solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .main-nav-list input {
+    border: none;
+    border-bottom: 2px white solid;
+  }
+  .main-nav-list select {
+    border: none;
+  }
+  .top-five-keywords {
+    width: 100%;
+  }
+  /*  trying to make no focus on load in mobile */
+  .editor input {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 660px) {
-    .main-nav-list li.upload-parent {
-        display: flex;
-    }
-    .logo {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
+  .main-nav-list li.upload-parent {
+    display: flex;
+  }
+  .logo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .about-us-modal {
+    left: 15%;
+  }
+  .logo i {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .main-nav-list {
+    width: 150px;
+    transform: scale(0);
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #292929;
+    align-items: center;
+  }
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .up {
+    display: none;
+  }
+  .key-words-modal {
+    left: 0;
+    min-width: 250px;
+  }
+  .memes-container {
+    padding: 0 13% 0 9%;
+    min-height: 85vh;
+  }
+  .fa-arrow-circle-right,
+  .fa-arrow-circle-left {
+    color: white;
+  }
+  .main-navbar,
+  .main-nav {
+    height: 8vh;
+  }
+  .main-nav span {
+    display: flex;
+    align-items: center;
+  }
+  .upload-parent {
+    font-size: 1rem;
+  }
+  .upload-parent i {
+    font-size: 2rem;
+  }
+
+  .upload-parent .upload {
+    opacity: 0;
+    width: 50%;
+    position: absolute;
+  }
+  .editor {
+    margin-top: 36px;
+  }
+  .canvas-share {
+    height: 35%;
+    width: 73%;
+  }
+  .canvas-share .fas,
+  .fab {
+    color: white;
+  }
+  @media (max-width: 376px) {
     .about-us-modal {
-        left: 15%;
+      left: 2%;
+      height: 50vh;
     }
-    .logo i {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    .main-nav-list {
-        width: 150px;
-        transform: scale(0);
-        flex-direction: column;
-        position: absolute;
-        top: 50px;
-        right: 0;
-        background-color: #292929;
-        align-items: center;
-    }
-    .hamburger {
-        display: block;
-        font-size: 2rem;
-        text-align: center;
-    }
-    .up {
-        display: none;
-    }
-    .key-words-modal {
-        left: 0;
-        min-width: 250px;
-    }
-    .memes-container {
-        padding: 0 13% 0 9%;
-        min-height: 85vh;
-    }
-    .fa-arrow-circle-right, .fa-arrow-circle-left {
-        color: white;
-    }
-    .main-navbar, .main-nav {
-        height: 8vh;
-    }
-    .main-nav span {
-        display: flex;
-        align-items: center;
-    }
-    .upload-parent {
-        font-size: 2rem;
-    }
-    .upload-parent .upload {
-        opacity: 0;
-        width: 50%;
-        position: absolute;
-    }
-    .editor {
-        margin-top: 36px;
-    }
-    .canvas-share {
-        height: 35%;
-        width: 73%;
-    }
-    .canvas-share .fas, .fab {
-        color: white;
-    }
-    @media (max-width: 376px) {
-        .about-us-modal {
-            left: 2%;
-            height: 50vh;
-        }
-    }
+  }
 }
 
 .toggle-menu {
-    transform: scale(1)
+  transform: scale(1);
 }
