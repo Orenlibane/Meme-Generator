@@ -131,6 +131,7 @@ function onSetLang(lang) {
   if (lang === 'he') {
     document.querySelector('body').style.direction = 'rtl';
     document.querySelector('body').classList.toggle('rtl');
+    handlePaging ();
   } else {
     if (document.body.classList.contains('rtl')) {
       document.querySelector('body').classList.toggle('rtl');
