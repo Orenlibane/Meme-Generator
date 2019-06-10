@@ -161,6 +161,12 @@
       left: 2%;
       height: 50vh;
     }
+    .about-us-modal button {
+      padding: 10px;
+      font-size: 3rem;
+      font-family: "VT", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      background: white;
+    }
   }
 }
 

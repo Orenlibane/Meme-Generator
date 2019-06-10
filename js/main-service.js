@@ -1,5 +1,4 @@
 'use strict';
-// var canvasFactorHeight = 150;
 
 var gPageSize = 14;
 var gCurrPageIdx = 0;
@@ -20,235 +19,12 @@ var gkeywords = {};
 var gScreenSize = 500;
 var gDownload;
 
-var gImgs = [
-  {
-    id: gImgId++,
-    keywords: [
-      'happy',
-      'dancing',
-      'singing',
-      'שירה',
-      'ריקוד',
-      'שמח',
-      'רוקד',
-      'שר'
-    ]
-  },
-  {
-    id: gImgId++,
-    keywords: ['survivour', 'guy', 'שורד', 'בחור', 'גבר', 'אולטימטיבי']
-  },
-  {
-    id: gImgId++,
-    keywords: ['angry', 'doodle', 'כועס']
-  },
-  {
-    id: gImgId++,
-    keywords: ['sleep', 'baby', 'dog', 'כלב', 'תינוק', 'שינה', 'ישן']
-  },
-  {
-    id: gImgId++,
-    keywords: [
-      'black',
-      'terantino',
-      'pulp fiction',
-      'שחור',
-      'טרנטינו',
-      'ספרות',
-      'זולה'
-    ]
-  },
-  {
-    id: gImgId++,
-    keywords: ['geek', 'face', 'פנים', 'חנון']
-  },
-  {
-    id: gImgId++,
-    keywords: [
-      'gameOfThorns',
-      'actor',
-      'movie',
-      'שחקן',
-      'סרט',
-      'משחקי-הכס',
-      'חורף'
-    ]
-  },
-  {
-    id: gImgId++,
-    keywords: ['time', 'hours', 'geek', 'זמן', 'שעות', 'חנון']
-  },
-  {
-    id: gImgId++,
-    keywords: [
-      'crying',
-      'face',
-      'big-eyes',
-      'geek',
-      'חנון',
-      'עיניים-גדולות',
-      'בכי',
-      'פנים'
-    ]
-  },
-  {
-    id: gImgId++,
-    keywords: ['geek', 'resting', 'חנון', 'מנוחה']
-  },
-  {
-    id: gImgId++,
-    keywords: ['food', 'suprise', 'אוכל', 'הפתעה']
-  },
-  {
-    id: gImgId++,
-    keywords: ['sword', 'computer', 'blood', 'guy', 'חרב', 'מחשב', 'דם', 'כעס']
-  },
-  {
-    id: gImgId++,
-    keywords: ['dog', 'phone', 'כלב', 'פלאפון']
-  },
-  {
-    id: gImgId++,
-    keywords: ['yuda', 'יודה', 'מלחמת-הכוכבים']
-  },
-  {
-    id: gImgId++,
-    keywords: ['baby', 'boss', 'suit', 'תינוק', 'בוס', 'חליפה', 'קשוח']
-  },
-  {
-    id: gImgId++,
-    keywords: ['olympic', 'lift', 'women', 'אישה', 'משקולות', 'אולימפי', 'חזק']
-  },
-  {
-    id: gImgId++,
-    keywords: [
-      'angry',
-      'annoyed',
-      'eating',
-      'cereal',
-      'כועס',
-      'עצבני',
-      'אוכל',
-      'זעם'
-    ]
-  },
-  {
-    id: gImgId++,
-    keywords: ['challenge', 'accepted', 'אתגר', 'התקבל']
-  },
-  {
-    id: gImgId++,
-    keywords: [
-      'cat',
-      'smart',
-      'board',
-      'potions',
-      'חתול',
-      'חכם',
-      'לוח',
-      'שיקויים'
-    ]
-  },
-  {
-    id: gImgId++,
-    keywords: ['cry', 'cat', 'sad', 'חתול', 'בכי', 'עצוב']
-  },
-  {
-    id: gImgId++,
-    keywords: ['nerd', 'bad-ass', 'hat', 'חנון', 'כובע', 'מגניב']
-  },
-  {
-    id: gImgId++,
-    keywords: ['duck', 'colors', 'ברווז', 'צבעים']
-  },
-  {
-    id: gImgId++,
-    keywords: ['god', 'wtf', 'אלוהים', 'מה']
-  },
-  {
-    id: gImgId++,
-    keywords: ['dog', 'suprise', 'colors', 'כלב', 'מופתע', 'צבעים']
-  },
-  {
-    id: gImgId++,
-    keywords: ['girl', 'scream', 'ילדה', 'צעקה', 'צועקת']
-  },
-  {
-    id: gImgId++,
-    keywords: ['chicken', 'colors', 'תרנגול', 'צבעים']
-  },
-  {
-    id: gImgId++,
-    keywords: ['nerd', 'boy', 'smile', 'חנון', 'חיוך', 'ילד']
-  },
-  {
-    id: gImgId++,
-    keywords: ['sponge-bob', 'minutes', 'later', 'בובספוג', 'דקות', 'לאחר-מכן']
-  },
-  {
-    id: gImgId++,
-    keywords: ['girl', 'smile', 'burn', 'שריפה', 'ילדה', 'חיוך']
-  },
-  {
-    id: gImgId++,
-    keywords: ['look', 'amaze', 'rainbow', 'מבט', 'נדהם', 'קשת']
-  },
-  {
-    id: gImgId++,
-    keywords: ['xzibit', 'black', 'guy', 'smile', 'בחור', 'חיוך']
-  },
-  {
-    id: gImgId++,
-    keywords: ['nicolas', 'cage', 'say', 'ניקולס', 'קייג', 'אומר']
-  },
-  {
-    id: gImgId++,
-    keywords: ['are', 'man', 'thumb', 'בסדר', 'גבר', 'אגודל']
-  },
-  {
-    id: gImgId++,
-    keywords: ['success', 'smile', 'happy', 'הצלחה', 'חיוך', 'שמחה']
-  },
-  {
-    id: gImgId++,
-    keywords: ['pink', 'pokemon', 'פוקימון', 'ורוד']
-  },
-  {
-    id: gImgId++,
-    keywords: ['hours', 'later', 'spongebob', 'בובספוג', 'שעות', 'אחר-כך']
-  },
-  {
-    id: gImgId++,
-    keywords: ['brain', 'smart', 'מוח', 'חכם']
-  },
-  {
-    id: gImgId++,
-    keywords: ['guy', 'girl', 'computer', 'בחור', 'בחורה', 'מחשב']
-  },
-  {
-    id: gImgId++,
-    keywords: ['hide', 'computer', 'scared', 'מחשב', 'מפחד', 'מסתתר']
-  },
-  {
-    id: gImgId++,
-    keywords: ['guy', 'arabic', 'בחור', 'ערבי']
-  }
-];
-
 function showModal(id) {
   updateKeywordMap();
   onUpdateId(id);
   createGmemeStrucute();
-  document.body.classList.toggle('footer-display');
-  document.querySelector('.memes-container').style.display = 'none';
-  document.querySelector('.modal-container').style.transform = 'scale(1)';
-  document.querySelector('.modal-container').style.display = 'flex';
-
-  gCanvas = document.querySelector('#canvas');
-  ctx = gCanvas.getContext('2d');
 
   // js media queries
-
   if (window.innerWidth > 1295) {
     canvasFactorWidth = 950;
   } else if (window.innerWidth > 1000) {
@@ -270,44 +46,7 @@ function showModal(id) {
   gCanvas.width = window.innerWidth - canvasFactorWidth;
   gCanvas.height = window.innerHeight - 250;
 
-  // gCanvasHeight = gCanvas.height;
-  // gCanvasWidth = gCanvas.width;
-
   updateImgCanvas();
-}
-
-function updateImgCanvas() {
-  var image = new Image();
-
-  if (gUploadFile) {
-    image.src = gUploadFile;
-  } else image.src = `graphic/img/${gMeme.id}.jpg`;
-  // ---------------------------------------------------------------------------
-  var hRatio = gScreenSize / image.width;
-  var vRatio = gScreenSize / image.height;
-
-  var ratio = Math.min(hRatio, vRatio);
-
-  var centerShift_x = 0;
-  var centerShift_y = 0;
-
-  gCanvas.width = image.width * ratio;
-  gCanvas.height = image.height * ratio;
-
-  ctx.drawImage(
-    image,
-    0,
-    0,
-    image.width,
-    image.height,
-    centerShift_x,
-    centerShift_y,
-    image.width * ratio,
-    image.height * ratio
-  );
-
-  gCanvasHeight = image.height * ratio;
-  gCanvasWidth = image.width * ratio;
 }
 
 function updateId(id) {
@@ -344,113 +83,19 @@ function createGmemeStrucute() {
   };
 }
 
-function changeColor(pickedColor) {
-  gMeme.text[gMeme.position].color = pickedColor;
-  drawText();
-}
-
-function changePos(direction) {
-  if (direction) {
-    if (gMeme.position > 0) gMeme.position--;
-  } else {
-    if (gMeme.position < 2) gMeme.position++;
-  }
-  document.querySelector('.editor input').value =
-    gMeme.text[gMeme.position].content;
-}
-
-function changeSize(sizeVariation) {
-  gMeme.text[gMeme.position].size += sizeVariation;
-  drawText();
-}
-
-function changeAlign(dir) {
-  gMeme.text[gMeme.position].align = dir;
-  drawText();
-}
-
-function showFonts() {
-  document.querySelector('.fonts').classList.toggle('show');
-}
-
-//TODO: need to update so we build array of fonts and then putting the idx into gmeme font
-function changeFont(fontNumber) {
-  if (!fontNumber) {
-    gMeme.text[gMeme.position].font = 'VT';
-  } else if (fontNumber === 1) {
-    gMeme.text[gMeme.position].font = 'DancingScript';
-  } else if (fontNumber === 2) {
-    gMeme.text[gMeme.position].font = 'Impact';
-  } else if (fontNumber === 3) {
-    gMeme.text[gMeme.position].font = 'Indie';
-  }
-
-  drawText();
-}
-
-function clearMeme() {
-  updateImgCanvas();
-  for (var i = 0; i < gMeme.text.length; i++) {
-    gMeme.text[i].content = '';
-  }
-  gMeme.text[gMeme.position].content = '';
-}
-
-function handleImageFromInput(ev, onImageReady) {
-  var reader = new FileReader();
-  reader.onload = function(event) {
-    var img = new Image();
-    img.onload = onImageReady.bind(null, img);
-    img.src = event.target.result;
-    gUploadFile = img.src;
-  };
-  reader.readAsDataURL(ev.target.files[0]);
-}
-
 function backToGallery() {
   gUploadFile = false;
-}
-
-function upLoadToFb(elForm, ev) {
-  gDownload = true;
-  drawText();
-  ev.preventDefault();
-
-  document.getElementById('imgData').value = canvas.toDataURL('image/jpeg');
-
-  // A function to be called if request succeeds
-  function onSuccess(uploadedImgUrl) {
-    console.log('uploadedImgUrl', uploadedImgUrl);
-
-    uploadedImgUrl = encodeURIComponent(uploadedImgUrl);
-    document.querySelector('.share').innerHTML = `
-      <a class="w-inline-block social-share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
-      <i class="fas fa-arrow-up"></i>   Share  </a>`;
-  }
-
-  doupLoadToFb(elForm, onSuccess);
-  gDownload = false;
-}
-
-function doupLoadToFb(elForm, onSuccess) {
-  var formData = new FormData(elForm);
-
-  fetch('http://ca-upload.com/here/upload.php', {
-    method: 'POST',
-    body: formData
-  })
-    .then(function(response) {
-      return response.text();
-    })
-    .then(onSuccess)
-    .catch(function(error) {
-      console.error(error);
-    });
 }
 
 function showAboutUsModal() {
   document.querySelector('.about-us-modal').classList.toggle('show');
   document.querySelector('.screen').classList.toggle('show');
+}
+
+function sendMsg() {
+  window.open(
+    'https://mail.google.com/mail/?view=cm&fs=1&to=me@example.com&su=SUBJECT&body=BODY'
+  );
 }
 
 function getMemes() {
@@ -459,6 +104,18 @@ function getMemes() {
   return memes;
 }
 
+function showMemes() {
+  var memes = document.querySelectorAll('.meme');
+  var i = 500;
+  memes.forEach(function(meme) {
+    setTimeout(function() {
+      meme.classList.remove('hide');
+    }, i);
+    i += 30;
+  });
+}
+
+// function for setting the memes per pages and pages navigation
 function setMemesCount(width) {
   if (width < 650) gPageSize = 8;
 }
@@ -570,7 +227,6 @@ function sortArrForComp() {
     }
   } while (swapped);
 }
-//TODO:creating new obj is a bit of double code! maby we make it a function!
 
 function findTop5Maxes() {
   var keys = Object.keys(gkeywords);
@@ -607,12 +263,6 @@ function updateKeywordMap() {
   uploadKeywordsToLocalStorage();
 }
 
-function sendMsg() {
-  window.open(
-    'https://mail.google.com/mail/?view=cm&fs=1&to=me@example.com&su=SUBJECT&body=BODY'
-  );
-}
-
 function updateComapreArr(newKeyword) {
   var duplicate = false;
   if (gkeywords[newKeyword] > compareArr[compareArr.length - 1].count) {
@@ -631,86 +281,4 @@ function updateComapreArr(newKeyword) {
     }
   }
   sortArrForComp();
-}
-
-function showMemes() {
-  var memes = document.querySelectorAll('.meme');
-  var i = 500;
-  memes.forEach(function(meme) {
-    setTimeout(function() {
-      meme.classList.remove('hide');
-    }, i);
-    i += 30;
-  });
-}
-
-function alignText(textAlign, x) {
-  if (document.body.classList.contains('rtl')) {
-    if (textAlign === 'center') {
-      x = gCanvasWidth / 2;
-    } else if (textAlign === 'start') {
-      x = gCanvasWidth / 1.1;
-    } else if (textAlign === 'end') {
-      x = gCanvasWidth / 6;
-    }
-  } else {
-    if (textAlign === 'center') {
-      x = gCanvasWidth / 2;
-    } else if (textAlign === 'start') {
-      x = gCanvasWidth / 6;
-    } else if (textAlign === 'end') {
-      x = gCanvasWidth / 1.1;
-    }
-  }
-  return x;
-}
-
-function drawRect(x, y, ch, color) {
-  ctx.strokeStyle = color;
-  ctx.strokeRect(x, y, canvas.width - 5, ch);
-}
-
-// prettier-ignore
-function drawText() {
-  updateImgCanvas();
-
-
-  for (var i=0; i<gMeme.text.length;i++){
-    var color = gMeme.text[i].color
-    var txt = gMeme.text[i].content 
-    var fontSize = gMeme.text[i].size +"rem"
-    var font = gMeme.text[i].font
-    var textAlign = gMeme.text[i].align
-    
-
-//TODO: make this a function for aligning text - returning a object with x and y
-    var x;
-    var y;
-        if (i===0){
-        y= gCanvasHeight / 6
-        }else if(i===1){
-        y= gCanvasHeight / 2
-        }
-        else if(i===2){
-        y= gCanvasHeight -10
-        }
-
-        x = alignText(textAlign,x)
-      
-    ctx.strokeStyle = 'black';
-    ctx.textAlign = textAlign;
-    ctx.font = fontSize + ' ' + font;
-    ctx.fillStyle = color;
-    ctx.fillText(txt, x, y);
-    ctx.strokeText(txt, x, y);
-
-    // add square around text current position.
-if(gDownload) continue
-else {
-    if (gMeme.position===0) drawRect(4,canvas.height/18, canvas.height/6, "blue")
-    else if (gMeme.position===1) drawRect(4,canvas.height/2.7, canvas.height/6, "blue")
-    else if (gMeme.position===2) drawRect(4,canvas.height/1.2, canvas.height/6, "blue") 
-  }
-  }
-     
 }

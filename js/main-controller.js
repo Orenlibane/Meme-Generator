@@ -19,7 +19,7 @@ function renderMeme() {
 
   if (gFilterArr && gFilterArr.length !== gImgs.length) {
     gFilterArr.forEach(function(meme) {
-      strHTML += `<div data-id=${meme.id} onclick=showModal(${
+      strHTML += `<div data-id=${meme.id} onclick=onShowModal(${
         meme.id
       }) style="background-image:url('graphic/img/${
         meme.id
@@ -27,7 +27,7 @@ function renderMeme() {
     });
   } else {
     getMemes().forEach(function(meme) {
-      strHTML += `<div data-id=${meme.id} onclick=showModal(${
+      strHTML += `<div data-id=${meme.id} onclick=onShowModal(${
         meme.id
       }) style="background-image:url('graphic/img/${
         meme.id
@@ -49,43 +49,8 @@ function draw(txt) {
   drawText();
 }
 
-function onChangeColor(pickedColor) {
-  changeColor(pickedColor);
-}
-function onChangePos(diraction) {
-  changePos(diraction);
-  drawText();
-}
-
-function onChangeSize(sizeVariation) {
-  changeSize(sizeVariation);
-}
-function saveCanvas(elLink) {
-  gDownload = true;
-  drawText();
-  const data = gCanvas.toDataURL();
-  elLink.href = data;
-  elLink.download = 'my-img.jpg';
-  gDownload = false;
-}
-
-function onShowFonts() {
-  showFonts();
-}
-
-function onChangeFont(fontNumber) {
-  changeFont(fontNumber);
-}
-
-function onChangeAlign(dir) {
-  changeAlign(dir);
-}
-
 function onBackToGallery() {
   backToGallery();
-}
-function onupLoadToFb(elbtn, ev) {
-  upLoadToFb(elbtn, ev);
 }
 
 function onShowAboutUsModal() {
@@ -98,14 +63,15 @@ function onFilterMeme() {
 }
 
 function onNextPage() {
+  // debugger;
   var checkIfNotLastPage = nextPage();
   if (checkIfNotLastPage) {
     renderMeme();
 
-    if (gCurrPageIdx + 1 === gImgs.length / gPageSize) {
+    if (gCurrPageIdx + 1 === +parseFloat(gImgs.length / gPageSize).toFixed(0)) {
       document.querySelector('.fa-arrow-circle-right').style.display = 'none';
     }
-  } else;
+  }
 }
 function onPrevPage() {
   var checkIfLastPage = prevPage();
@@ -117,10 +83,6 @@ function onPrevPage() {
   }
 }
 //we think its better to clean all, should we just clean 1 line
-function onClearMeme() {
-  document.querySelector('.editor input').value = '';
-  clearMeme();
-}
 
 function onFileInputChange(ev) {
   handleImageFromInput(ev, showModal);
@@ -131,7 +93,7 @@ function onSetLang(lang) {
   if (lang === 'he') {
     document.querySelector('body').style.direction = 'rtl';
     document.querySelector('body').classList.toggle('rtl');
-    handlePaging ();
+    handlePaging();
   } else {
     if (document.body.classList.contains('rtl')) {
       document.querySelector('body').classList.toggle('rtl');
@@ -179,4 +141,16 @@ function handlePaging() {
   if (!gCurrPageIdx) {
     document.querySelector('.fa-arrow-circle-left').style.display = 'none';
   }
+}
+
+function onShowModal(id) {
+  //delete footer and show canvas and editor
+  document.body.classList.toggle('footer-display');
+  document.querySelector('.memes-container').style.display = 'none';
+  document.querySelector('.modal-container').style.transform = 'scale(1)';
+  document.querySelector('.modal-container').style.display = 'flex';
+
+  gCanvas = document.querySelector('#canvas');
+  ctx = gCanvas.getContext('2d');
+  showModal(id);
 }
