@@ -478,6 +478,8 @@ function getFilterArr() {
   return filterImages;
 }
 
+// Filter for key words
+
 function filterByKeyword(elKeyWord) {
   document.querySelector('.meme-searcher').value = elKeyWord.innerText;
   filterMeme();
@@ -499,25 +501,6 @@ function showWordsSearchCount() {
   });
 }
 
-function sortArrForComp() {
-  var swapped;
-
-  do {
-    swapped = false;
-
-    for (var i = 0; i < compareArr.length - 1; i++) {
-      if (compareArr[i].count < compareArr[i + 1].count) {
-        var temp = compareArr[i];
-
-        compareArr[i] = compareArr[i + 1];
-        compareArr[i + 1] = temp;
-
-        swapped = true;
-      }
-    }
-  } while (swapped);
-}
-
 function createArrForCompare() {
   showWordsSearchCount();
   var keys = Object.keys(gkeywords);
@@ -536,7 +519,26 @@ function createArrForCompare() {
     uploadKeywordsToLocalStorage();
   }
 }
-//TODO:creating new obj is a bit of double code! make it a function!
+
+function sortArrForComp() {
+  var swapped;
+
+  do {
+    swapped = false;
+
+    for (var i = 0; i < compareArr.length - 1; i++) {
+      if (compareArr[i].count < compareArr[i + 1].count) {
+        var temp = compareArr[i];
+
+        compareArr[i] = compareArr[i + 1];
+        compareArr[i + 1] = temp;
+
+        swapped = true;
+      }
+    }
+  } while (swapped);
+}
+//TODO:creating new obj is a bit of double code! maby we make it a function!
 
 function findTop5Maxes() {
   var keys = Object.keys(gkeywords);
@@ -608,4 +610,15 @@ function showMemes() {
     }, i);
     i += 30;
   });
+}
+
+function alignText(textAlign, x) {
+  if (textAlign === 'center') {
+    x = gCanvasWidth / 2;
+  } else if (textAlign === 'start') {
+    x = gCanvasWidth / 6;
+  } else if (textAlign === 'end') {
+    x = gCanvasWidth / 1.1;
+  }
+  return x;
 }

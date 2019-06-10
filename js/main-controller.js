@@ -73,17 +73,8 @@ function drawText() {
         y= gCanvasHeight -10
         }
 
-        if (textAlign==='center'){
-        x = gCanvasWidth / 2
-        }else if(textAlign==='start'){
-        x = gCanvasWidth / 6
-        }
-        else if(textAlign==='end'){
-        x = gCanvasWidth / 1.1
-        }
-
-
-    
+        x = alignText(textAlign,x)
+      
     ctx.strokeStyle = 'black';
     ctx.textAlign = textAlign;
     ctx.font = fontSize + ' ' + font;
