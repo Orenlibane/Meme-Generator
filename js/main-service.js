@@ -278,39 +278,34 @@ function updateImgCanvas() {
   if (gUploadFile) {
     image.src = gUploadFile;
   } else image.src = `graphic/img/${gMeme.id}.jpg`;
-// ---------------------------------------------------------------------------
-var hRatio = canvas.width / image.width
-var vRatio = canvas.height / image.height
-var ratio = Math.min(hRatio, vRatio)
-var centerShift_x = 0
-var centerShift_y = 0
-// var centerShift_x = (gCanvas.width - image.width * ratio) / 2
-// var centerShift_y = (gCanvas.height - image.height * ratio) / 2
+  // ---------------------------------------------------------------------------
+  var hRatio = canvas.width / image.width;
+  var vRatio = canvas.height / image.height;
+  var ratio = Math.min(hRatio, vRatio);
+  var centerShift_x = 0;
+  var centerShift_y = 0;
+  // var centerShift_x = (gCanvas.width - image.width * ratio) / 2
+  // var centerShift_y = (gCanvas.height - image.height * ratio) / 2
 
-gCanvas.width = image.width * ratio;
-gCanvas.height = image.height * ratio;
+  gCanvas.width = image.width * ratio;
+  gCanvas.height = image.height * ratio;
 
-ctx.drawImage(
-  image,
-  0,
-  0,
-  image.width,
-  image.height,
-  centerShift_x,
-  centerShift_y,
-  image.width * ratio,
-  image.height * ratio)
-
-  console.log (image.width, image.height ,centerShift_x, centerShift_y,image.width * ratio,
-    image.height * ratio)
+  ctx.drawImage(
+    image,
+    0,
+    0,
+    image.width,
+    image.height,
+    centerShift_x,
+    centerShift_y,
+    image.width * ratio,
+    image.height * ratio
+  );
 
   gCanvasHeight = image.height * ratio;
   gCanvasWidth = image.width * ratio;
 
-  
-  
-
-// ---------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
 
   // ctx.drawImage(image, 0, 0, gCanvas.width, gCanvas.height);
 }
