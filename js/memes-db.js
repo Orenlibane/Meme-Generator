@@ -3,28 +3,36 @@
 var gImgs = [
   {
     id: gImgId++,
+    keywords: ['happy', 'dancing', 'raccon', 'ראקון', 'ריקוד', 'שמח', 'רוקד']
+  },
+  {
+    id: gImgId++,
     keywords: [
-      'happy',
-      'dancing',
-      'singing',
-      'שירה',
-      'ריקוד',
-      'שמח',
-      'רוקד',
-      'שר'
+      'survivour',
+      'guy',
+      'ultimate',
+      'שורד',
+      'בחור',
+      'גבר',
+      'אולטימטיבי'
     ]
   },
   {
     id: gImgId++,
-    keywords: ['survivour', 'guy', 'שורד', 'בחור', 'גבר', 'אולטימטיבי']
+    keywords: ['angry', 'doodle', 'כועס', 'ציור']
   },
   {
     id: gImgId++,
-    keywords: ['angry', 'doodle', 'כועס']
-  },
-  {
-    id: gImgId++,
-    keywords: ['sleep', 'baby', 'dog', 'כלב', 'תינוק', 'שינה', 'ישן']
+    keywords: [
+      'feminist',
+      'rastot',
+      'hair',
+      'women',
+      'אישה',
+      'שיער',
+      'ראסטות',
+      'פמיניסטית'
+    ]
   },
   {
     id: gImgId++,
@@ -40,7 +48,16 @@ var gImgs = [
   },
   {
     id: gImgId++,
-    keywords: ['geek', 'face', 'פנים', 'חנון']
+    keywords: [
+      'geek',
+      'face',
+      'hair',
+      'eyeglasses',
+      'משקפיים',
+      'שיער',
+      'פנים',
+      'חנון'
+    ]
   },
   {
     id: gImgId++,
@@ -56,20 +73,11 @@ var gImgs = [
   },
   {
     id: gImgId++,
-    keywords: ['time', 'hours', 'geek', 'זמן', 'שעות', 'חנון']
+    keywords: ['ape', 'orangutang', 'angry', 'עצבני', 'אורנגוטנג', 'קוף']
   },
   {
     id: gImgId++,
-    keywords: [
-      'crying',
-      'face',
-      'big-eyes',
-      'geek',
-      'חנון',
-      'עיניים-גדולות',
-      'בכי',
-      'פנים'
-    ]
+    keywords: ['crying', 'face', 'big-eyes', 'עיניים-גדולות', 'בכי', 'פנים']
   },
   {
     id: gImgId++,
@@ -77,19 +85,28 @@ var gImgs = [
   },
   {
     id: gImgId++,
-    keywords: ['food', 'suprise', 'אוכל', 'הפתעה']
+    keywords: ['food', 'boss', 'בוס', 'אוכל']
   },
   {
     id: gImgId++,
-    keywords: ['sword', 'computer', 'blood', 'guy', 'חרב', 'מחשב', 'דם', 'כעס']
+    keywords: [
+      'thug',
+      'ciggarete',
+      'smile',
+      'eyes',
+      'עיניים',
+      'חיוך',
+      'סיגריה',
+      'בריון'
+    ]
   },
   {
     id: gImgId++,
-    keywords: ['dog', 'phone', 'כלב', 'פלאפון']
+    keywords: ['dog', 'bear', 'phone', , 'דב', 'כלב', 'פלאפון']
   },
   {
     id: gImgId++,
-    keywords: ['yuda', 'יודה', 'מלחמת-הכוכבים']
+    keywords: ['yoda', 'יודה', 'מלחמת-הכוכבים']
   },
   {
     id: gImgId++,
@@ -102,14 +119,14 @@ var gImgs = [
   {
     id: gImgId++,
     keywords: [
-      'angry',
-      'annoyed',
-      'eating',
-      'cereal',
-      'כועס',
-      'עצבני',
-      'אוכל',
-      'זעם'
+      'girl',
+      'red',
+      'standing',
+      'look',
+      'ילדה',
+      'אדום',
+      'עומדת',
+      'מבט'
     ]
   },
   {
@@ -183,7 +200,7 @@ var gImgs = [
   },
   {
     id: gImgId++,
-    keywords: ['are', 'man', 'thumb', 'בסדר', 'גבר', 'אגודל']
+    keywords: ['chinese', 'man', 'glasses', 'סיני', 'גבר', 'משקפיים']
   },
   {
     id: gImgId++,
@@ -207,7 +224,7 @@ var gImgs = [
   },
   {
     id: gImgId++,
-    keywords: ['hide', 'computer', 'scared', 'מחשב', 'מפחד', 'מסתתר']
+    keywords: ['cat', 'meow', 'scream', 'חתול', 'מיאו', 'צעקה']
   },
   {
     id: gImgId++,

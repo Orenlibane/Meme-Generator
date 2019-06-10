@@ -84,7 +84,7 @@ function onPrevPage() {
 //we think its better to clean all, should we just clean 1 line
 
 function onFileInputChange(ev) {
-  debugger;
+  
   handleImageFromInput(ev, showModal);
 }
 

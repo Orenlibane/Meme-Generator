@@ -70,9 +70,6 @@
   .editor {
     height: 100%;
   }
-  .canvas-container {
-    margin-top: 25px;
-  }
   .footer-display .keywords, .footer-display .main-nav-list .search-meme {
     display: none;
   }
@@ -165,6 +162,12 @@
       font-family: "VT", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       background: white;
     }
+  }
+}
+
+@media (min-height: 700px) {
+  .canvas-container {
+    margin-top: 70px;
   }
 }
 

@@ -11,7 +11,7 @@ var gTrans = {
     en: 'Memes-Gallery',
     he: 'גלרייה'
   },
-  langaue: {
+  language: {
     en: 'Langaue',
     he: 'שפה'
   },
