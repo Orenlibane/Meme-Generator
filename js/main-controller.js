@@ -140,12 +140,12 @@ function onFilterMeme() {
 }
 
 function onNextPage() {
-  nextPage();
-  renderMeme();
+  var checkIfLastPage = nextPage();
+  if (checkIfLastPage) renderMeme();
 }
 function onPrevPage() {
-  prevPage();
-  renderMeme();
+  var checkIfLastPage = prevPage();
+  if (checkIfLastPage) renderMeme();
 }
 
 //we think its better to clean all, should we just clean 1 line

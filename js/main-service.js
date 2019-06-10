@@ -434,12 +434,18 @@ function setMemesCount(width) {
 function nextPage() {
   if (gCurrPageIdx + 1 < gImgs.length / gPageSize) {
     gCurrPageIdx++;
+    return true;
+  } else {
+    return false;
   }
 }
 
 function prevPage() {
   if (gCurrPageIdx > 0) {
     gCurrPageIdx--;
+    return true;
+  } else {
+    return false;
   }
 }
 
