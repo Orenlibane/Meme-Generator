@@ -13,6 +13,7 @@
   .canvas-editor-container {
     margin-top: -100px;
     height: 150px;
+    justify-content: space-around;
   }
   .canvas-editor-container i {
     font-size: 1.5rem;
@@ -28,6 +29,7 @@
   }
   .first-editor {
     display: flex;
+    margin-bottom: 0;
   }
   .first-editor li {
     padding-left: 0;
