@@ -119,7 +119,7 @@ function alignText(textAlign, x) {
 
 function drawRect(x, y, ch, color) {
   ctx.strokeStyle = color;
-  ctx.strokeRect(x, y, canvas.width - 5, ch);
+  ctx.strokeRect(x, y, canvas.width - 4, ch);
 }
 
 // prettier-ignore
